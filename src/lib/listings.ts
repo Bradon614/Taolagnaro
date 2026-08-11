@@ -14,6 +14,7 @@
 import type { CategorySlug } from "@/lib/site";
 import type { Price } from "@/lib/money";
 import type { PlateVariant } from "@/components/media/Plate";
+import { distanceKm as greatCircleKm, TOWN_CENTRE, type Coordinates } from "@/lib/geo";
 
 export type Listing = {
   slug: string;
@@ -45,9 +46,10 @@ export type Listing = {
   badge?: { label: string; tone: "accent" | "outline" | "warm" };
   /** Position in the home mosaic; absent means not featured. */
   featuredRank?: number;
+  coordinates: Coordinates;
 };
 
-export const LISTINGS: Listing[] = [
+const RAW_LISTINGS: Omit<Listing, "coordinates">[] = [
   // ---------------------------------------------------------------- sites
   {
     slug: "plage-de-libanona",
@@ -423,6 +425,63 @@ export const LISTINGS: Listing[] = [
     badge: { label: "Géré par la communauté", tone: "outline" },
   },
 ];
+
+
+/**
+ * Approximate positions, good enough to place a pin and rank "nearby".
+ * These need checking against real GPS readings before launch — several are
+ * village centroids rather than the establishment door.
+ */
+const COORDINATES: Record<string, Coordinates> = {
+  "plage-de-libanona": { lat: -25.0397, lon: 46.9967 },
+  "reserve-de-nahampoana": { lat: -24.9772, lon: 46.9903 },
+  "fort-flacourt": { lat: -25.033, lon: 46.995 },
+  "baie-de-sainte-luce": { lat: -24.7797, lon: 47.1728 },
+  "presquile-de-lokaro": { lat: -24.9333, lon: 47.1333 },
+  "pic-saint-louis": { lat: -25.0217, lon: 47.0011 },
+  "plage-dambinanibe": { lat: -25.07, lon: 46.95 },
+  "villa-libanona": { lat: -25.039, lon: 46.996 },
+  "lodge-ravinala": { lat: -25.05, lon: 46.94 },
+  "chez-voahangy": { lat: -24.78, lon: 47.17 },
+  "camp-de-lokaro": { lat: -24.934, lon: 47.13 },
+  "hotel-de-lanosy": { lat: -25.034, lon: 46.989 },
+  "residence-des-galions": { lat: -25.038, lon: 46.993 },
+  "les-filaos-dambinanibe": { lat: -25.069, lon: 46.952 },
+  "chez-perline": { lat: -25.036, lon: 46.986 },
+  "la-table-de-libanona": { lat: -25.0385, lon: 46.9955 },
+  "chez-zafy": { lat: -25.0325, lon: 46.9875 },
+  "le-filao": { lat: -25.043, lon: 46.982 },
+  "grillades-du-port": { lat: -25.048, lon: 46.976 },
+  "initiation-au-surf": { lat: -25.0397, lon: 46.9967 },
+  "pic-saint-louis-lever-du-jour": { lat: -25.0217, lon: 47.0011 },
+  "kitesurf-a-vinanibe": { lat: -25.05, lon: 46.94 },
+  "reserve-de-berenty": { lat: -25.0053, lon: 46.3053 },
+  "sainte-luce-deux-jours": { lat: -24.7797, lon: 47.1728 },
+  "cuisine-antanosy-chez-lhabitant": { lat: -25.01, lon: 46.96 },
+  "vannerie-de-mahampy": { lat: -24.78, lon: 47.17 },
+};
+
+export const LISTINGS: Listing[] = RAW_LISTINGS.map((listing) => ({
+  ...listing,
+  coordinates: COORDINATES[listing.slug] ?? TOWN_CENTRE,
+}));
+
+/** Closest listings by straight-line distance, excluding the subject itself. */
+export function nearbyListings(listing: Listing, limit = 4): Listing[] {
+  return LISTINGS.filter((other) => other.slug !== listing.slug)
+    .map((other) => ({
+      other,
+      km: greatCircleKm(listing.coordinates, other.coordinates),
+    }))
+    .sort((a, b) => a.km - b.km)
+    .slice(0, limit)
+    .map((entry) => entry.other);
+}
+
+/** Straight-line distance from one listing to another, in km. */
+export function kmBetween(a: Listing, b: Listing): number {
+  return greatCircleKm(a.coordinates, b.coordinates);
+}
 
 export function listingsByCategory(category: CategorySlug): Listing[] {
   return LISTINGS.filter((listing) => listing.category === category);
