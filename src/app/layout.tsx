@@ -1,4 +1,7 @@
 import type { Metadata, Viewport } from "next";
+import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SiteFooter } from "@/components/layout/SiteFooter";
+import { MobileTabBar } from "@/components/layout/MobileTabBar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -28,7 +31,18 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body className="flex min-h-screen flex-col">
+        <a href="#contenu" className="skip-link">
+          Aller au contenu
+        </a>
+        <SiteHeader />
+        {/* Bottom padding clears the mobile tab bar. */}
+        <main id="contenu" className="flex-1 pb-20 lg:pb-0">
+          {children}
+        </main>
+        <SiteFooter />
+        <MobileTabBar />
+      </body>
     </html>
   );
 }

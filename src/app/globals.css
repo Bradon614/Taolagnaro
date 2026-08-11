@@ -46,6 +46,8 @@
   --color-accent-contrast: var(--accent-contrast);
   --color-warn: var(--warn);
   --color-whatsapp: #1fa855;
+  --color-footer: var(--footer-bg);
+  --color-footer-ink: var(--footer-ink);
 
   /* -- typography: three roles ------------------------------------------ */
   --font-display: "Iowan Old Style", "Charter", "Palatino Linotype", Palatino,
@@ -98,6 +100,8 @@
   --accent: #c98a16;
   --accent-contrast: #1a1206;
   --warn: #b14a2a;
+  --footer-bg: #0b3b3c;
+  --footer-ink: #dceae4;
   color-scheme: light;
 }
 
@@ -115,6 +119,9 @@
     --accent: #e8b54a;
     --accent-contrast: #0a2124;
     --warn: #d9714b;
+    /* The footer sits *under* the ground in dark, not above it. */
+    --footer-bg: #061b1e;
+    --footer-ink: #b9ccc6;
     color-scheme: dark;
   }
 }
@@ -132,6 +139,8 @@
   --accent: #c98a16;
   --accent-contrast: #1a1206;
   --warn: #b14a2a;
+  --footer-bg: #0b3b3c;
+  --footer-ink: #dceae4;
   color-scheme: light;
 }
 
@@ -148,6 +157,8 @@
   --accent: #e8b54a;
   --accent-contrast: #0a2124;
   --warn: #d9714b;
+  --footer-bg: #061b1e;
+  --footer-ink: #b9ccc6;
   color-scheme: dark;
 }
 
@@ -208,4 +219,105 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* --------------------------------------------------------------------------
+   Plates — placeholder imagery with a bathymetric contour overlay.
+   See src/components/media/Plate.tsx.
+   -------------------------------------------------------------------------- */
+
+@layer components {
+  .plate {
+    position: relative;
+    overflow: hidden;
+    background:
+      repeating-radial-gradient(
+        ellipse at var(--plate-ox, 28%) var(--plate-oy, 118%),
+        rgb(255 255 255 / 0) 0 17px,
+        rgb(255 255 255 / 0.075) 17px 18px
+      ),
+      linear-gradient(
+        158deg,
+        var(--plate-a),
+        var(--plate-b) 52%,
+        var(--plate-c)
+      );
+  }
+
+  /* Keeps white text legible over the lighter end of every gradient. */
+  .plate::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgb(4 20 22 / 0.55),
+      rgb(4 20 22 / 0) 58%
+    );
+  }
+
+  .plate-ocean {
+    --plate-a: #062a31;
+    --plate-b: #0e5a62;
+    --plate-c: #3e9e9b;
+    --plate-ox: 22%;
+    --plate-oy: 125%;
+  }
+  .plate-reef {
+    --plate-a: #0a3f43;
+    --plate-b: #1b7e74;
+    --plate-c: #7fccb6;
+    --plate-ox: 70%;
+    --plate-oy: 115%;
+  }
+  .plate-forest {
+    --plate-a: #12301c;
+    --plate-b: #2c5b33;
+    --plate-c: #79a05a;
+    --plate-ox: 35%;
+    --plate-oy: -20%;
+  }
+  .plate-sand {
+    --plate-a: #8a7a52;
+    --plate-b: #c4b183;
+    --plate-c: #e8dcbb;
+    --plate-ox: 55%;
+    --plate-oy: 120%;
+  }
+  .plate-sunset {
+    --plate-a: #3a1a18;
+    --plate-b: #9b4526;
+    --plate-c: #e0a83b;
+    --plate-ox: 78%;
+    --plate-oy: 108%;
+  }
+  .plate-town {
+    --plate-a: #231f1c;
+    --plate-b: #5c534a;
+    --plate-c: #a79581;
+    --plate-ox: 15%;
+    --plate-oy: 110%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Skip link — visible only once focused.
+   -------------------------------------------------------------------------- */
+
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-plate);
+  font-size: var(--text-small);
+  font-weight: 600;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
 }
