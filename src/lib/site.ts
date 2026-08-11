@@ -148,6 +148,19 @@ export const FOOTER_COLUMNS = [
   },
 ] as const;
 
+/**
+ * True for a listing detail route (/<category>/<slug>). Those pages dock their
+ * own price-and-request bar on mobile, so the global tab bar stands down —
+ * two stacked fixed bars would eat a fifth of a phone viewport.
+ */
+export function isListingDetailRoute(pathname: string): boolean {
+  const segments = pathname.split("/").filter(Boolean);
+  return (
+    segments.length === 2 &&
+    CATEGORIES.some((category) => category.slug === segments[0])
+  );
+}
+
 export const LANGUAGES = [
   { code: "fr", label: "FR", name: "Français" },
   { code: "en", label: "EN", name: "English" },

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
-import { SITE } from "@/lib/site";
+import { isListingDetailRoute, SITE } from "@/lib/site";
 
 /**
  * Five destinations within thumb reach. A hamburger would hide the whole
@@ -57,6 +57,9 @@ export function MobileTabBar() {
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [moreOpen]);
+
+  // Detail pages dock their own action bar; stand down there.
+  if (isListingDetailRoute(pathname)) return null;
 
   return (
     <>
