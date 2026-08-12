@@ -58,6 +58,18 @@ export function SiteHeader() {
 
   useEffect(() => () => clearTimeout(closeTimer.current), []);
 
+  // On routes with a full-bleed hero the header starts transparent over the
+  // image and turns solid once the hero is behind you — otherwise a long page
+  // (Découvrir runs to seven chapters) is left with no navigation at all.
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    if (!isOverlay) return;
+    const onScroll = () => setScrolled(window.scrollY > 120);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isOverlay]);
+
   function openMenu() {
     clearTimeout(closeTimer.current);
     setMenuOpen(true);
@@ -71,9 +83,11 @@ export function SiteHeader() {
   }
 
   // On mobile the header is two rows tall and the bottom bar is already the
-  // persistent navigation, so it only sticks from lg upwards.
+  // persistent navigation, so the solid variant only sticks from lg upwards.
   const headerTone = isOverlay
-    ? "absolute inset-x-0 top-0 z-40 border-white/20 text-white"
+    ? scrolled
+      ? "fixed inset-x-0 top-0 z-40 border-line bg-surface text-ink shadow-[0_1px_0_var(--line)]"
+      : "absolute inset-x-0 top-0 z-40 border-white/20 text-white"
     : "z-40 border-line bg-surface text-ink lg:sticky lg:top-0";
 
   return (
