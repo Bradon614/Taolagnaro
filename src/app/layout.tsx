@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { MobileTabBar } from "@/components/layout/MobileTabBar";
+import { SearchProvider } from "@/components/search/SearchProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="flex min-h-screen flex-col">
+        <SearchProvider>
         <a href="#contenu" className="skip-link">
           Aller au contenu
         </a>
@@ -42,6 +44,7 @@ export default function RootLayout({
         </main>
         <SiteFooter />
         <MobileTabBar />
+        </SearchProvider>
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SearchTrigger } from "@/components/search/SearchTrigger";
 import { Plate } from "@/components/media/Plate";
 import { SITE } from "@/lib/site";
 
@@ -39,11 +40,12 @@ export function Hero() {
           Fort-Dauphin — puis envoyez votre demande directement au prestataire.
         </p>
 
-        {/* Visual for now: the working search arrives with the search slice.
-            Dates stay optional — there is no availability to check against. */}
-        <Link
-          href="/explorer"
-          className="mt-7 flex w-full max-w-3xl flex-col gap-1 rounded-2xl bg-surface p-2 sm:flex-row sm:items-center sm:gap-0 sm:rounded-full sm:py-1.5 sm:pl-6 sm:pr-1.5"
+        {/* Opens the search overlay. Dates stay decorative for now — there is
+            no availability to check against, and the field exists to set the
+            provider's expectation, not to filter. */}
+        <SearchTrigger
+          label="Rechercher un lieu à Taolagnaro"
+          className="mt-7 flex w-full max-w-3xl flex-col gap-1 rounded-2xl bg-surface p-2 text-left sm:flex-row sm:items-center sm:gap-0 sm:rounded-full sm:py-1.5 sm:pl-6 sm:pr-1.5"
         >
           {FIELDS.map((field, index) => (
             <span
@@ -63,7 +65,7 @@ export function Hero() {
           <span className="mt-1 inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-small font-semibold text-accent-contrast sm:mt-0">
             <span aria-hidden="true">⌕</span> Rechercher
           </span>
-        </Link>
+        </SearchTrigger>
 
         <div className="mt-4 flex flex-wrap items-center gap-2">
           <span className="mr-1 font-mono text-label uppercase tracking-[0.14em] text-white/55">

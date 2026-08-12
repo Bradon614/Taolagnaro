@@ -6,6 +6,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { Logo } from "@/components/brand/Logo";
 import { ExploreMenu } from "@/components/layout/ExploreMenu";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { SearchTrigger } from "@/components/search/SearchTrigger";
 import { OVERLAY_HEADER_ROUTES, PRIMARY_NAV } from "@/lib/site";
 
 /**
@@ -169,11 +170,9 @@ export function SiteHeader() {
         </div>
 
         <div className="ml-auto flex items-center gap-3 md:gap-4">
-          {/* The full-screen search overlay arrives with the search slice. */}
-          <Link
-            href="/explorer"
+          <SearchTrigger
             className={`hidden items-center gap-2 rounded-full border px-4 py-2 text-small md:inline-flex ${
-              isOverlay
+              isOverlay && !scrolled
                 ? "border-white/35 text-white/80 hover:text-white"
                 : "border-line-strong text-ink-subtle hover:text-ink"
             }`}
@@ -181,7 +180,7 @@ export function SiteHeader() {
             <span aria-hidden="true">⌕</span>
             <span className="hidden xl:inline">Plage, lodge, randonnée…</span>
             <span className="xl:hidden">Rechercher</span>
-          </Link>
+          </SearchTrigger>
 
           <LanguageSwitcher />
 
@@ -198,13 +197,10 @@ export function SiteHeader() {
           their hero already carries a search field. */}
       {isOverlay ? null : (
         <div className="border-t border-line px-4 py-2.5 md:hidden">
-          <Link
-            href="/explorer"
-            className="flex items-center gap-2 rounded-full border border-line-strong px-4 py-2.5 text-small text-ink-subtle"
-          >
+          <SearchTrigger className="flex w-full items-center gap-2 rounded-full border border-line-strong px-4 py-2.5 text-small text-ink-subtle">
             <span aria-hidden="true">⌕</span>
             Chercher un lieu, un hôtel…
-          </Link>
+          </SearchTrigger>
         </div>
       )}
     </header>
