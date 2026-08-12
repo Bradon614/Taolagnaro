@@ -1,11 +1,19 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import { useMediaQuery } from "@/lib/use-media-query";
 
 /**
  * Footer sections collapse into an accordion on mobile and sit open on
- * desktop. Server-rendered open so the links are present without JavaScript;
- * a client effect collapses them once we know the viewport is narrow.
+ * desktop.
+ *
+ * `open` is fully controlled. An earlier version rendered `<details open>` and
+ * then mutated `details.open` from an effect — React owns that attribute, so
+ * the next render put it back and columns reopened at random. Controlled state
+ * plus onToggle keeps React and the DOM in agreement.
+ *
+ * The server snapshot is `true` (desktop), so without JavaScript every column
+ * renders open and no links are hidden.
  */
 export function FooterColumn({
   heading,
@@ -14,24 +22,16 @@ export function FooterColumn({
   heading: string;
   children: React.ReactNode;
 }) {
-  const ref = useRef<HTMLDetailsElement>(null);
-  const [isDesktop, setIsDesktop] = useState(true);
-
-  useEffect(() => {
-    const query = window.matchMedia("(min-width: 768px)");
-    function apply() {
-      setIsDesktop(query.matches);
-      if (ref.current) ref.current.open = query.matches;
-    }
-    apply();
-    query.addEventListener("change", apply);
-    return () => query.removeEventListener("change", apply);
-  }, []);
+  const isDesktop = useMediaQuery("(min-width: 768px)", true);
+  const [openOnMobile, setOpenOnMobile] = useState(false);
+  const open = isDesktop || openOnMobile;
 
   return (
     <details
-      ref={ref}
-      open
+      open={open}
+      onToggle={(event) => {
+        if (!isDesktop) setOpenOnMobile(event.currentTarget.open);
+      }}
       className="border-b border-white/15 pb-3 md:border-0 md:pb-0"
     >
       <summary
@@ -41,7 +41,7 @@ export function FooterColumn({
       >
         {heading}
         <span aria-hidden="true" className="text-[0.9em] md:hidden">
-          +
+          {open ? "−" : "+"}
         </span>
       </summary>
       {children}
