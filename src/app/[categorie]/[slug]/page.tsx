@@ -98,7 +98,7 @@ export default async function ListingDetailPage({ params }: Params) {
         alt={listing.name}
       />
 
-      <div className="mx-auto grid max-w-[1440px] gap-8 px-4 pb-14 pt-7 md:px-6 lg:grid-cols-[1fr_22rem] lg:gap-11">
+      <div className="mx-auto grid max-w-[1440px] grid-cols-[minmax(0,1fr)] gap-8 px-4 pb-14 pt-7 md:px-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-11">
         <div>
           <div className="flex flex-wrap gap-2">
             {category ? <Badge>{category.label}</Badge> : null}

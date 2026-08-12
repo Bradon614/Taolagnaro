@@ -127,7 +127,7 @@ export function MapExplorer() {
   return (
     // grid-rows-[minmax(0,1fr)]: without it the row sizes to the tallest
     // child (the results list) and the map grows past the viewport.
-    <div className="relative lg:grid lg:h-[calc(100dvh-4rem)] lg:grid-cols-[23.5rem_1fr] lg:grid-rows-[minmax(0,1fr)] lg:overflow-hidden">
+    <div className="relative lg:grid lg:h-[calc(100dvh-4rem)] lg:grid-cols-[23.5rem_minmax(0,1fr)] lg:grid-rows-[minmax(0,1fr)] lg:overflow-hidden">
       {/* Desktop: list beside the map */}
       <aside className="hidden min-h-0 flex-col border-r border-line bg-ground lg:flex">
         {panel}

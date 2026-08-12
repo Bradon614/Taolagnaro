@@ -54,7 +54,7 @@ export default async function RequestPage({ params, searchParams }: Params) {
   const category = categoryBySlug(listing.category);
 
   return (
-    <div className="mx-auto grid max-w-[1120px] gap-10 px-4 pb-20 pt-8 md:px-6 md:pb-16 lg:grid-cols-[1fr_20.5rem] lg:gap-12">
+    <div className="mx-auto grid max-w-[1120px] grid-cols-[minmax(0,1fr)] gap-10 px-4 pb-20 pt-8 md:px-6 md:pb-16 lg:grid-cols-[minmax(0,1fr)_20.5rem] lg:gap-12">
       <div>
         <p className="font-mono text-label uppercase tracking-[0.14em] text-ink-subtle">
           Demande de réservation

@@ -147,7 +147,7 @@ export function ExploreView({
         </div>
       </header>
 
-      <div className="mx-auto grid max-w-[1440px] items-start gap-0 px-4 pb-16 md:px-6 lg:grid-cols-[15.5rem_1fr]">
+      <div className="mx-auto grid max-w-[1440px] grid-cols-[minmax(0,1fr)] items-start gap-0 px-4 pb-16 md:px-6 lg:grid-cols-[15.5rem_minmax(0,1fr)]">
         <aside className="hidden py-6 pr-6 lg:sticky lg:top-20 lg:block">
           <FilterPanel
             filters={filters}

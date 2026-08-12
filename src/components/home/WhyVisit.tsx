@@ -29,7 +29,7 @@ const FACTS = [
 export function WhyVisit() {
   return (
     <section className="bg-bay px-4 py-14 text-quartz-200 md:px-6">
-      <div className="mx-auto grid max-w-[1440px] items-center gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-14">
+      <div className="mx-auto grid max-w-[1440px] grid-cols-[minmax(0,1fr)] items-center gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-14">
         <div>
           <p className="font-mono text-label uppercase tracking-[0.16em] opacity-60">
             Pourquoi venir
