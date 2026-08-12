@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FilterPanel } from "@/components/explore/FilterPanel";
 import { MobileFilterSheet } from "@/components/explore/MobileFilterSheet";
+import { ExploreSearchField } from "@/components/explore/ExploreSearchField";
 import { SortControl } from "@/components/explore/SortControl";
 import { ListingCard } from "@/components/listing/ListingCard";
 import { Button } from "@/components/ui/Button";
@@ -18,6 +19,9 @@ import {
 } from "@/lib/filters";
 import { CATEGORIES, categoryBySlug, TOTAL_LISTINGS } from "@/lib/site";
 import type { CategorySlug } from "@/lib/site";
+
+/** Params that hold one value, so removing the chip clears them outright. */
+const SINGLE_VALUE = new Set(["note", "budget", "q"]);
 
 /**
  * One catalog page. `/explorer` shows everything; `/explorer/hotels` is the
@@ -45,6 +49,9 @@ export function ExploreView({
   const hasMore = matched.length > visible.length;
 
   const chips = [
+    ...(filters.query
+      ? [{ key: "q", value: filters.query, label: `« ${filters.query} »` }]
+      : []),
     ...(categoryFromRoute
       ? []
       : filters.categories.map((slug) => ({
@@ -149,6 +156,9 @@ export function ExploreView({
 
       <div className="mx-auto grid max-w-[1440px] grid-cols-[minmax(0,1fr)] items-start gap-0 px-4 pb-16 md:px-6 lg:grid-cols-[15.5rem_minmax(0,1fr)]">
         <aside className="hidden py-6 pr-6 lg:sticky lg:top-20 lg:block">
+          <div className="mb-4">
+            <ExploreSearchField basePath={basePath} query={filters.query} />
+          </div>
           <FilterPanel
             filters={filters}
             basePath={basePath}
@@ -165,8 +175,8 @@ export function ExploreView({
                 key={`${chip.key}-${chip.value}`}
                 href={buildHref(basePath, params, {
                   key: chip.key,
-                  value: chip.key === "note" || chip.key === "budget" ? undefined : chip.value,
-                  toggle: chip.key !== "note" && chip.key !== "budget",
+                  value: SINGLE_VALUE.has(chip.key) ? undefined : chip.value,
+                  toggle: !SINGLE_VALUE.has(chip.key),
                 })}
                 scroll={false}
                 className="inline-flex items-center gap-1.5 rounded-plate border border-line-strong px-2.5 py-1.5 text-small text-ink-muted hover:text-ink"
@@ -195,6 +205,10 @@ export function ExploreView({
           </div>
 
           <div className="mb-4 lg:hidden">
+            <ExploreSearchField basePath={basePath} query={filters.query} />
+          </div>
+
+          <div className="mb-4 lg:hidden">
             <MobileFilterSheet
               activeCount={activeCount}
               resultCount={matched.length}
@@ -215,7 +229,9 @@ export function ExploreView({
                 ◎
               </p>
               <p className="mt-2 font-semibold">
-                Aucun lieu ne correspond à ces filtres
+                {filters.query
+                  ? `Rien ne correspond à « ${filters.query} »`
+                  : "Aucun lieu ne correspond à ces filtres"}
               </p>
               <p className="mx-auto mt-1.5 max-w-[38ch] text-small text-ink-muted">
                 Élargissez la zone ou retirez le filtre budget pour voir les{" "}
