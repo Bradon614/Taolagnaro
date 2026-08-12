@@ -47,9 +47,11 @@ export type Listing = {
   /** Position in the home mosaic; absent means not featured. */
   featuredRank?: number;
   coordinates: Coordinates;
+  /** Filterable attributes. See TAGS below and TAG_LABELS in filters.ts. */
+  tags: string[];
 };
 
-const RAW_LISTINGS: Omit<Listing, "coordinates">[] = [
+const RAW_LISTINGS: Omit<Listing, "coordinates" | "tags">[] = [
   // ---------------------------------------------------------------- sites
   {
     slug: "plage-de-libanona",
@@ -461,9 +463,45 @@ const COORDINATES: Record<string, Coordinates> = {
   "vannerie-de-mahampy": { lat: -24.78, lon: 47.17 },
 };
 
+
+/**
+ * Filterable attributes. Kept beside the catalog rather than inside it so the
+ * listing records stay readable, and so the filter vocabulary is visible in
+ * one place when it needs extending.
+ */
+const TAGS: Record<string, string[]> = {
+  "plage-de-libanona": ["plage", "vue-mer", "famille"],
+  "reserve-de-nahampoana": ["famille", "guide-fr"],
+  "fort-flacourt": ["famille", "guide-fr"],
+  "baie-de-sainte-luce": ["plage", "vue-mer", "communautaire"],
+  "presquile-de-lokaro": ["plage", "vue-mer"],
+  "pic-saint-louis": ["guide-fr"],
+  "plage-dambinanibe": ["plage", "vue-mer"],
+  "villa-libanona": ["vue-mer", "wifi", "plage", "petit-dejeuner"],
+  "lodge-ravinala": ["vue-mer", "wifi", "restaurant", "transfert", "generateur"],
+  "chez-voahangy": ["communautaire", "restaurant", "famille"],
+  "camp-de-lokaro": ["vue-mer", "plage", "restaurant"],
+  "hotel-de-lanosy": ["wifi", "restaurant", "generateur", "parking"],
+  "residence-des-galions": ["vue-mer", "wifi", "parking"],
+  "les-filaos-dambinanibe": ["plage", "vue-mer", "restaurant"],
+  "chez-perline": ["wifi", "restaurant", "famille"],
+  "la-table-de-libanona": ["vue-mer", "terrasse"],
+  "chez-zafy": ["famille"],
+  "le-filao": ["terrasse", "wifi"],
+  "grillades-du-port": ["plage", "terrasse", "famille"],
+  "initiation-au-surf": ["plage", "guide-fr", "famille"],
+  "pic-saint-louis-lever-du-jour": ["guide-fr"],
+  "kitesurf-a-vinanibe": ["plage", "guide-fr"],
+  "reserve-de-berenty": ["guide-fr", "famille", "transfert"],
+  "sainte-luce-deux-jours": ["communautaire", "guide-fr", "plage"],
+  "cuisine-antanosy-chez-lhabitant": ["communautaire", "famille"],
+  "vannerie-de-mahampy": ["communautaire", "famille"],
+};
+
 export const LISTINGS: Listing[] = RAW_LISTINGS.map((listing) => ({
   ...listing,
   coordinates: COORDINATES[listing.slug] ?? TOWN_CENTRE,
+  tags: TAGS[listing.slug] ?? [],
 }));
 
 /** Closest listings by straight-line distance, excluding the subject itself. */
