@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
-import { PagePlaceholder } from "@/components/layout/PagePlaceholder";
+import { ExploreView } from "@/components/explore/ExploreView";
+import type { SearchParams } from "@/lib/filters";
 import { TOTAL_LISTINGS } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Explorer l’Anosy" };
+export const metadata: Metadata = {
+  title: "Explorer l’Anosy",
+  description:
+    "Tous les sites, hôtels, restaurants, activités et excursions référencés à Taolagnaro et dans la région Anosy.",
+};
 
-export default function ExplorerPage() {
+export default async function ExplorerPage({
+  searchParams,
+}: {
+  searchParams: Promise<SearchParams>;
+}) {
   return (
-    <PagePlaceholder
-      kicker="Accueil / Explorer"
+    <ExploreView
+      params={await searchParams}
+      basePath="/explorer"
       title="Explorer l’Anosy"
-      description={`${TOTAL_LISTINGS} lieux et offres référencés à Taolagnaro et dans la région. Filtrez, comparez, puis envoyez une demande.`}
+      intro={`${TOTAL_LISTINGS} lieux et offres référencés à Taolagnaro et dans la région. Filtrez, comparez, puis envoyez une demande.`}
     />
   );
 }
