@@ -8,6 +8,7 @@
  */
 
 import { LISTINGS, type Listing } from "@/lib/listings";
+import { listingMatches } from "@/lib/search";
 import type { CategorySlug } from "@/lib/site";
 
 export const PAGE_SIZE = 9;
@@ -163,12 +164,9 @@ export function activeFilterCount(
 
 function matchesQuery(listing: Listing, query: string): boolean {
   if (!query) return true;
-  const haystack =
-    `${listing.name} ${listing.place} ${listing.summary} ${listing.cuisine ?? ""}`.toLowerCase();
-  return query
-    .toLowerCase()
-    .split(/\s+/)
-    .every((word) => haystack.includes(word));
+  // Shared with the search overlay so a typed query and a shared ?q= URL
+  // always return the same set, accents or not.
+  return listingMatches(listing, query);
 }
 
 /**
