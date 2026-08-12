@@ -11,6 +11,8 @@ import { Plate } from "@/components/media/Plate";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Rating } from "@/components/ui/Rating";
+import { SaveButton } from "@/components/wishlist/SaveButton";
+import { ShareButton } from "@/components/wishlist/ShareButton";
 import { detailFor } from "@/lib/listing-details";
 import {
   LISTINGS,
@@ -214,6 +216,15 @@ export default async function ListingDetailPage({ params }: Params) {
           ) : (
             <VisitPanel listing={listing} detail={detail} />
           )}
+
+          <div className="grid grid-cols-2 gap-2.5">
+            <SaveButton
+              slug={listing.slug}
+              name={listing.name}
+              variant="labelled"
+            />
+            <ShareButton title={listing.name} />
+          </div>
 
           {detail.contact ? (
             <div className="rounded-panel border border-line p-4.5">

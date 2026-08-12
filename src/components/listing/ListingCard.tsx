@@ -3,6 +3,7 @@ import { Plate } from "@/components/media/Plate";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Rating } from "@/components/ui/Rating";
+import { SaveButton } from "@/components/wishlist/SaveButton";
 import { formatPrice, priceUnit } from "@/lib/money";
 import { categoryBySlug } from "@/lib/site";
 import { listingHref, type Listing } from "@/lib/listings";
@@ -75,25 +76,32 @@ export function ListingCard({
     <article className="relative flex h-full w-full flex-col overflow-hidden rounded-plate border border-line bg-surface-raised transition-shadow hover:shadow-[0_10px_24px_-18px_rgb(0_0_0_/_0.5)]">
       <div className="relative">
         <Plate variant={listing.plate} className={ASPECT[aspect]} />
-        {showCategory && category ? (
-          <Badge tone="floating" className="absolute left-2.5 top-2.5 z-[3]">
-            {category.label.replace(" touristiques", "")}
-          </Badge>
-        ) : null}
-        {listing.badge ? (
-          // Anything sitting over a plate has to carry its own contrast, so
-          // only the gold accent keeps its own tone here — outline and warm
-          // both become floating, with warm tinted so it still reads as a
-          // caution rather than a neutral note.
-          <Badge
-            tone={listing.badge.tone === "accent" ? "accent" : "floating"}
-            className={`absolute right-2.5 top-2.5 z-[3] ${
-              listing.badge.tone === "warm" ? "text-[#f4b49b]" : ""
-            }`}
-          >
-            {listing.badge.label}
-          </Badge>
-        ) : null}
+
+        {/* Badges share the top-left so the heart owns the top-right corner.
+            Anything over a plate carries its own contrast: only the gold
+            accent keeps its tone, warm is tinted so it still reads as a
+            caution rather than a neutral note. */}
+        <div className="absolute left-2.5 top-2.5 z-[3] flex flex-wrap gap-1.5 pr-11">
+          {showCategory && category ? (
+            <Badge tone="floating">
+              {category.label.replace(" touristiques", "")}
+            </Badge>
+          ) : null}
+          {listing.badge ? (
+            <Badge
+              tone={listing.badge.tone === "accent" ? "accent" : "floating"}
+              className={listing.badge.tone === "warm" ? "text-[#f4b49b]" : ""}
+            >
+              {listing.badge.label}
+            </Badge>
+          ) : null}
+        </div>
+
+        <SaveButton
+          slug={listing.slug}
+          name={listing.name}
+          className="absolute right-2.5 top-2.5 z-[4]"
+        />
       </div>
 
       <div className="flex flex-1 flex-col gap-2 px-3.5 pb-4 pt-3">

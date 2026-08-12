@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { isListingDetailRoute, SITE } from "@/lib/site";
+import { useWishlist } from "@/lib/wishlist";
 
 /**
  * Five destinations within thumb reach. A hamburger would hide the whole
@@ -30,6 +31,7 @@ const MORE_LINKS = [
 export function MobileTabBar() {
   const pathname = usePathname();
   const [moreOpen, setMoreOpen] = useState(false);
+  const { count: savedCount } = useWishlist();
 
   // Dismiss on navigation, adjusted during render rather than in an effect.
   const [renderedPath, setRenderedPath] = useState(pathname);
@@ -123,8 +125,13 @@ export function MobileTabBar() {
                 active ? "font-semibold text-ink" : "text-ink-subtle"
               }`}
             >
-              <span aria-hidden="true" className="text-base leading-none">
+              <span aria-hidden="true" className="relative text-base leading-none">
                 {tab.glyph}
+                {tab.href === "/envies" && savedCount > 0 ? (
+                  <span className="tabular absolute -right-2.5 -top-1 rounded-full bg-accent px-1 text-[0.5rem] font-semibold text-accent-contrast">
+                    {savedCount}
+                  </span>
+                ) : null}
               </span>
               {tab.label}
             </Link>
