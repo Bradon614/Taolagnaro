@@ -113,9 +113,8 @@ export const EXPLORE_SHORTCUTS = [
 /**
  * Routes whose hero sits under a transparent header. A route only belongs here
  * once it actually has a full-bleed hero — white-on-white otherwise.
- * `/decouvrir` joins this list when its editorial hero is built.
  */
-export const OVERLAY_HEADER_ROUTES = ["/"];
+export const OVERLAY_HEADER_ROUTES = ["/", "/decouvrir"];
 
 export const FOOTER_COLUMNS = [
   {
