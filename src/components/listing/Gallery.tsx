@@ -1,5 +1,7 @@
 import { Plate } from "@/components/media/Plate";
 import type { PlateVariant } from "@/components/media/Plate";
+import { getDictionary, fill } from "@/i18n";
+import type { Locale } from "@/i18n/config";
 
 /**
  * Mosaic on desktop, full-bleed swipe carousel on mobile.
@@ -15,11 +17,14 @@ export function Gallery({
   plates,
   photoCount,
   alt,
+  locale = "fr",
 }: {
   plates: PlateVariant[];
   photoCount?: number;
   alt: string;
+  locale?: Locale;
 }) {
+  const t = getDictionary(locale);
   const [lead, ...rest] = plates;
   if (!lead) return null;
 
@@ -42,7 +47,7 @@ export function Gallery({
     <>
       {/* Mobile: swipe through every image */}
       <ul
-        aria-label={`Photos — ${alt}`}
+        aria-label={fill(t.detail.photos, { name: alt })}
         className="flex snap-x snap-mandatory gap-1 overflow-x-auto md:hidden"
       >
         {plates.map((plate, index) => (
@@ -81,7 +86,7 @@ export function Gallery({
             >
               {isLast && remaining > 0 ? (
                 <span className="absolute inset-0 z-[3] flex items-center justify-center bg-abyss/55 text-small font-semibold text-white">
-                  + {remaining} photos
+                  {fill(t.detail.morePhotos, { count: remaining })}
                 </span>
               ) : null}
             </Plate>

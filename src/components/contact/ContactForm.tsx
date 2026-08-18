@@ -5,6 +5,7 @@ import { Alert } from "@/components/ui/Alert";
 import { Field, inputClass } from "@/components/ui/Field";
 import { submitContactMessage } from "@/app/[locale]/contact/actions";
 import { CONTACT_SUBJECTS, type ContactFormState } from "@/lib/contact";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 const EMPTY: ContactFormState = { errors: {} };
 
@@ -14,6 +15,7 @@ const EMPTY: ContactFormState = { errors: {} };
  * need different things from us.
  */
 export function ContactForm({ initialSubject }: { initialSubject?: string }) {
+  const { locale, t } = useLocale();
   const [state, formAction, pending] = useActionState(
     submitContactMessage,
     EMPTY,
@@ -28,10 +30,8 @@ export function ContactForm({ initialSubject }: { initialSubject?: string }) {
 
   if (state.sent) {
     return (
-      <Alert tone="success" title="Votre message a bien été envoyé.">
-        Nous répondons sous deux jours ouvrés. Si votre demande concerne une
-        réservation, passez plutôt par la fiche du lieu — c’est direct et plus
-        rapide.
+      <Alert tone="success" title={t.contact.sentTitle}>
+        {t.contact.sentBody}
       </Alert>
     );
   }
@@ -39,10 +39,11 @@ export function ContactForm({ initialSubject }: { initialSubject?: string }) {
   return (
     <form action={formAction} noValidate className="flex flex-col gap-4">
       <input type="hidden" name="subject" value={subject} />
+      <input type="hidden" name="locale" value={locale} />
 
       <fieldset className="flex flex-col gap-1.5">
         <legend className="mb-1.5 font-mono text-label uppercase tracking-[0.13em] text-ink-subtle">
-          Votre message concerne
+          {t.contact.about}
         </legend>
         <div className="flex flex-wrap gap-2">
           {CONTACT_SUBJECTS.map((entry) => (
@@ -57,7 +58,7 @@ export function ContactForm({ initialSubject }: { initialSubject?: string }) {
                   : "border-line-strong text-ink-muted hover:text-ink"
               }`}
             >
-              {entry.label}
+              {t.contact.subjects[entry.value]}
             </button>
           ))}
         </div>
@@ -68,7 +69,7 @@ export function ContactForm({ initialSubject }: { initialSubject?: string }) {
 
       <div className="grid gap-4 sm:grid-cols-2">
         <Field
-          label="Nom complet"
+          label={t.request.fullName}
           name="fullName"
           required
           error={state.errors.fullName}
@@ -78,23 +79,23 @@ export function ContactForm({ initialSubject }: { initialSubject?: string }) {
             name="fullName"
             autoComplete="name"
             defaultValue={value("fullName")}
-            placeholder="Prénom et nom"
+            placeholder={t.request.fullNamePlaceholder}
             aria-invalid={state.errors.fullName ? true : undefined}
             className={inputClass(state.errors.fullName)}
           />
         </Field>
 
-        <Field label="Établissement" name="business">
+        <Field label={t.contact.business} name="business">
           <input
             id="business"
             name="business"
             defaultValue={value("business")}
-            placeholder="Nom de votre hôtel, table ou service"
+            placeholder={t.contact.businessPlaceholder}
             className={inputClass()}
           />
         </Field>
 
-        <Field label="Email" name="email" required error={state.errors.email}>
+        <Field label={t.request.email} name="email" required error={state.errors.email}>
           <input
             id="email"
             name="email"
@@ -107,7 +108,7 @@ export function ContactForm({ initialSubject }: { initialSubject?: string }) {
           />
         </Field>
 
-        <Field label="Téléphone / WhatsApp" name="phone">
+        <Field label={t.request.phone} name="phone">
           <input
             id="phone"
             name="phone"
@@ -120,7 +121,7 @@ export function ContactForm({ initialSubject }: { initialSubject?: string }) {
         </Field>
 
         <Field
-          label="Message"
+          label={t.contact.subjects ? "Message" : "Message"}
           name="message"
           required
           error={state.errors.message}
@@ -131,7 +132,7 @@ export function ContactForm({ initialSubject }: { initialSubject?: string }) {
             name="message"
             rows={5}
             defaultValue={value("message")}
-            placeholder="Décrivez votre établissement, sa localisation et ce que vous proposez."
+            placeholder={t.contact.messagePlaceholder}
             aria-invalid={state.errors.message ? true : undefined}
             className={inputClass(state.errors.message, "resize-y")}
           />
@@ -144,7 +145,7 @@ export function ContactForm({ initialSubject }: { initialSubject?: string }) {
           disabled={pending}
           className="inline-flex items-center justify-center rounded-plate border border-accent bg-accent px-6 py-3.5 font-semibold text-accent-contrast disabled:opacity-40"
         >
-          {pending ? "Envoi en cours…" : "Envoyer le message"}
+          {pending ? t.common.sending : t.contact.submit}
         </button>
       </div>
     </form>

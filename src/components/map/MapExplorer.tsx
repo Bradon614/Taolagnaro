@@ -8,6 +8,8 @@ import { MapResultCard } from "@/components/map/MapResultCard";
 import { CATEGORY_GLYPH } from "@/components/map/glyphs";
 import { LISTINGS, type Listing } from "@/lib/listings";
 import { CATEGORIES, type CategorySlug } from "@/lib/site";
+import { useHref, useLocale } from "@/i18n/LocaleProvider";
+import { localeHref } from "@/i18n/config";
 
 /**
  * The catalog, spatially.
@@ -24,6 +26,8 @@ import { CATEGORIES, type CategorySlug } from "@/lib/site";
  */
 export function MapExplorer() {
   const router = useRouter();
+  const { locale, t } = useLocale();
+  const href = useHref();
   const params = useSearchParams();
   const [selected, setSelected] = useState<Listing | null>(null);
   const [sheetOpen, setSheetOpen] = useState(false);
@@ -51,7 +55,7 @@ export function MapExplorer() {
       ? active.filter((entry) => entry !== slug)
       : [...active, slug];
     const query = next.length > 0 ? `?categories=${next.join(",")}` : "";
-    router.replace(`/carte${query}`, { scroll: false });
+    router.replace(localeHref(locale, `/carte${query}`), { scroll: false });
   }
 
   // Selecting a pin scrolls its card into view in the panel.
@@ -69,13 +73,13 @@ export function MapExplorer() {
       <div className="border-b border-line px-4 py-3.5">
         <div className="flex items-baseline justify-between gap-3">
           <h2 className="font-display text-lg">
-            <span className="tabular">{visible.length}</span> lieux affichés
+            <span className="tabular">{visible.length}</span> {t.map.shown}
           </h2>
           <Link
-            href="/explorer"
+            href={href("/explorer")}
             className="text-small text-brand hover:underline"
           >
-            Voir en liste
+            {t.map.seeList}
           </Link>
         </div>
 
@@ -97,7 +101,7 @@ export function MapExplorer() {
                   }`}
                 >
                   {CATEGORY_GLYPH[category.slug]}{" "}
-                  {category.label.replace(" touristiques", "")}
+                  {t.categories[category.slug].short}
                 </button>
               </li>
             );
@@ -113,6 +117,7 @@ export function MapExplorer() {
           <li key={listing.slug} data-slug={listing.slug}>
             <MapResultCard
               listing={listing}
+              locale={locale}
               selected={selected?.slug === listing.slug}
               onSelect={() =>
                 setSelected(selected?.slug === listing.slug ? null : listing)
@@ -139,6 +144,7 @@ export function MapExplorer() {
       <div className="relative h-[calc(100dvh-12rem)] overflow-hidden lg:h-full">
         <MapCanvas
           listings={visible}
+          locale={locale}
           selected={selected}
           onSelect={setSelected}
         />
@@ -147,6 +153,7 @@ export function MapExplorer() {
           <div className="pointer-events-auto absolute bottom-16 left-1/2 z-[8] w-[19rem] -translate-x-1/2 lg:bottom-20">
             <MapResultCard
               listing={selected}
+              locale={locale}
               selected
               onSelect={() => setSelected(null)}
             />
@@ -172,7 +179,7 @@ export function MapExplorer() {
             className="mx-auto block h-1 w-9 rounded-full bg-line-strong"
           />
           <span className="sr-only">
-            {sheetOpen ? "Réduire la liste" : "Afficher la liste"}
+            {sheetOpen ? t.map.hideList : t.map.showList}
           </span>
         </button>
         <div className="flex min-h-0 flex-1 flex-col">{panel}</div>

@@ -2,17 +2,26 @@ import { Button } from "@/components/ui/Button";
 import { formatAriary, formatEuro, formatPrice, priceUnit } from "@/lib/money";
 import { SITE } from "@/lib/site";
 import { listingHref, type Listing } from "@/lib/listings";
+import { getDictionary } from "@/i18n";
+import { localeHref, type Locale } from "@/i18n/config";
 
 /**
  * Docked bar so the request action never scrolls out of reach on a phone.
  * It replaces the global tab bar on detail routes — two stacked fixed bars
  * would eat a fifth of the viewport.
  */
-export function MobileActionBar({ listing }: { listing: Listing }) {
+export function MobileActionBar({
+  listing,
+  locale,
+}: {
+  listing: Listing;
+  locale: Locale;
+}) {
+  const t = getDictionary(locale);
   const headline =
     listing.price.kind === "from"
       ? formatAriary(listing.price.amount)
-      : formatPrice(listing.price);
+      : formatPrice(listing.price, locale);
 
   const approx =
     listing.price.kind === "from" ? formatEuro(listing.price.amount) : null;
@@ -29,7 +38,7 @@ export function MobileActionBar({ listing }: { listing: Listing }) {
         </span>
         <span className="block text-label text-ink-subtle">
           {approx ? `${approx} ` : ""}
-          {priceUnit(listing.price) ?? ""}
+          {priceUnit(listing.price, locale) ?? ""}
         </span>
       </p>
 
@@ -47,15 +56,15 @@ export function MobileActionBar({ listing }: { listing: Listing }) {
               WhatsApp
             </Button>
             <Button
-              href={`${listingHref(listing)}/demande`}
+              href={localeHref(locale, `${listingHref(listing)}/demande`)}
               variant="primary"
             >
-              Demander
+              {t.common.request}
             </Button>
           </>
         ) : (
-          <Button href="/carte" variant="primary">
-            Situer sur la carte
+          <Button href={localeHref(locale, "/carte")} variant="primary">
+            {t.detail.locateOnMap}
           </Button>
         )}
       </div>

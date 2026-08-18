@@ -2,49 +2,40 @@ import Link from "next/link";
 import { Plate } from "@/components/media/Plate";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import type { PlateVariant } from "@/components/media/Plate";
+import { getDictionary } from "@/i18n";
+import { localeHref, type Locale } from "@/i18n/config";
 
-const CULTURE: {
-  title: string;
-  note: string;
-  plate: PlateVariant;
-  href: string;
-  wide?: boolean;
-}[] = [
-  {
-    title: "Le hira gasy et les fêtes de village",
-    note: "Musique, joutes oratoires et danse — encore vivants dans l’Anosy",
-    plate: "town",
-    href: "/decouvrir#culture",
-    wide: true,
-  },
-  {
-    title: "Vannerie de mahampy",
-    note: "Le jonc des marais tressé à Sainte-Luce",
-    plate: "sunset",
-    href: "/experiences/vannerie-de-mahampy",
-  },
-  {
-    title: "Le sisal et le zébu",
-    note: "Ce qui fait vivre l’arrière-pays",
-    plate: "forest",
-    href: "/decouvrir#culture",
-  },
-];
 
-export function CultureStrip() {
+
+export function CultureStrip({ locale }: { locale: Locale }) {
+  const t = getDictionary(locale);
+  const href = (path: string) => localeHref(locale, path);
+
+  const culture: {
+    title: string;
+    note: string;
+    plate: PlateVariant;
+    href: string;
+    wide?: boolean;
+  }[] = [
+    { title: t.home.culture1Title, note: t.home.culture1Note, plate: "town", href: "/decouvrir#culture", wide: true },
+    { title: t.home.culture2Title, note: t.home.culture2Note, plate: "sunset", href: "/experiences/vannerie-de-mahampy" },
+    { title: t.home.culture3Title, note: t.home.culture3Note, plate: "forest", href: "/decouvrir#culture" },
+  ];
+
   return (
     <section className="px-4 py-12 md:px-6 md:py-14">
       <div className="mx-auto max-w-[1440px]">
         <SectionHeader
-          kicker="Culture antanosy"
-          title="Le pays des Antanosy"
-          action={{ href: "/decouvrir#culture", label: "Lire la suite" }}
+          kicker={t.home.cultureKicker}
+          title={t.home.cultureTitle}
+          action={{ href: href("/decouvrir#culture"), label: t.home.cultureAction }}
         />
 
         <ul className="grid gap-4 lg:grid-cols-[1.3fr_1fr_1fr]">
-          {CULTURE.map((item) => (
+          {culture.map((item) => (
             <li key={item.title}>
-              <Link href={item.href} className="group block rounded-plate">
+              <Link href={href(item.href)} className="group block rounded-plate">
                 <Plate
                   variant={item.plate}
                   className="h-48 rounded-plate transition-opacity group-hover:opacity-90 md:h-56"

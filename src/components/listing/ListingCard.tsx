@@ -5,8 +5,20 @@ import { Button } from "@/components/ui/Button";
 import { Rating } from "@/components/ui/Rating";
 import { SaveButton } from "@/components/wishlist/SaveButton";
 import { formatPrice, priceUnit } from "@/lib/money";
-import { categoryBySlug } from "@/lib/site";
 import { listingHref, type Listing } from "@/lib/listings";
+import {
+  categoryLabel,
+  listingAccess,
+  listingBadge,
+  listingCuisine,
+  listingDuration,
+  listingLevel,
+  listingPlace,
+  listingSummary,
+} from "@/lib/listing-i18n";
+import { getDictionary } from "@/i18n";
+import { localeHref, type Locale } from "@/i18n/config";
+import { formatDistance } from "@/lib/geo";
 
 /**
  * One shell, six category fills. The structure never changes — image, kicker,
@@ -23,53 +35,54 @@ const ASPECT: Record<Aspect, string> = {
   "3/2": "aspect-[3/2]",
 };
 
-function formatDistance(km: number): string {
-  const value = km < 10 ? km.toString().replace(".", ",") : Math.round(km);
-  return `${value} km`;
-}
-
 /** The left-hand half of the kicker line, chosen per category. */
-function kickerLeft(listing: Listing): string {
+function kickerLeft(listing: Listing, locale: Locale): string {
+  const place = listingPlace(listing, locale);
+  const distance = formatDistance(listing.distanceKm);
+
   switch (listing.category) {
     case "restaurants":
-      return [listing.cuisine, listing.place].filter(Boolean).join(" · ");
+      return [listingCuisine(listing, locale), place].filter(Boolean).join(" · ");
     case "activites":
     case "experiences":
-      return [listing.duration, listing.place].filter(Boolean).join(" · ");
+      return [listingDuration(listing, locale), place].filter(Boolean).join(" · ");
     case "excursions":
-      return [listing.duration, formatDistance(listing.distanceKm)]
-        .filter(Boolean)
-        .join(" · ");
+      return [listingDuration(listing, locale), distance].filter(Boolean).join(" · ");
     case "sites":
-      return [listing.place, listing.elevation ?? formatDistance(listing.distanceKm)]
-        .filter(Boolean)
-        .join(" · ");
+      return [place, listing.elevation ?? distance].filter(Boolean).join(" · ");
     default:
-      return `${listing.place} · ${formatDistance(listing.distanceKm)}`;
+      return `${place} · ${distance}`;
   }
 }
 
 export function ListingCard({
   listing,
+  locale,
   aspect = "4/3",
   showCategory = true,
 }: {
   listing: Listing;
+  locale: Locale;
   aspect?: Aspect;
   showCategory?: boolean;
 }) {
-  const category = categoryBySlug(listing.category);
-  const price = formatPrice(listing.price);
-  const unit = priceUnit(listing.price);
+  const t = getDictionary(locale);
+  const href = (path: string) => localeHref(locale, path);
+
+  const price = formatPrice(listing.price, locale);
+  const unit = priceUnit(listing.price, locale);
   const isFree = listing.price.kind === "free";
+  const badge = listingBadge(listing, locale);
+  const level = listingLevel(listing, locale);
+  const access = listingAccess(listing, locale);
 
   // Activities lead with a difficulty chip; everything else with its rating.
-  const kickerRight = listing.level ? (
-    <Badge tone="outline">{listing.level}</Badge>
+  const kickerRight = level ? (
+    <Badge tone="outline">{level}</Badge>
   ) : listing.rating ? (
-    <Rating score={listing.rating.score} count={listing.rating.count} />
-  ) : listing.access ? (
-    <Badge tone="outline">{listing.access}</Badge>
+    <Rating score={listing.rating.score} count={listing.rating.count} locale={locale} />
+  ) : access ? (
+    <Badge tone="outline">{access}</Badge>
   ) : null;
 
   return (
@@ -82,17 +95,17 @@ export function ListingCard({
             accent keeps its tone, warm is tinted so it still reads as a
             caution rather than a neutral note. */}
         <div className="absolute left-2.5 top-2.5 z-[3] flex flex-wrap gap-1.5 pr-11">
-          {showCategory && category ? (
+          {showCategory ? (
             <Badge tone="floating">
-              {category.label.replace(" touristiques", "")}
+              {categoryLabel(listing.category, locale).short}
             </Badge>
           ) : null}
-          {listing.badge ? (
+          {badge ? (
             <Badge
-              tone={listing.badge.tone === "accent" ? "accent" : "floating"}
-              className={listing.badge.tone === "warm" ? "text-[#f4b49b]" : ""}
+              tone={badge.tone === "accent" ? "accent" : "floating"}
+              className={badge.tone === "warm" ? "text-[#f4b49b]" : ""}
             >
-              {listing.badge.label}
+              {badge.label}
             </Badge>
           ) : null}
         </div>
@@ -106,7 +119,7 @@ export function ListingCard({
 
       <div className="flex flex-1 flex-col gap-2 px-3.5 pb-4 pt-3">
         <div className="flex items-start justify-between gap-2 font-mono text-label uppercase tracking-[0.14em] text-ink-subtle">
-          <span>{kickerLeft(listing)}</span>
+          <span>{kickerLeft(listing, locale)}</span>
           {kickerRight}
         </div>
 
@@ -114,7 +127,7 @@ export function ListingCard({
           {/* Stretched link: the whole card is the target, but the action
               button below stays independently clickable. */}
           <Link
-            href={listingHref(listing)}
+            href={href(listingHref(listing))}
             className="after:absolute after:inset-0 after:content-['']"
           >
             {listing.name}
@@ -122,7 +135,7 @@ export function ListingCard({
         </h3>
 
         <p className="line-clamp-2 text-small text-ink-muted">
-          {listing.summary}
+          {listingSummary(listing, locale)}
         </p>
 
         <div className="mt-auto flex items-center justify-between gap-3 border-t border-line pt-2.5">
@@ -139,21 +152,21 @@ export function ListingCard({
 
           {listing.acceptsRequests ? (
             <Button
-              href={`${listingHref(listing)}/demande`}
+              href={href(`${listingHref(listing)}/demande`)}
               variant="primary"
               size="sm"
               className="relative z-[2]"
             >
-              Demander
+              {t.common.request}
             </Button>
           ) : (
             <Button
-              href={listingHref(listing)}
+              href={href(listingHref(listing))}
               variant="secondary"
               size="sm"
               className="relative z-[2]"
             >
-              Voir le site
+              {t.common.viewSite}
             </Button>
           )}
         </div>

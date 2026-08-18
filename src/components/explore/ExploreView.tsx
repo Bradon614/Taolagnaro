@@ -11,13 +11,13 @@ import {
   filterListings,
   parseFilters,
   sortListings,
-  TAG_LABELS,
-  ZONES,
   PAGE_SIZE,
-  BUDGET_BANDS,
   type SearchParams,
 } from "@/lib/filters";
-import { CATEGORIES, categoryBySlug, TOTAL_LISTINGS } from "@/lib/site";
+import { CATEGORIES, TOTAL_LISTINGS } from "@/lib/site";
+import { getDictionary, fill } from "@/i18n";
+import { localeHref } from "@/i18n/config";
+import { formatAriary } from "@/lib/money";
 import type { CategorySlug } from "@/lib/site";
 import type { Locale } from "@/i18n/config";
 
@@ -43,6 +43,8 @@ export function ExploreView({
   intro: string;
   locale: Locale;
 }) {
+  const t = getDictionary(locale);
+  const href = (path: string) => localeHref(locale, path);
   const filters = parseFilters(params, forcedCategory);
   const categoryFromRoute = forcedCategory !== undefined;
   const activeCount = activeFilterCount(filters, categoryFromRoute);
@@ -60,24 +62,24 @@ export function ExploreView({
       : filters.categories.map((slug) => ({
           key: "categorie",
           value: slug,
-          label: categoryBySlug(slug)?.label ?? slug,
+          label: t.categories[slug].label,
         }))),
     ...filters.zones.map((slug) => ({
       key: "lieu",
       value: slug,
-      label: ZONES.find((zone) => zone.slug === slug)?.label ?? slug,
+      label: t.zones[slug],
     })),
     ...filters.tags.map((tag) => ({
       key: "tag",
       value: tag,
-      label: TAG_LABELS[tag] ?? tag,
+      label: t.tags[tag as keyof typeof t.tags] ?? tag,
     })),
     ...(filters.minRating
       ? [
           {
             key: "note",
             value: String(filters.minRating),
-            label: `${filters.minRating} étoiles et plus`,
+            label: fill(t.explore.starsAndUp, { count: filters.minRating }),
           },
         ]
       : []),
@@ -86,9 +88,7 @@ export function ExploreView({
           {
             key: "budget",
             value: String(filters.maxPrice),
-            label:
-              BUDGET_BANDS.find((band) => band.value === filters.maxPrice)
-                ?.label ?? `≤ ${filters.maxPrice} Ar`,
+            label: fill(t.explore.underPrice, { price: formatAriary(filters.maxPrice) }),
           },
         ]
       : []),
@@ -99,20 +99,20 @@ export function ExploreView({
       <header className="border-b border-line bg-surface px-4 pb-5 pt-7 md:px-6">
         <div className="mx-auto max-w-[1440px]">
           <p className="font-mono text-label uppercase tracking-[0.14em] text-ink-subtle">
-            <Link href="/" className="hover:text-ink">
-              Accueil
+            <Link href={href("/")} className="hover:text-ink">
+              {t.common.home}
             </Link>
             {" / "}
             {categoryFromRoute ? (
               <>
-                <Link href="/explorer" className="hover:text-ink">
-                  Explorer
+                <Link href={href("/explorer")} className="hover:text-ink">
+                  {t.common.explore}
                 </Link>
                 {" / "}
                 <span className="text-ink">{title}</span>
               </>
             ) : (
-              <span className="text-ink">Explorer</span>
+              <span className="text-ink">{t.common.explore}</span>
             )}
           </p>
 
@@ -124,7 +124,7 @@ export function ExploreView({
           <ul className="-mx-4 mt-5 flex gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:px-0">
             <li>
               <Link
-                href="/explorer"
+                href={href("/explorer")}
                 scroll={false}
                 className={`inline-block whitespace-nowrap rounded-plate border px-3.5 py-2 text-small ${
                   !categoryFromRoute && filters.categories.length === 0
@@ -132,7 +132,7 @@ export function ExploreView({
                     : "border-line-strong text-ink-muted hover:text-ink"
                 }`}
               >
-                Tout · <span className="tabular">{TOTAL_LISTINGS}</span>
+                {t.explore.all} · <span className="tabular">{TOTAL_LISTINGS}</span>
               </Link>
             </li>
             {CATEGORIES.map((category) => {
@@ -140,14 +140,14 @@ export function ExploreView({
               return (
                 <li key={category.slug}>
                   <Link
-                    href={`/explorer/${category.slug}`}
+                    href={href(`/explorer/${category.slug}`)}
                     className={`inline-block whitespace-nowrap rounded-plate border px-3.5 py-2 text-small ${
                       selected
                         ? "border-accent bg-accent font-semibold text-accent-contrast"
                         : "border-line-strong text-ink-muted hover:text-ink"
                     }`}
                   >
-                    {category.label} ·{" "}
+                    {t.categories[category.slug].label} ·{" "}
                     <span className="tabular">{category.count}</span>
                   </Link>
                 </li>
@@ -168,6 +168,7 @@ export function ExploreView({
             params={params}
             categoryFromRoute={categoryFromRoute}
             activeCount={activeCount}
+            locale={locale}
           />
         </aside>
 
@@ -176,17 +177,17 @@ export function ExploreView({
             {chips.map((chip) => (
               <Link
                 key={`${chip.key}-${chip.value}`}
-                href={buildHref(basePath, params, {
+                href={href(buildHref(basePath, params, {
                   key: chip.key,
                   value: SINGLE_VALUE.has(chip.key) ? undefined : chip.value,
                   toggle: !SINGLE_VALUE.has(chip.key),
-                })}
+                }))}
                 scroll={false}
                 className="inline-flex items-center gap-1.5 rounded-plate border border-line-strong px-2.5 py-1.5 text-small text-ink-muted hover:text-ink"
               >
                 {chip.label}
                 <span aria-hidden="true">✕</span>
-                <span className="sr-only">Retirer ce filtre</span>
+                <span className="sr-only">{t.explore.removeFilter}</span>
               </Link>
             ))}
 
@@ -197,13 +198,14 @@ export function ExploreView({
               <strong className="tabular font-semibold text-ink">
                 {matched.length}
               </strong>{" "}
-              {matched.length === 1 ? "résultat" : "résultats"}
+              {matched.length === 1 ? t.explore.result : t.explore.results}
             </p>
 
             <SortControl
               sort={filters.sort}
               basePath={basePath}
               params={params}
+              locale={locale}
             />
           </div>
 
@@ -222,6 +224,7 @@ export function ExploreView({
                 params={params}
                 categoryFromRoute={categoryFromRoute}
                 activeCount={activeCount}
+                locale={locale}
               />
             </MobileFilterSheet>
           </div>
@@ -233,17 +236,15 @@ export function ExploreView({
               </p>
               <p className="mt-2 font-semibold">
                 {filters.query
-                  ? `Rien ne correspond à « ${filters.query} »`
-                  : "Aucun lieu ne correspond à ces filtres"}
+                  ? fill(t.search.noMatch, { query: filters.query })
+                  : t.explore.emptyTitle}
               </p>
               <p className="mx-auto mt-1.5 max-w-[38ch] text-small text-ink-muted">
-                Élargissez la zone ou retirez le filtre budget pour voir les{" "}
-                <span className="tabular">{TOTAL_LISTINGS}</span> lieux de
-                l’Anosy.
+                {fill(t.explore.emptyBody, { count: TOTAL_LISTINGS })}
               </p>
               <div className="mt-4">
-                <Button href={basePath} variant="secondary" size="sm">
-                  Retirer les filtres
+                <Button href={href(basePath)} variant="secondary" size="sm">
+                  {t.explore.emptyAction}
                 </Button>
               </div>
             </div>
@@ -253,6 +254,7 @@ export function ExploreView({
                 <li key={listing.slug} className="flex">
                   <ListingCard
                     listing={listing}
+                    locale={locale}
                     showCategory={!categoryFromRoute}
                   />
                 </li>
@@ -265,17 +267,19 @@ export function ExploreView({
               {/* scroll={false} keeps the visitor where they were — the whole
                   point of "show more" over numbered pages. */}
               <Button
-                href={buildHref(basePath, params, {
-                  key: "afficher",
-                  value: String(filters.limit + PAGE_SIZE),
-                })}
+                href={href(
+                  buildHref(basePath, params, {
+                    key: "afficher",
+                    value: String(filters.limit + PAGE_SIZE),
+                  }),
+                )}
                 variant="secondary"
                 scroll={false}
               >
-                Afficher plus de résultats
+                {t.explore.showMore}
               </Button>
               <p className="tabular mt-2.5 font-mono text-label text-ink-subtle">
-                {visible.length} sur {matched.length}
+                {fill(t.explore.ofTotal, { shown: visible.length, total: matched.length })}
               </p>
             </div>
           ) : null}

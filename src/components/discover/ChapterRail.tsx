@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import type { Chapter } from "@/lib/discover";
 import { TOTAL_LISTINGS } from "@/lib/site";
+import { useHref, useLocale } from "@/i18n/LocaleProvider";
+import { fill } from "@/i18n";
 
 /**
  * Chapter index. A sticky rail in the margin on desktop, a sticky scrolling
@@ -14,6 +16,8 @@ import { TOTAL_LISTINGS } from "@/lib/site";
  * side-effect.
  */
 export function ChapterRail({ chapters }: { chapters: Chapter[] }) {
+  const { t } = useLocale();
+  const href = useHref();
   const [active, setActive] = useState(chapters[0]?.id ?? "");
 
   useEffect(() => {
@@ -41,7 +45,7 @@ export function ChapterRail({ chapters }: { chapters: Chapter[] }) {
     <>
       {/* Mobile: a strip that scrolls with the chapters */}
       <nav
-        aria-label="Chapitres"
+        aria-label={t.discover.chapters}
         className="sticky top-0 z-20 -mx-4 border-b border-line bg-ground/95 px-4 py-2.5 backdrop-blur lg:hidden"
       >
         <ul className="flex gap-2 overflow-x-auto">
@@ -65,11 +69,11 @@ export function ChapterRail({ chapters }: { chapters: Chapter[] }) {
 
       {/* Desktop: margin rail */}
       <nav
-        aria-label="Chapitres"
+        aria-label={t.discover.chapters}
         className="hidden lg:sticky lg:top-24 lg:block lg:self-start lg:pr-7"
       >
         <p className="mb-3 font-mono text-label uppercase tracking-[0.14em] text-ink-subtle">
-          Chapitres
+          {t.discover.chapters}
         </p>
         <ul className="flex flex-col gap-2">
           {chapters.map((chapter) => (
@@ -90,8 +94,8 @@ export function ChapterRail({ chapters }: { chapters: Chapter[] }) {
         </ul>
 
         <div className="mt-6 border-t border-line pt-4">
-          <Button href="/explorer" variant="secondary" size="sm" fullWidth>
-            Explorer les {TOTAL_LISTINGS} lieux
+          <Button href={href("/explorer")} variant="secondary" size="sm" fullWidth>
+            {fill(t.home.ctaExplore, { count: TOTAL_LISTINGS })}
           </Button>
         </div>
       </nav>

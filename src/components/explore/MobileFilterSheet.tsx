@@ -2,6 +2,8 @@
 
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { useLocale } from "@/i18n/LocaleProvider";
+import { fill } from "@/i18n";
 
 /**
  * The filter panel as a bottom sheet on mobile. It wraps the same
@@ -18,6 +20,7 @@ export function MobileFilterSheet({
   children: React.ReactNode;
 }) {
   const [open, setOpen] = useState(false);
+  const { t } = useLocale();
   const pathname = usePathname();
   const search = useSearchParams().toString();
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -54,7 +57,7 @@ export function MobileFilterSheet({
         className="flex w-full items-center justify-center gap-2 rounded-plate border border-line-strong px-4 py-2.5 text-small font-semibold"
       >
         <span aria-hidden="true">⚟</span>
-        Filtrer
+        {t.explore.filter}
         {activeCount > 0 ? (
           <span className="tabular rounded-full bg-accent px-1.5 text-label text-accent-contrast">
             {activeCount}
@@ -66,7 +69,7 @@ export function MobileFilterSheet({
         <div className="fixed inset-0 z-50">
           <button
             type="button"
-            aria-label="Fermer les filtres"
+            aria-label={t.common.close}
             onClick={() => setOpen(false)}
             className="absolute inset-0 bg-abyss/55"
           />
@@ -74,7 +77,7 @@ export function MobileFilterSheet({
             ref={dialogRef}
             role="dialog"
             aria-modal="true"
-            aria-label="Filtres"
+            aria-label={t.explore.filters}
             tabIndex={-1}
             className="absolute inset-x-0 bottom-0 top-24 flex flex-col rounded-t-2xl border-t border-line bg-surface outline-none"
           >
@@ -94,7 +97,7 @@ export function MobileFilterSheet({
                 onClick={() => setOpen(false)}
                 className="tabular w-full rounded-plate border border-accent bg-accent px-4 py-3 font-semibold text-accent-contrast"
               >
-                Voir les {resultCount} résultats
+                {fill(t.explore.seeResults, { count: resultCount })}
               </button>
             </div>
           </div>

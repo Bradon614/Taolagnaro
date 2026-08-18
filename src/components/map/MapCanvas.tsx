@@ -13,6 +13,8 @@ import {
 import { formatCoordinates, type Coordinates } from "@/lib/geo";
 import type { Listing } from "@/lib/listings";
 import { CATEGORY_GLYPH } from "@/components/map/glyphs";
+import { getDictionary, fill } from "@/i18n";
+import type { Locale } from "@/i18n/config";
 
 /**
  * The map surface.
@@ -25,13 +27,16 @@ import { CATEGORY_GLYPH } from "@/components/map/glyphs";
  */
 export function MapCanvas({
   listings,
+  locale,
   selected,
   onSelect,
 }: {
   listings: Listing[];
+  locale: Locale;
   selected: Listing | null;
   onSelect: (listing: Listing | null) => void;
 }) {
+  const t = getDictionary(locale);
   const containerRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
   const [view, setView] = useState({ zoom: 1, panX: 0, panY: 0 });
@@ -290,7 +295,7 @@ export function MapCanvas({
             >
               {cluster.items.length}
               <span className="sr-only">
-                {cluster.items.length} lieux — agrandir
+                {fill(t.map.expandCluster, { count: cluster.items.length })}
               </span>
             </button>
           );
@@ -305,14 +310,14 @@ export function MapCanvas({
           disabled={locating}
           className="rounded-plate border border-line-strong bg-surface px-3 py-2 text-small font-semibold text-ink disabled:opacity-60"
         >
-          {locating ? "Localisation…" : "⌖ Autour de moi"}
+          {locating ? t.map.locating : t.map.aroundMe}
         </button>
         <button
           type="button"
           onClick={() => setView({ zoom: 1, panX: 0, panY: 0 })}
           className="rounded-plate border border-line-strong bg-surface px-3 py-2 text-small text-ink"
         >
-          Recadrer
+          {t.map.recentre}
         </button>
       </div>
 
@@ -320,7 +325,7 @@ export function MapCanvas({
         <button
           type="button"
           onClick={() => zoomBy(1.6)}
-          aria-label="Agrandir"
+          aria-label={t.map.zoomIn}
           className="size-8 border-b border-line bg-surface text-base text-ink"
         >
           +
@@ -328,7 +333,7 @@ export function MapCanvas({
         <button
           type="button"
           onClick={() => zoomBy(1 / 1.6)}
-          aria-label="Réduire"
+          aria-label={t.map.zoomOut}
           className="size-8 bg-surface text-base text-ink"
         >
           −
@@ -338,13 +343,13 @@ export function MapCanvas({
       {/* Legend */}
       <div className="absolute bottom-4 left-4 z-[7] hidden rounded-plate bg-surface px-3 py-2.5 sm:block">
         <p className="mb-1.5 font-mono text-label uppercase tracking-[0.13em] text-ink-subtle">
-          Légende
+          {t.map.legend}
         </p>
         <ul className="flex flex-wrap gap-x-3.5 gap-y-1 text-label text-ink-muted">
-          <li>{CATEGORY_GLYPH.sites} Sites</li>
-          <li>{CATEGORY_GLYPH.hotels} Hôtels</li>
-          <li>{CATEGORY_GLYPH.restaurants} Tables</li>
-          <li>{CATEGORY_GLYPH.activites} Activités</li>
+          <li>{CATEGORY_GLYPH.sites} {t.categories.sites.short}</li>
+          <li>{CATEGORY_GLYPH.hotels} {t.categories.hotels.short}</li>
+          <li>{CATEGORY_GLYPH.restaurants} {t.categories.restaurants.short}</li>
+          <li>{CATEGORY_GLYPH.activites} {t.categories.activites.short}</li>
         </ul>
       </div>
 

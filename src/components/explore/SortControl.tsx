@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { buildHref, SORTS, type SearchParams, type SortKey } from "@/lib/filters";
+import { getDictionary } from "@/i18n";
+import { localeHref, type Locale } from "@/i18n/config";
 
 /**
  * A <details> disclosure rather than a JS dropdown: it opens, closes and
@@ -10,18 +12,21 @@ export function SortControl({
   sort,
   basePath,
   params,
+  locale,
 }: {
   sort: SortKey;
   basePath: string;
   params: SearchParams;
+  locale: Locale;
 }) {
+  const t = getDictionary(locale);
   const current = SORTS.find((entry) => entry.key === sort) ?? SORTS[0];
 
   return (
     <details className="relative">
       <summary className="flex cursor-pointer list-none items-center gap-2 rounded-plate border border-line-strong px-3.5 py-2 text-small [&::-webkit-details-marker]:hidden">
-        <span className="text-ink-subtle">Trier&nbsp;:</span>
-        {current.label}
+        <span className="text-ink-subtle">{t.explore.sortBy}</span>
+        {t.sort[current.key]}
         <span aria-hidden="true" className="text-[0.7em]">
           ▼
         </span>
@@ -30,17 +35,20 @@ export function SortControl({
         {SORTS.map((entry) => (
           <li key={entry.key}>
             <Link
-              href={buildHref(basePath, params, {
-                key: "tri",
-                value: entry.key === "recommandes" ? undefined : entry.key,
-              })}
+              href={localeHref(
+                locale,
+                buildHref(basePath, params, {
+                  key: "tri",
+                  value: entry.key === "recommandes" ? undefined : entry.key,
+                }),
+              )}
               scroll={false}
               aria-current={entry.key === sort ? "true" : undefined}
               className={`block px-3.5 py-2 text-small hover:bg-surface ${
                 entry.key === sort ? "font-semibold text-ink" : "text-ink-muted"
               }`}
             >
-              {entry.label}
+              {t.sort[entry.key]}
             </Link>
           </li>
         ))}

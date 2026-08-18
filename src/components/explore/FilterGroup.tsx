@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Facet, SearchParams } from "@/lib/filters";
 import { buildHref } from "@/lib/filters";
+import { localeHref, type Locale } from "@/i18n/config";
 
 /**
  * A filter group renders as links, not inputs.
@@ -16,6 +17,7 @@ export function FilterGroup({
   selected,
   basePath,
   params,
+  locale,
   toggle = true,
 }: {
   title: string;
@@ -24,6 +26,7 @@ export function FilterGroup({
   selected: string[];
   basePath: string;
   params: SearchParams;
+  locale: Locale;
   /** Multi-select (checkbox behaviour) vs single-select (radio behaviour). */
   toggle?: boolean;
 }) {
@@ -35,11 +38,14 @@ export function FilterGroup({
           const isSelected = selected.includes(facet.value);
           const empty = facet.count === 0 && !isSelected;
 
-          const href = buildHref(basePath, params, {
-            key: paramKey,
-            value: isSelected && !toggle ? undefined : facet.value,
-            toggle,
-          });
+          const href = localeHref(
+            locale,
+            buildHref(basePath, params, {
+              key: paramKey,
+              value: isSelected && !toggle ? undefined : facet.value,
+              toggle,
+            }),
+          );
 
           return (
             <li key={facet.value}>

@@ -6,6 +6,8 @@ import { formatAriary, formatEuro, priceUnit } from "@/lib/money";
 import { SITE } from "@/lib/site";
 import { listingHref, type Listing } from "@/lib/listings";
 import type { ListingDetail } from "@/lib/listing-details";
+import { getDictionary } from "@/i18n";
+import { localeHref, type Locale } from "@/i18n/config";
 
 /**
  * The only place the gold button appears on a detail page.
@@ -18,17 +20,23 @@ import type { ListingDetail } from "@/lib/listing-details";
 export function ReservationPanel({
   listing,
   detail,
+  locale,
 }: {
   listing: Listing;
   detail: ListingDetail;
+  locale: Locale;
 }) {
+  const t = getDictionary(locale);
   const [date, setDate] = useState("");
   const [people, setPeople] = useState(2);
 
   const params = new URLSearchParams();
   if (date) params.set("date", date);
   params.set("personnes", String(people));
-  const requestHref = `${listingHref(listing)}/demande?${params.toString()}`;
+  const requestHref = localeHref(
+    locale,
+    `${listingHref(listing)}/demande?${params.toString()}`,
+  );
 
   const headline =
     listing.price.kind === "from"
@@ -36,8 +44,8 @@ export function ReservationPanel({
       : listing.price.kind === "range"
         ? `${formatAriary(listing.price.min)} – ${formatAriary(listing.price.max)}`
         : listing.price.kind === "free"
-          ? "Gratuit"
-          : "Sur demande";
+          ? t.common.free
+          : t.common.onRequest;
 
   const approx =
     listing.price.kind === "from"
@@ -56,17 +64,17 @@ export function ReservationPanel({
         <p className="tabular font-mono text-xl leading-tight">{headline}</p>
         <p className="text-small text-ink-subtle">
           {approx ? `${approx} · ` : ""}
-          {priceUnit(listing.price)?.replace("/ ", "par ") ?? "entrée"}
+          {priceUnit(listing.price, locale)?.replace("/ ", "") ?? ""}
         </p>
         <p className="mt-1 text-label text-ink-subtle">
-          Tarif indicatif communiqué par l’établissement
+          {t.detail.indicativePrice}
         </p>
       </div>
 
       <div className="flex flex-col gap-3">
         <label className="flex flex-col gap-1.5">
           <span className="font-mono text-label uppercase tracking-[0.13em] text-ink-subtle">
-            Date souhaitée
+            {t.detail.desiredDate}
           </span>
           <input
             type="date"
@@ -78,7 +86,7 @@ export function ReservationPanel({
 
         <label className="flex flex-col gap-1.5">
           <span className="font-mono text-label uppercase tracking-[0.13em] text-ink-subtle">
-            Nombre de personnes
+            {t.detail.people}
           </span>
           <input
             type="number"
@@ -94,11 +102,11 @@ export function ReservationPanel({
       </div>
 
       <Button href={requestHref} variant="primary" fullWidth>
-        Demander une réservation
+        {t.common.requestFull}
       </Button>
 
       <p className="text-center text-label leading-relaxed text-ink-subtle">
-        Aucun paiement. L’établissement vous contacte pour confirmer.
+        {t.detail.noPayment}
       </p>
 
       <Button
@@ -108,17 +116,17 @@ export function ReservationPanel({
         target="_blank"
         rel="noreferrer noopener"
       >
-        Écrire sur WhatsApp
+        {t.detail.whatsapp}
       </Button>
 
       {detail.responseTime ? (
         <p className="border-t border-line pt-3 text-small text-ink-subtle">
-          Répond en général sous{" "}
+          {t.detail.respondsIn}{" "}
           <strong className="font-semibold text-ink">
             {detail.responseTime}
           </strong>
           {detail.memberSince ? (
-            <> · Membre depuis {detail.memberSince}</>
+            <> · {t.detail.memberSince} {detail.memberSince}</>
           ) : null}
         </p>
       ) : null}

@@ -1,5 +1,7 @@
 import { Rating } from "@/components/ui/Rating";
 import type { Review } from "@/lib/listing-details";
+import { getDictionary, fill } from "@/i18n";
+import type { Locale } from "@/i18n/config";
 
 /**
  * Reviews are only accepted from visitors whose request a provider confirmed.
@@ -9,16 +11,19 @@ import type { Review } from "@/lib/listing-details";
 export function Reviews({
   reviews,
   total,
+  locale = "fr",
 }: {
   reviews: Review[];
   total?: number;
+  locale?: Locale;
 }) {
+  const t = getDictionary(locale);
   if (reviews.length === 0) return null;
 
   return (
     <section className="mt-8">
       <h2 className="text-[1.3rem]">
-        Avis des visiteurs{" "}
+        {t.detail.reviewsTitle}{" "}
         {total ? (
           <span className="tabular font-mono text-small text-ink-subtle">
             {total}
@@ -32,7 +37,7 @@ export function Reviews({
             key={`${review.author}-${review.date}`}
             className="rounded-plate border border-line bg-surface p-4"
           >
-            <Rating score={review.score} count={1} />
+            <Rating score={review.score} count={1} locale={locale} />
             <blockquote className="mt-2.5 font-display text-[1.02rem] leading-snug">
               «&nbsp;{review.body}&nbsp;»
             </blockquote>
@@ -47,7 +52,7 @@ export function Reviews({
       {total && total > reviews.length ? (
         <p className="mt-3">
           <span className="text-small text-ink-subtle">
-            {reviews.length} avis sur {total} affichés
+            {fill(t.detail.reviewsShown, { shown: reviews.length, total: total ?? 0 })}
           </span>
         </p>
       ) : null}

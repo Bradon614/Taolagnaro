@@ -1,6 +1,7 @@
 import { ListingCard } from "@/components/listing/ListingCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import type { Listing } from "@/lib/listings";
+import type { Locale } from "@/i18n/config";
 
 const COLUMNS: Record<3 | 4, string> = {
   3: "sm:grid-cols-2 lg:grid-cols-3",
@@ -16,6 +17,7 @@ export function ListingRow({
   title,
   action,
   listings,
+  locale,
   columns = 4,
   aspect = "4/3",
   className,
@@ -24,6 +26,7 @@ export function ListingRow({
   title: string;
   action?: { href: string; label: string };
   listings: Listing[];
+  locale: Locale;
   columns?: 3 | 4;
   aspect?: "4/3" | "16/9" | "3/2";
   className?: string;
@@ -38,7 +41,7 @@ export function ListingRow({
         >
           {listings.map((listing) => (
             <li key={listing.slug} className="flex">
-              <ListingCard listing={listing} aspect={aspect} />
+              <ListingCard listing={listing} locale={locale} aspect={aspect} />
             </li>
           ))}
         </ul>
