@@ -96,11 +96,15 @@ export function categoryBySlug(slug: string): Category | undefined {
 
 /** Primary destinations. Four is the ceiling — Explore absorbs the six categories. */
 export const PRIMARY_NAV = [
-  { href: "/explorer", label: "Explorer", hasMenu: true },
-  { href: "/carte", label: "Carte", hasMenu: false },
-  { href: "/decouvrir", label: "Découvrir Taolagnaro", hasMenu: false },
-  { href: "/contact", label: "Contact", hasMenu: false },
-] as const;
+  { href: "/explorer", key: "explore", hasMenu: true },
+  { href: "/carte", key: "map", hasMenu: false },
+  { href: "/decouvrir", key: "discover", hasMenu: false },
+  { href: "/contact", key: "contact", hasMenu: false },
+] as const satisfies readonly {
+  href: string;
+  key: "explore" | "map" | "discover" | "contact";
+  hasMenu: boolean;
+}[];
 
 /** Shortcuts shown alongside the categories in the Explore mega-panel. */
 export const EXPLORE_SHORTCUTS = [

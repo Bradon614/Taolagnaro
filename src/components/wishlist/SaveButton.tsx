@@ -1,6 +1,8 @@
 "use client";
 
 import { useWishlist } from "@/lib/wishlist";
+import { useLocale } from "@/i18n/LocaleProvider";
+import { fill } from "@/i18n";
 
 /**
  * Two shapes: a heart floating over a card image, and a labelled button in the
@@ -19,11 +21,10 @@ export function SaveButton({
   className?: string;
 }) {
   const { has, toggle } = useWishlist();
+  const { t } = useLocale();
   const saved = has(slug);
 
-  const label = saved
-    ? `Retirer ${name} de vos envies`
-    : `Ajouter ${name} à vos envies`;
+  const label = fill(saved ? t.wishlist.remove : t.wishlist.add, { name });
 
   if (variant === "icon") {
     return (
@@ -56,7 +57,7 @@ export function SaveButton({
       <span aria-hidden="true" className={saved ? "text-accent" : ""}>
         {saved ? "♥" : "♡"}
       </span>
-      {saved ? "Enregistré" : "Enregistrer"}
+      {saved ? t.common.saved : t.common.save}
     </button>
   );
 }

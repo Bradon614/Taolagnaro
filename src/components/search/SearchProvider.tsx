@@ -16,6 +16,8 @@ import { formatPrice } from "@/lib/money";
 import { listingHref } from "@/lib/listings";
 import { searchListings, SUGGESTED_QUERIES } from "@/lib/search";
 import { CATEGORIES, categoryBySlug } from "@/lib/site";
+import { useHref, useLocale } from "@/i18n/LocaleProvider";
+import { fill } from "@/i18n";
 
 /**
  * Search opens as a full-screen overlay rather than an inline dropdown.
@@ -45,6 +47,8 @@ export function useSearch(): SearchContextValue {
 
 export function SearchProvider({ children }: { children: React.ReactNode }) {
   const router = useRouter();
+  const { t } = useLocale();
+  const href = useHref();
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [recents, setRecents] = useState<string[]>([]);
@@ -111,7 +115,7 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
     remember(trimmed);
     setIsOpen(false);
     setQuery("");
-    router.push(`/explorer?q=${encodeURIComponent(trimmed)}`);
+    router.push(href(`/explorer?q=${encodeURIComponent(trimmed)}`));
   }
 
   function clearRecents() {
@@ -134,7 +138,7 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Rechercher"
+          aria-label={t.search.dialogLabel}
           className="fixed inset-0 z-[60] flex flex-col bg-ground"
         >
           <form
@@ -152,8 +156,8 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
               type="search"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Plage, lodge, randonnée…"
-              aria-label="Rechercher un lieu"
+              placeholder={t.nav.searchPlaceholder}
+              aria-label={t.search.inputLabel}
               className="min-w-0 flex-1 bg-transparent py-1.5 text-lg text-ink outline-none placeholder:text-ink-subtle"
             />
             <button
@@ -161,7 +165,7 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
               onClick={close}
               className="shrink-0 rounded-plate border border-line-strong px-3 py-1.5 text-small text-ink-muted hover:text-ink"
             >
-              Fermer
+              {t.common.close}
             </button>
           </form>
 
@@ -171,13 +175,13 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
                 results.length > 0 ? (
                   <>
                     <p className="font-mono text-label uppercase tracking-[0.14em] text-ink-subtle">
-                      Résultats
+                      {t.search.results}
                     </p>
                     <ul className="mt-3 flex flex-col gap-2">
                       {results.map((listing) => (
                         <li key={listing.slug}>
                           <Link
-                            href={listingHref(listing)}
+                            href={href(listingHref(listing))}
                             onClick={() => {
                               remember(query);
                               setIsOpen(false);
@@ -211,19 +215,17 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
                         onClick={() => submit(query)}
                         className="text-small text-brand hover:underline"
                       >
-                        Voir tous les résultats pour «&nbsp;{query.trim()}
-                        &nbsp;» →
+                        {fill(t.search.seeAllFor, { query: query.trim() })}
                       </button>
                     </div>
                   </>
                 ) : (
                   <div className="rounded-plate border border-dashed border-line-strong px-5 py-10 text-center">
                     <p className="font-semibold">
-                      Rien ne correspond à «&nbsp;{query.trim()}&nbsp;»
+                      {fill(t.search.noMatch, { query: query.trim() })}
                     </p>
                     <p className="mx-auto mt-1.5 max-w-[40ch] text-small text-ink-muted">
-                      Essayez un nom de lieu (Libanona, Sainte-Luce) ou un type
-                      d’activité (surf, lémuriens, pirogue).
+{t.search.noMatchHelp}
                     </p>
                   </div>
                 )
@@ -233,14 +235,14 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
                     <section className="mb-6">
                       <div className="flex items-baseline justify-between gap-3">
                         <h2 className="font-mono text-label uppercase tracking-[0.14em] text-ink-subtle">
-                          Recherches récentes
+                          {t.search.recent}
                         </h2>
                         <button
                           type="button"
                           onClick={clearRecents}
                           className="text-small text-brand hover:underline"
                         >
-                          Effacer
+                          {t.common.clear}
                         </button>
                       </div>
                       <ul className="mt-2.5 flex flex-wrap gap-2">
@@ -261,7 +263,7 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
 
                   <section className="mb-6">
                     <h2 className="font-mono text-label uppercase tracking-[0.14em] text-ink-subtle">
-                      Suggestions
+                      {t.search.suggestions}
                     </h2>
                     <ul className="mt-2.5 flex flex-wrap gap-2">
                       {SUGGESTED_QUERIES.map((term) => (
@@ -280,13 +282,13 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
 
                   <section>
                     <h2 className="font-mono text-label uppercase tracking-[0.14em] text-ink-subtle">
-                      Parcourir par catégorie
+                      {t.search.browseByCategory}
                     </h2>
                     <ul className="mt-2.5 grid grid-cols-2 gap-2.5 sm:grid-cols-3">
                       {CATEGORIES.map((category) => (
                         <li key={category.slug}>
                           <Link
-                            href={`/explorer/${category.slug}`}
+                            href={href(`/explorer/${category.slug}`)}
                             onClick={() => setIsOpen(false)}
                             className="block rounded-plate"
                           >
@@ -298,7 +300,7 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
                               {category.label}
                             </span>
                             <span className="tabular block font-mono text-label text-ink-subtle">
-                              {category.count} lieux
+                              {category.count} {t.common.places}
                             </span>
                           </Link>
                         </li>

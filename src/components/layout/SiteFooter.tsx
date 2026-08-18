@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { LogoGlyph } from "@/components/brand/Logo";
 import { FooterColumn } from "@/components/layout/FooterColumn";
-import { FOOTER_COLUMNS, SITE } from "@/lib/site";
+import { CATEGORIES, SITE } from "@/lib/site";
+import { getDictionary } from "@/i18n";
+import { localeHref, type Locale } from "@/i18n/config";
 
 const SOCIALS = [
   { label: "Facebook", href: "https://facebook.com" },
@@ -9,7 +11,41 @@ const SOCIALS = [
   { label: "WhatsApp", href: `https://wa.me/${SITE.whatsapp}` },
 ];
 
-export function SiteFooter() {
+export function SiteFooter({ locale }: { locale: Locale }) {
+  const t = getDictionary(locale);
+  const href = (path: string) => localeHref(locale, path);
+
+  const columns = [
+    {
+      heading: t.footer.explore,
+      links: CATEGORIES.map((category) => ({
+        href: `/explorer/${category.slug}`,
+        label: category.label,
+      })),
+    },
+    {
+      heading: t.footer.region,
+      links: [
+        { href: "/decouvrir", label: t.common.discover },
+        { href: "/decouvrir#histoire", label: t.footer.history },
+        { href: "/decouvrir#nature", label: t.footer.nature },
+        { href: "/decouvrir#culture", label: t.footer.culture },
+        { href: "/decouvrir#pratique", label: t.footer.practical },
+        { href: "/carte", label: t.common.map },
+      ],
+    },
+    {
+      heading: t.footer.providers,
+      links: [
+        { href: "/contact", label: t.nav.listBusiness },
+        { href: "/contact", label: t.footer.howItWorks },
+        { href: "/contact", label: t.common.contact },
+        { href: "/mentions-legales", label: t.nav.legal },
+        { href: "/confidentialite", label: t.nav.privacy },
+      ],
+    },
+  ];
+
   return (
     <footer className="mt-auto bg-footer text-footer-ink">
       <div className="mx-auto max-w-[1440px] px-4 pb-6 pt-11 md:px-6">
@@ -20,9 +56,7 @@ export function SiteFooter() {
               {SITE.name}
             </p>
             <p className="mt-3 max-w-[36ch] text-small opacity-75">
-              La porte d’entrée numérique de Taolagnaro et de la région Anosy.
-              Plateforme indépendante, gratuite pour les visiteurs et les
-              prestataires locaux.
+              {t.footer.blurb}
             </p>
             <ul className="mt-4 flex flex-wrap gap-2">
               {SOCIALS.map((social) => (
@@ -40,12 +74,12 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          {FOOTER_COLUMNS.map((column) => (
+          {columns.map((column) => (
             <FooterColumn key={column.heading} heading={column.heading}>
               <ul className="flex flex-col gap-2 text-small">
                 {column.links.map((link) => (
                   <li key={`${link.href}-${link.label}`}>
-                    <Link href={link.href} className="opacity-85 hover:opacity-100">
+                    <Link href={href(link.href)} className="opacity-85 hover:opacity-100">
                       {link.label}
                     </Link>
                   </li>

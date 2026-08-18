@@ -7,7 +7,7 @@ import { Alert } from "@/components/ui/Alert";
 import { formatPrice } from "@/lib/money";
 import { listingHref, type Listing } from "@/lib/listings";
 import { LANGUAGES } from "@/lib/site";
-import { submitReservationRequest } from "@/app/[categorie]/[slug]/demande/actions";
+import { submitReservationRequest } from "@/app/[locale]/[categorie]/[slug]/demande/actions";
 import type { RequestFormState } from "@/lib/requests";
 import { Plate } from "@/components/media/Plate";
 

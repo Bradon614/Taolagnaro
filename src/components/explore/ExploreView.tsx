@@ -19,6 +19,7 @@ import {
 } from "@/lib/filters";
 import { CATEGORIES, categoryBySlug, TOTAL_LISTINGS } from "@/lib/site";
 import type { CategorySlug } from "@/lib/site";
+import type { Locale } from "@/i18n/config";
 
 /** Params that hold one value, so removing the chip clears them outright. */
 const SINGLE_VALUE = new Set(["note", "budget", "q"]);
@@ -33,12 +34,14 @@ export function ExploreView({
   forcedCategory,
   title,
   intro,
+  locale,
 }: {
   params: SearchParams;
   basePath: string;
   forcedCategory?: CategorySlug;
   title: string;
   intro: string;
+  locale: Locale;
 }) {
   const filters = parseFilters(params, forcedCategory);
   const categoryFromRoute = forcedCategory !== undefined;
@@ -157,7 +160,7 @@ export function ExploreView({
       <div className="mx-auto grid max-w-[1440px] grid-cols-[minmax(0,1fr)] items-start gap-0 px-4 pb-16 md:px-6 lg:grid-cols-[15.5rem_minmax(0,1fr)]">
         <aside className="hidden py-6 pr-6 lg:sticky lg:top-20 lg:block">
           <div className="mb-4">
-            <ExploreSearchField basePath={basePath} query={filters.query} />
+            <ExploreSearchField basePath={basePath} query={filters.query} locale={locale} />
           </div>
           <FilterPanel
             filters={filters}
@@ -205,7 +208,7 @@ export function ExploreView({
           </div>
 
           <div className="mb-4 lg:hidden">
-            <ExploreSearchField basePath={basePath} query={filters.query} />
+            <ExploreSearchField basePath={basePath} query={filters.query} locale={locale} />
           </div>
 
           <div className="mb-4 lg:hidden">

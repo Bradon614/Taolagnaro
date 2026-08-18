@@ -7,13 +7,20 @@
  * results and wants to adjust the query in place, not be taken to a
  * full-screen search.
  */
+import { getDictionary } from "@/i18n";
+import type { Locale } from "@/i18n/config";
+
 export function ExploreSearchField({
   basePath,
   query,
+  locale,
 }: {
   basePath: string;
   query: string;
+  locale: Locale;
 }) {
+  const t = getDictionary(locale);
+
   return (
     <form
       action={basePath}
@@ -25,14 +32,14 @@ export function ExploreSearchField({
         ⌕
       </span>
       <label htmlFor="explore-q" className="sr-only">
-        Rechercher dans les résultats
+        {t.search.inResults}
       </label>
       <input
         id="explore-q"
         name="q"
         type="search"
         defaultValue={query}
-        placeholder="Plage, lodge, randonnée…"
+        placeholder={t.nav.searchPlaceholder}
         className="min-w-0 flex-1 bg-transparent py-1.5 text-small text-ink outline-none placeholder:text-ink-subtle"
       />
       <button

@@ -3,7 +3,7 @@
 import { useActionState, useState } from "react";
 import { Alert } from "@/components/ui/Alert";
 import { Field, inputClass } from "@/components/ui/Field";
-import { submitContactMessage } from "@/app/contact/actions";
+import { submitContactMessage } from "@/app/[locale]/contact/actions";
 import { CONTACT_SUBJECTS, type ContactFormState } from "@/lib/contact";
 
 const EMPTY: ContactFormState = { errors: {} };

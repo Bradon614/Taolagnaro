@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 /**
  * Uses the native share sheet where the device has one — which on the phones
@@ -15,6 +16,7 @@ export function ShareButton({
   className?: string;
 }) {
   const [copied, setCopied] = useState(false);
+  const { t } = useLocale();
 
   async function share() {
     const url = window.location.href;
@@ -44,7 +46,7 @@ export function ShareButton({
       className={`inline-flex items-center justify-center gap-2 rounded-plate border border-line-strong px-4 py-2.5 text-small font-semibold text-ink hover:border-ink-subtle ${className ?? ""}`}
     >
       <span aria-hidden="true">↗</span>
-      {copied ? "Lien copié" : "Partager"}
+      {copied ? t.common.linkCopied : t.common.share}
     </button>
   );
 }

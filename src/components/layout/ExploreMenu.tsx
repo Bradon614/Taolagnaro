@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { CATEGORIES, EXPLORE_SHORTCUTS } from "@/lib/site";
+import { CATEGORIES, TOTAL_LISTINGS } from "@/lib/site";
+import { useHref, useLocale } from "@/i18n/LocaleProvider";
+import { fill } from "@/i18n";
 import { Plate } from "@/components/media/Plate";
 
 type ExploreMenuProps = {
@@ -14,6 +16,16 @@ type ExploreMenuProps = {
  * Opening is handled by the header; this renders the panel body.
  */
 export function ExploreMenu({ id, onNavigate }: ExploreMenuProps) {
+  const { t } = useLocale();
+  const href = useHref();
+
+  const shortcuts = [
+    { href: "/explorer", label: fill(t.nav.exploreAll, { count: TOTAL_LISTINGS }) },
+    { href: "/carte", label: t.common.openMap },
+    { href: "/explorer?lieu=sainte-luce", label: t.nav.sainteLuce },
+    { href: "/decouvrir", label: t.nav.ideas },
+  ];
+
   return (
     <div
       id={id}
@@ -23,7 +35,7 @@ export function ExploreMenu({ id, onNavigate }: ExploreMenuProps) {
         {CATEGORIES.map((category) => (
           <Link
             key={category.slug}
-            href={`/explorer/${category.slug}`}
+            href={href(`/explorer/${category.slug}`)}
             onClick={onNavigate}
             className="group rounded-plate outline-offset-4"
           >
@@ -42,13 +54,13 @@ export function ExploreMenu({ id, onNavigate }: ExploreMenuProps) {
 
         <div className="border-line lg:border-l lg:pl-5">
           <p className="font-mono text-label uppercase tracking-[0.14em] text-ink-subtle">
-            Raccourcis
+            {t.nav.shortcuts}
           </p>
           <ul className="mt-2.5 flex flex-col gap-2">
-            {EXPLORE_SHORTCUTS.map((shortcut) => (
+            {shortcuts.map((shortcut) => (
               <li key={shortcut.label}>
                 <Link
-                  href={shortcut.href}
+                  href={href(shortcut.href)}
                   onClick={onNavigate}
                   className="text-small text-brand hover:underline"
                 >

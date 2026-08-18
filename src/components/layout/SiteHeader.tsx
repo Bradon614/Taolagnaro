@@ -8,6 +8,8 @@ import { ExploreMenu } from "@/components/layout/ExploreMenu";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { SearchTrigger } from "@/components/search/SearchTrigger";
 import { OVERLAY_HEADER_ROUTES, PRIMARY_NAV } from "@/lib/site";
+import { useHref, useLocale } from "@/i18n/LocaleProvider";
+import { splitLocale } from "@/i18n/config";
 
 /**
  * Four primary destinations, a search field, the language switcher and one
@@ -15,8 +17,13 @@ import { OVERLAY_HEADER_ROUTES, PRIMARY_NAV } from "@/lib/site";
  * over the image; everywhere else it is a solid sticky bar.
  */
 export function SiteHeader() {
-  const pathname = usePathname();
+  const rawPathname = usePathname();
+  // The proxy rewrites French URLs to /fr/..., so compare against the
+  // locale-free path or every overlay route check fails outside French.
+  const { path: pathname } = splitLocale(rawPathname);
   const isOverlay = OVERLAY_HEADER_ROUTES.includes(pathname);
+  const { t } = useLocale();
+  const href = useHref();
 
   const [menuOpen, setMenuOpen] = useState(false);
   const menuId = useId();
@@ -95,9 +102,9 @@ export function SiteHeader() {
     <header className={`border-b ${headerTone}`}>
       <div className="mx-auto flex h-16 max-w-[1440px] items-center gap-6 px-4 md:px-6">
         <Link
-          href="/"
+          href={href("/")}
           className="shrink-0 rounded-plate"
-          aria-label="Taolagnaro — accueil"
+          aria-label={t.nav.homeAria}
         >
           <Logo />
         </Link>
@@ -111,7 +118,7 @@ export function SiteHeader() {
           onMouseEnter={openMenu}
           onMouseLeave={scheduleClose}
         >
-          <nav aria-label="Navigation principale">
+          <nav aria-label={t.nav.primary}>
           <ul className="flex items-center gap-5 text-small">
             {PRIMARY_NAV.map((item) => {
               const active =
@@ -121,7 +128,7 @@ export function SiteHeader() {
                 return (
                   <li key={item.href}>
                     <Link
-                      href={item.href}
+                      href={href(item.href)}
                       className={`inline-block rounded-sm py-1 ${
                         active
                           ? "font-semibold opacity-100"
@@ -129,7 +136,7 @@ export function SiteHeader() {
                       }`}
                       aria-current={active ? "page" : undefined}
                     >
-                      {item.label}
+                      {t.common[item.key]}
                     </Link>
                   </li>
                 );
@@ -143,7 +150,7 @@ export function SiteHeader() {
                 <li key={item.href}>
                   <Link
                     ref={triggerRef}
-                    href={item.href}
+                    href={href(item.href)}
                     aria-expanded={menuOpen}
                     aria-controls={menuId}
                     onFocus={openMenu}
@@ -153,7 +160,7 @@ export function SiteHeader() {
                         : "opacity-80 hover:opacity-100"
                     }`}
                   >
-                    {item.label}
+                    {t.common[item.key]}
                     <span aria-hidden="true" className="text-[0.7em]">
                       {menuOpen ? "▲" : "▼"}
                     </span>
@@ -178,17 +185,17 @@ export function SiteHeader() {
             }`}
           >
             <span aria-hidden="true">⌕</span>
-            <span className="hidden xl:inline">Plage, lodge, randonnée…</span>
-            <span className="xl:hidden">Rechercher</span>
+            <span className="hidden xl:inline">{t.nav.searchPlaceholder}</span>
+            <span className="xl:hidden">{t.common.search}</span>
           </SearchTrigger>
 
           <LanguageSwitcher />
 
           <Link
-            href="/explorer"
+            href={href("/explorer")}
             className="hidden rounded-plate bg-accent px-4 py-2.5 text-small font-semibold text-accent-contrast hover:opacity-90 lg:inline-block"
           >
-            Demander une réservation
+            {t.common.requestFull}
           </Link>
         </div>
       </div>
@@ -199,7 +206,7 @@ export function SiteHeader() {
         <div className="border-t border-line px-4 py-2.5 md:hidden">
           <SearchTrigger className="flex w-full items-center gap-2 rounded-full border border-line-strong px-4 py-2.5 text-small text-ink-subtle">
             <span aria-hidden="true">⌕</span>
-            Chercher un lieu, un hôtel…
+            {t.nav.searchPlaceholderShort}
           </SearchTrigger>
         </div>
       )}

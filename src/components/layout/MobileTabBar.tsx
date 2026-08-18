@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { isListingDetailRoute, SITE } from "@/lib/site";
 import { useWishlist } from "@/lib/wishlist";
+import { useHref, useLocale } from "@/i18n/LocaleProvider";
+import { splitLocale } from "@/i18n/config";
 
 /**
  * Five destinations within thumb reach. A hamburger would hide the whole
@@ -14,23 +16,30 @@ import { useWishlist } from "@/lib/wishlist";
  */
 
 const TABS = [
-  { href: "/", label: "Accueil", glyph: "⌂" },
-  { href: "/explorer", label: "Explorer", glyph: "⌕" },
-  { href: "/carte", label: "Carte", glyph: "◎" },
-  { href: "/envies", label: "Envies", glyph: "♡" },
-] as const;
-
-const MORE_LINKS = [
-  { href: "/decouvrir", label: "Découvrir Taolagnaro" },
-  { href: "/contact", label: "Contact" },
-  { href: "/contact", label: "Référencer mon établissement" },
-  { href: "/mentions-legales", label: "Mentions légales" },
-  { href: "/confidentialite", label: "Confidentialité" },
-];
+  { href: "/", key: "home", glyph: "⌂" },
+  { href: "/explorer", key: "explore", glyph: "⌕" },
+  { href: "/carte", key: "map", glyph: "◎" },
+  { href: "/envies", key: "wishlist", glyph: "♡" },
+] as const satisfies readonly {
+  href: string;
+  key: "home" | "explore" | "map" | "wishlist";
+  glyph: string;
+}[];
 
 export function MobileTabBar() {
-  const pathname = usePathname();
+  const rawPathname = usePathname();
+  const { path: pathname } = splitLocale(rawPathname);
+  const { t } = useLocale();
+  const href = useHref();
   const [moreOpen, setMoreOpen] = useState(false);
+
+  const moreLinks = [
+    { href: "/decouvrir", label: t.common.discover },
+    { href: "/contact", label: t.common.contact },
+    { href: "/contact", label: t.nav.listBusiness },
+    { href: "/mentions-legales", label: t.nav.legal },
+    { href: "/confidentialite", label: t.nav.privacy },
+  ];
   const { count: savedCount } = useWishlist();
 
   // Dismiss on navigation, adjusted during render rather than in an effect.
@@ -69,7 +78,7 @@ export function MobileTabBar() {
         <div className="fixed inset-0 z-50 lg:hidden">
           <button
             type="button"
-            aria-label="Fermer le menu"
+            aria-label={t.common.close}
             onClick={() => setMoreOpen(false)}
             className="absolute inset-0 bg-abyss/55"
           />
@@ -77,7 +86,7 @@ export function MobileTabBar() {
             ref={dialogRef}
             role="dialog"
             aria-modal="true"
-            aria-label="Plus"
+            aria-label={t.common.more}
             tabIndex={-1}
             className="absolute inset-x-0 bottom-0 rounded-t-2xl border-t border-line bg-surface px-5 pb-[calc(env(safe-area-inset-bottom)+1.25rem)] pt-3 outline-none"
           >
@@ -86,9 +95,9 @@ export function MobileTabBar() {
               className="mx-auto mb-4 block h-1 w-9 rounded-full bg-line-strong"
             />
             <ul className="flex flex-col">
-              {MORE_LINKS.map((link) => (
+              {moreLinks.map((link) => (
                 <li key={link.label} className="border-b border-line last:border-0">
-                  <Link href={link.href} className="block py-3">
+                  <Link href={href(link.href)} className="block py-3">
                     {link.label}
                   </Link>
                 </li>
@@ -108,7 +117,7 @@ export function MobileTabBar() {
       ) : null}
 
       <nav
-        aria-label="Navigation mobile"
+        aria-label={t.nav.mobile}
         className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-line bg-surface pb-[env(safe-area-inset-bottom)] text-center lg:hidden"
       >
         {TABS.map((tab) => {
@@ -119,7 +128,7 @@ export function MobileTabBar() {
           return (
             <Link
               key={tab.href}
-              href={tab.href}
+              href={href(tab.href)}
               aria-current={active ? "page" : undefined}
               className={`flex min-h-[3.25rem] flex-col items-center justify-center gap-0.5 text-label ${
                 active ? "font-semibold text-ink" : "text-ink-subtle"
@@ -133,7 +142,7 @@ export function MobileTabBar() {
                   </span>
                 ) : null}
               </span>
-              {tab.label}
+              {t.common[tab.key]}
             </Link>
           );
         })}
@@ -149,7 +158,7 @@ export function MobileTabBar() {
           <span aria-hidden="true" className="text-base leading-none">
             ☰
           </span>
-          Plus
+          {t.common.more}
         </button>
       </nav>
     </>
