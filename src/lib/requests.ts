@@ -35,6 +35,9 @@ export type RequestFormState = {
   values?: Record<string, string>;
 };
 
+import type { Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n";
+
 export type FieldErrors = Partial<
   Record<
     "fullName" | "phone" | "email" | "date" | "people" | "consent",
@@ -66,41 +69,39 @@ export function validate(input: {
   date: string;
   people: number;
   consent: boolean;
-}): FieldErrors {
+}, locale: Locale = "fr"): FieldErrors {
+  const e = getDictionary(locale).errors;
   const errors: FieldErrors = {};
 
   if (input.fullName.trim().length < 2) {
-    errors.fullName = "Indiquez le nom sous lequel le prestataire vous trouvera.";
+    errors.fullName = e.fullName;
   }
 
   const digits = input.phone.replace(/[^\d]/g, "");
   if (digits.length < 8) {
-    errors.phone =
-      "Un numéro joignable est nécessaire — c’est par là que la réponse arrivera. Exemple : +261 34 12 345 67";
+    errors.phone = e.phone;
   }
 
   const email = input.email.trim();
   if (!email.includes("@")) {
-    errors.email = "Il manque le « @ ». Exemple : hanta@exemple.mg";
+    errors.email = e.emailAt;
   } else {
     const [local, domain] = email.split("@");
     if (!local || !domain || !domain.includes(".") || domain.endsWith(".")) {
-      errors.email =
-        "Il manque la partie après « @ ». Exemple : hanta@exemple.mg";
+      errors.email = e.emailDomain;
     }
   }
 
   if (!input.date) {
-    errors.date = "Donnez une date, même approximative.";
+    errors.date = e.date;
   }
 
   if (!Number.isFinite(input.people) || input.people < 1 || input.people > 30) {
-    errors.people = "Indiquez entre 1 et 30 personnes.";
+    errors.people = e.people;
   }
 
   if (!input.consent) {
-    errors.consent =
-      "Sans votre accord, vos coordonnées ne peuvent pas être transmises au prestataire.";
+    errors.consent = e.consent;
   }
 
   return errors;
@@ -125,11 +126,11 @@ export async function deliverRequest(
 }
 
 /** "14 septembre 2026" */
-export function formatDateFr(iso: string): string {
+export function formatDate(iso: string, locale: Locale = "fr"): string {
   if (!iso) return "";
   const date = new Date(`${iso}T12:00:00`);
   if (Number.isNaN(date.getTime())) return iso;
-  return new Intl.DateTimeFormat("fr-FR", {
+  return new Intl.DateTimeFormat(locale === "en" ? "en-GB" : "fr-FR", {
     day: "numeric",
     month: "long",
     year: "numeric",

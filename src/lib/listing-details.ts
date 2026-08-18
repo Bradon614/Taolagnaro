@@ -23,6 +23,12 @@ export type Review = {
 export type ListingDetail = {
   /** Body paragraphs. Falls back to the catalog summary when absent. */
   description?: string[];
+  /** English body paragraphs; falls back to the summary when absent. */
+  descriptionEn?: string[];
+  featuresEn?: string[];
+  practicalEn?: { label: string; value: string }[];
+  gettingThereEn?: string[];
+  seasonNoteEn?: string;
   features?: string[];
   practical?: { label: string; value: string }[];
   contact?: { phone?: string; email?: string; address: string };

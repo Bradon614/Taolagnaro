@@ -11,6 +11,9 @@
  */
 export const ARIARY_PER_EUR = 5000;
 
+import type { Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n";
+
 export type PricePer = "nuit" | "personne" | "repas";
 
 export type Price =
@@ -32,19 +35,14 @@ export function formatEuro(amount: number): string {
   return `≈ ${euro.format(Math.round(amount / ARIARY_PER_EUR))} €`;
 }
 
-const PER_LABEL: Record<PricePer, string> = {
-  nuit: "/ nuit",
-  personne: "/ pers.",
-  repas: "/ repas",
-};
-
 /** The headline figure shown on a card. */
-export function formatPrice(price: Price): string {
+export function formatPrice(price: Price, locale: Locale = "fr"): string {
+  const t = getDictionary(locale);
   switch (price.kind) {
     case "free":
-      return "Gratuit";
+      return t.common.free;
     case "on-request":
-      return "Sur demande";
+      return t.common.onRequest;
     case "from":
       return formatAriary(price.amount);
     case "range":
@@ -53,9 +51,12 @@ export function formatPrice(price: Price): string {
 }
 
 /** The small qualifier beside it, e.g. "/ nuit". */
-export function priceUnit(price: Price): string | null {
-  if (price.kind === "from" || price.kind === "range") {
-    return PER_LABEL[price.per];
-  }
-  return null;
+export function priceUnit(price: Price, locale: Locale = "fr"): string | null {
+  if (price.kind !== "from" && price.kind !== "range") return null;
+  const t = getDictionary(locale);
+  return price.per === "nuit"
+    ? t.common.perNight
+    : price.per === "repas"
+      ? t.common.perMeal
+      : t.common.perPerson;
 }

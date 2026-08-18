@@ -11,6 +11,7 @@
  */
 
 import type { PlateVariant } from "@/components/media/Plate";
+import { CHAPTERS_EN } from "@/lib/discover-en";
 
 export type Figure = {
   plates: PlateVariant[];
@@ -133,3 +134,12 @@ export const CHAPTERS: Chapter[] = [
     ],
   },
 ];
+
+/** Chapters for a locale, falling back to French. */
+export function chaptersFor(locale: string): Chapter[] {
+  if (locale === "en") {
+    // Imported lazily-by-reference to keep this module free of cycles.
+    return CHAPTERS_EN;
+  }
+  return CHAPTERS;
+}

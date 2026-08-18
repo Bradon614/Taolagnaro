@@ -3,6 +3,9 @@
  * request, which goes to a provider.
  */
 
+import type { Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n";
+
 export const CONTACT_SUBJECTS = [
   { value: "referencer", label: "Référencer mon établissement" },
   { value: "erreur", label: "Signaler une erreur" },
@@ -37,31 +40,30 @@ export function validateContact(input: {
   fullName: string;
   email: string;
   message: string;
-}): ContactFieldErrors {
+}, locale: Locale = "fr"): ContactFieldErrors {
+  const e = getDictionary(locale).errors;
   const errors: ContactFieldErrors = {};
 
   if (!CONTACT_SUBJECTS.some((entry) => entry.value === input.subject)) {
-    errors.subject = "Choisissez un sujet pour que le message arrive au bon endroit.";
+    errors.subject = e.subject;
   }
 
   if (input.fullName.trim().length < 2) {
-    errors.fullName = "Indiquez le nom auquel vous répondre.";
+    errors.fullName = e.contactName;
   }
 
   const email = input.email.trim();
   if (!email.includes("@")) {
-    errors.email = "Il manque le « @ ». Exemple : vous@exemple.mg";
+    errors.email = e.emailAt;
   } else {
     const [local, domain] = email.split("@");
     if (!local || !domain || !domain.includes(".") || domain.endsWith(".")) {
-      errors.email =
-        "Il manque la partie après « @ ». Exemple : vous@exemple.mg";
+      errors.email = e.emailDomain;
     }
   }
 
   if (input.message.trim().length < 10) {
-    errors.message =
-      "Décrivez votre demande en quelques mots — au moins une phrase.";
+    errors.message = e.message;
   }
 
   return errors;
