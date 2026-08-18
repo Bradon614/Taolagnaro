@@ -3,6 +3,7 @@
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { listingBySlug } from "@/lib/listings";
+import { isLocale, type Locale } from "@/i18n/config";
 import {
   CONFIRMATION_COOKIE,
   deliverRequest,
@@ -18,6 +19,8 @@ export async function submitReservationRequest(
 ): Promise<RequestFormState> {
   const read = (key: string) => String(formData.get(key) ?? "").trim();
 
+  const localeRaw = read("locale");
+  const locale: Locale = isLocale(localeRaw) ? localeRaw : "fr";
   const listingSlug = read("listingSlug");
   const listing = listingBySlug(listingSlug);
 
@@ -50,7 +53,7 @@ export async function submitReservationRequest(
     date: values.date,
     people,
     consent,
-  });
+  }, locale);
 
   if (Object.keys(errors).length > 0) {
     return { errors, values };
@@ -85,5 +88,9 @@ export async function submitReservationRequest(
     maxAge: 60 * 30,
   });
 
-  redirect(`/demande/${request.reference}`);
+  redirect(
+    locale === "fr"
+      ? `/demande/${request.reference}`
+      : `/${locale}/demande/${request.reference}`,
+  );
 }

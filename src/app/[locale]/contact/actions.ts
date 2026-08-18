@@ -1,5 +1,6 @@
 "use server";
 
+import { isLocale, type Locale } from "@/i18n/config";
 import {
   deliverContactMessage,
   validateContact,
@@ -21,7 +22,9 @@ export async function submitContactMessage(
     message: read("message"),
   };
 
-  const errors = validateContact(values);
+  const localeRaw = String(formData.get("locale") ?? "fr");
+  const locale: Locale = isLocale(localeRaw) ? localeRaw : "fr";
+  const errors = validateContact(values, locale);
   if (Object.keys(errors).length > 0) {
     return { errors, values };
   }

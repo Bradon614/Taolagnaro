@@ -21,7 +21,16 @@ import {
   type Listing,
 } from "@/lib/listings";
 import { formatCoordinates, formatDistance } from "@/lib/geo";
-import { categoryBySlug } from "@/lib/site";
+import { getDictionary, fill } from "@/i18n";
+import { localeHref, type Locale } from "@/i18n/config";
+import {
+  categoryLabel,
+  listingAccess,
+  listingBadge,
+  listingLevel,
+  listingPlace,
+  listingSummary,
+} from "@/lib/listing-i18n";
 
 /**
  * One template for all six categories, per the approved design. What changes
@@ -29,7 +38,9 @@ import { categoryBySlug } from "@/lib/site";
  * panel, a public site gets "Y aller" instead.
  */
 
-type Params = { params: Promise<{ categorie: string; slug: string }> };
+type Params = {
+  params: Promise<{ categorie: string; slug: string; locale: Locale }>;
+};
 
 export function generateStaticParams() {
   return LISTINGS.map((listing) => ({
@@ -52,13 +63,21 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 }
 
 export default async function ListingDetailPage({ params }: Params) {
-  const { categorie, slug } = await params;
+  const { categorie, slug, locale } = await params;
   const listing = resolve(categorie, slug);
   if (!listing) notFound();
 
+  const t = getDictionary(locale);
+  const href = (path: string) => localeHref(locale, path);
   const detail = detailFor(listing.slug);
-  const category = categoryBySlug(listing.category);
-  const paragraphs = detail.description ?? [listing.summary];
+  const category = categoryLabel(listing.category, locale);
+  const badge = listingBadge(listing, locale);
+  const level = listingLevel(listing, locale);
+  const paragraphs =
+    locale === "en" && !detail.descriptionEn
+      ? [listingSummary(listing, locale)]
+      : ((locale === "en" ? detail.descriptionEn : detail.description) ??
+        detail.description ?? [listingSummary(listing, locale)]);
   const plates = [listing.plate, ...(detail.gallery ?? [])];
   const nearby = nearbyListings(listing, 4);
 
@@ -67,28 +86,38 @@ export default async function ListingDetailPage({ params }: Params) {
   const practical =
     detail.practical ??
     [
-      listing.access ? { label: "Accès", value: listing.access } : null,
-      listing.duration ? { label: "Durée", value: listing.duration } : null,
-      listing.elevation ? { label: "Altitude", value: listing.elevation } : null,
-      listing.cuisine ? { label: "Cuisine", value: listing.cuisine } : null,
+      listingAccess(listing, locale)
+        ? { label: t.detail.accessRow, value: listingAccess(listing, locale)! }
+        : null,
+      listing.duration
+        ? { label: t.detail.durationRow, value: listing.duration }
+        : null,
+      listing.elevation
+        ? { label: t.detail.elevationRow, value: listing.elevation }
+        : null,
+      listing.cuisine
+        ? { label: t.detail.cuisineRow, value: listing.cuisine }
+        : null,
       {
-        label: "Distance",
-        value: `${formatDistance(listing.distanceKm)} du centre de Taolagnaro`,
+        label: t.detail.distanceRow,
+        value: fill(t.detail.fromCentre, {
+          distance: formatDistance(listing.distanceKm),
+        }),
       },
     ].filter((row): row is { label: string; value: string } => row !== null);
 
   return (
     <>
       <nav
-        aria-label="Fil d’ariane"
+        aria-label={t.common.home}
         className="mx-auto max-w-[1440px] px-4 pb-3 pt-4 font-mono text-label uppercase tracking-[0.14em] text-ink-subtle md:px-6"
       >
-        <Link href="/" className="hover:text-ink">
-          Accueil
+        <Link href={href("/")} className="hover:text-ink">
+          {t.common.home}
         </Link>
         {" / "}
-        <Link href={`/explorer/${listing.category}`} className="hover:text-ink">
-          {category?.label}
+        <Link href={href(`/explorer/${listing.category}`)} className="hover:text-ink">
+          {category.label}
         </Link>
         {" / "}
         <span className="text-ink">{listing.name}</span>
@@ -98,16 +127,17 @@ export default async function ListingDetailPage({ params }: Params) {
         plates={plates}
         photoCount={detail.photoCount}
         alt={listing.name}
+        locale={locale}
       />
 
       <div className="mx-auto grid max-w-[1440px] grid-cols-[minmax(0,1fr)] gap-8 px-4 pb-14 pt-7 md:px-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-11">
         <div>
           <div className="flex flex-wrap gap-2">
-            {category ? <Badge>{category.label}</Badge> : null}
-            {listing.level ? <Badge tone="outline">{listing.level}</Badge> : null}
-            {listing.badge ? (
-              <Badge tone={listing.badge.tone === "warm" ? "warm" : listing.badge.tone}>
-                {listing.badge.label}
+            <Badge>{category.label}</Badge>
+            {level ? <Badge tone="outline">{level}</Badge> : null}
+            {badge ? (
+              <Badge tone={badge.tone === "warm" ? "warm" : badge.tone}>
+                {badge.label}
               </Badge>
             ) : null}
           </div>
@@ -121,11 +151,12 @@ export default async function ListingDetailPage({ params }: Params) {
               <Rating
                 score={listing.rating.score}
                 count={listing.rating.count}
+                locale={locale}
                 showCount
               />
             ) : null}
             <span>
-              ◎ {listing.place}, {formatDistance(listing.distanceKm)} du centre
+              ◎ {listingPlace(listing, locale)}, {formatDistance(listing.distanceKm)} {t.common.from}
             </span>
             <span className="tabular font-mono text-label text-ink-subtle">
               {formatCoordinates(listing.coordinates)}
@@ -149,7 +180,7 @@ export default async function ListingDetailPage({ params }: Params) {
 
           {detail.features?.length ? (
             <section className="mt-8">
-              <h2 className="text-[1.3rem]">Équipements et services</h2>
+              <h2 className="text-[1.3rem]">{t.detail.features}</h2>
               <ul className="mt-3 grid gap-x-6 gap-y-2 text-small text-ink-muted sm:grid-cols-2 lg:grid-cols-3">
                 {detail.features.map((feature) => (
                   <li key={feature} className="flex gap-2">
@@ -165,7 +196,7 @@ export default async function ListingDetailPage({ params }: Params) {
 
           {practical.length ? (
             <section className="mt-8">
-              <h2 className="text-[1.3rem]">Informations pratiques</h2>
+              <h2 className="text-[1.3rem]">{t.detail.practical}</h2>
               <dl className="mt-3 overflow-hidden rounded-plate border border-line text-small">
                 {practical.map((row, index) => (
                   <div
@@ -183,7 +214,7 @@ export default async function ListingDetailPage({ params }: Params) {
           ) : null}
 
           <section className="mt-8">
-            <h2 className="text-[1.3rem]">Situation</h2>
+            <h2 className="text-[1.3rem]">{t.detail.location}</h2>
             {/* Static until /carte — no tile library loads on a detail page. */}
             <Plate variant="forest" className="mt-3 h-52 rounded-plate">
               <span
@@ -191,8 +222,8 @@ export default async function ListingDetailPage({ params }: Params) {
                 className="absolute left-1/2 top-1/2 z-[3] size-5 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-[50%_50%_50%_0] border-2 border-white bg-accent"
               />
               <span className="mt-auto self-end p-3">
-                <Button href="/carte" variant="primary" size="sm">
-                  Ouvrir dans la carte
+                <Button href={href("/carte")} variant="primary" size="sm">
+                  {t.detail.openInMap}
                 </Button>
               </span>
             </Plate>
@@ -200,21 +231,22 @@ export default async function ListingDetailPage({ params }: Params) {
               <span className="tabular">
                 {formatCoordinates(listing.coordinates)}
               </span>{" "}
-              · Position approximative
+              · {t.detail.approxPosition}
             </p>
           </section>
 
           <Reviews
             reviews={detail.reviews ?? []}
             total={listing.rating?.count}
+            locale={locale}
           />
         </div>
 
         <aside className="flex flex-col gap-3.5 lg:sticky lg:top-24 lg:self-start">
           {listing.acceptsRequests ? (
-            <ReservationPanel listing={listing} detail={detail} />
+            <ReservationPanel listing={listing} detail={detail} locale={locale} />
           ) : (
-            <VisitPanel listing={listing} detail={detail} />
+            <VisitPanel listing={listing} detail={detail} locale={locale} />
           )}
 
           <div className="grid grid-cols-2 gap-2.5">
@@ -229,7 +261,7 @@ export default async function ListingDetailPage({ params }: Params) {
           {detail.contact ? (
             <div className="rounded-panel border border-line p-4.5">
               <p className="font-mono text-label uppercase tracking-[0.14em] text-ink-subtle">
-                Contact direct
+                {t.detail.directContact}
               </p>
               <address className="mt-2.5 flex flex-col gap-1.5 text-small not-italic text-ink-muted">
                 {detail.contact.phone ? (
@@ -257,17 +289,18 @@ export default async function ListingDetailPage({ params }: Params) {
 
       {nearby.length ? (
         <ListingRow
-          kicker="À proximité"
-          title="Autres lieux tout près"
-          action={{ href: "/carte", label: "Ouvrir la carte" }}
+          kicker={t.detail.nearbyKicker}
+          title={t.detail.nearbyTitle}
+          action={{ href: href("/carte"), label: t.common.openMap }}
           listings={nearby}
+          locale={locale}
           columns={4}
           aspect="16/9"
           className="border-t border-line bg-surface pb-24 lg:pb-14"
         />
       ) : null}
 
-      <MobileActionBar listing={listing} />
+      <MobileActionBar listing={listing} locale={locale} />
     </>
   );
 }

@@ -2,14 +2,20 @@ import type { Metadata } from "next";
 import { ChapterRail } from "@/components/discover/ChapterRail";
 import { Plate } from "@/components/media/Plate";
 import { Button } from "@/components/ui/Button";
-import { CHAPTERS } from "@/lib/discover";
+import { chaptersFor } from "@/lib/discover";
+import { getDictionary, fill } from "@/i18n";
+import { isLocale, localeHref, type Locale } from "@/i18n/config";
 import { TOTAL_LISTINGS } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Découvrir Taolagnaro",
-  description:
-    "Une presqu’île, trois baies, une forêt épineuse et près de quatre siècles d’histoire entre les Antanosy, les Français et l’océan Indien.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = getDictionary(isLocale(locale) ? (locale as Locale) : "fr");
+  return { title: t.discover.title, description: t.discover.lead };
+}
 
 /**
  * The page that makes someone want to come at all.
@@ -18,37 +24,42 @@ export const metadata: Metadata = {
  * at a reading measure, images between chapters, and no cards, filters or
  * prices anywhere.
  */
-export default function DecouvrirPage() {
+export default async function DecouvrirPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  const t = getDictionary(locale);
+  const chapters = chaptersFor(locale);
   return (
     <>
       <Plate variant="sunset" className="min-h-[26rem] md:min-h-[30rem]">
         <div className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-end px-4 pb-11 pt-28 text-center md:px-6 md:pb-14">
           <p className="font-mono text-label uppercase tracking-[0.18em] text-white/70">
-            Région Anosy · Sud-est de Madagascar
+            {t.discover.kicker}
           </p>
           <h1 className="mx-auto mt-3.5 max-w-[16ch] text-[2.6rem] leading-[1.03] text-white md:text-[3.4rem]">
-            Taolagnaro, au bout de la route du sud
+            {t.discover.title}
           </h1>
           <p className="mx-auto mt-4 max-w-[56ch] text-white/90">
-            Une presqu’île, trois baies, une forêt épineuse et près de quatre
-            siècles d’histoire entre les Antanosy, les Français et l’océan
-            Indien.
+            {t.discover.lead}
           </p>
         </div>
       </Plate>
 
       <div className="mx-auto grid max-w-[68rem] grid-cols-[minmax(0,1fr)] gap-0 px-4 md:px-6 lg:grid-cols-[13rem_minmax(0,1fr)]">
-        <ChapterRail chapters={CHAPTERS} />
+        <ChapterRail chapters={chapters} />
 
         <article className="pb-4 pt-8 lg:border-l lg:border-line lg:pl-11 lg:pt-12">
-          {CHAPTERS.map((chapter, index) => (
+          {chapters.map((chapter, index) => (
             <section
               key={chapter.id}
               id={chapter.id}
               className="scroll-mt-24 pb-11"
             >
               <p className="font-mono text-label uppercase tracking-[0.16em] text-accent">
-                Chapitre {index + 1} — {chapter.label}
+                {fill(t.discover.chapter, { n: index + 1, label: chapter.label })}
               </p>
               <h2 className="mt-2.5 max-w-[22ch] text-section md:text-[2rem] md:leading-[1.12]">
                 {chapter.title}
@@ -109,7 +120,7 @@ export default function DecouvrirPage() {
                   <figcaption className="mt-2 text-small text-ink-subtle">
                     {chapter.figure.caption}{" "}
                     <span className="font-mono text-label uppercase tracking-[0.1em]">
-                      Photo — crédit à venir
+                      {t.discover.photoCredit}
                     </span>
                   </figcaption>
                 </figure>
@@ -121,18 +132,17 @@ export default function DecouvrirPage() {
 
       <section className="bg-bay px-4 py-14 text-center text-quartz-200 md:px-6">
         <h2 className="mx-auto max-w-[20ch] text-section text-white md:text-[2rem] md:leading-[1.12]">
-          Vous avez envie d’y aller&nbsp;?
+          {t.discover.ctaTitle}
         </h2>
         <p className="mx-auto mt-3 max-w-[48ch] text-small opacity-85 md:text-base">
-          Tout ce que vous venez de lire est référencé sur la plateforme — les
-          sites, les hôtels, les guides et les tables.
+          {t.discover.ctaBody}
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <Button href="/explorer" variant="primary" size="lg">
-            Explorer les {TOTAL_LISTINGS} lieux
+          <Button href={localeHref(locale, "/explorer")} variant="primary" size="lg">
+            {fill(t.home.ctaExplore, { count: TOTAL_LISTINGS })}
           </Button>
-          <Button href="/carte" variant="ghost" size="lg">
-            Ouvrir la carte
+          <Button href={localeHref(locale, "/carte")} variant="ghost" size="lg">
+            {t.common.openMap}
           </Button>
         </div>
       </section>

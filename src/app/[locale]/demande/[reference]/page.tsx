@@ -8,11 +8,14 @@ import { detailFor } from "@/lib/listing-details";
 import { listingBySlug, nearbyListings } from "@/lib/listings";
 import {
   CONFIRMATION_COOKIE,
-  formatDateFr,
+  formatDate,
   isValidReference,
   type ReservationRequest,
 } from "@/lib/requests";
 import { SITE } from "@/lib/site";
+import { getDictionary, fill } from "@/i18n";
+import { localeHref, type Locale } from "@/i18n/config";
+import { listingPlace } from "@/lib/listing-i18n";
 
 /**
  * Confirmation has to do real work: prove the request exists, say who has it,
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-type Params = { params: Promise<{ reference: string }> };
+type Params = { params: Promise<{ reference: string; locale: Locale }> };
 
 async function readSummary(
   reference: string,
@@ -45,8 +48,11 @@ async function readSummary(
 }
 
 export default async function ConfirmationPage({ params }: Params) {
-  const { reference } = await params;
+  const { reference, locale } = await params;
   if (!isValidReference(reference)) notFound();
+
+  const t = getDictionary(locale);
+  const href = (path: string) => localeHref(locale, path);
 
   const summary = await readSummary(reference);
   const listing = summary ? listingBySlug(summary.listingSlug) : null;
@@ -54,8 +60,8 @@ export default async function ConfirmationPage({ params }: Params) {
   const nearby = listing ? nearbyListings(listing, 3) : [];
 
   const whatsappText = encodeURIComponent(
-    `Bonjour, je vous contacte au sujet de ma demande ${reference}${
-      summary ? ` pour ${summary.listingName}` : ""
+    `${locale === "en" ? "Hello, I am writing about my request" : "Bonjour, je vous contacte au sujet de ma demande"} ${reference}${
+      summary ? ` (${summary.listingName})` : ""
     }.`,
   );
 
@@ -70,22 +76,20 @@ export default async function ConfirmationPage({ params }: Params) {
         </p>
 
         <h1 className="mt-5 text-page md:text-[2.2rem] md:leading-[1.1]">
-          Votre demande de réservation a bien été envoyée.
+          {t.confirmation.title}
         </h1>
 
         <p className="mx-auto mt-3 max-w-[52ch] text-ink-muted">
           {summary ? (
             <>
-              {summary.listingName} a reçu votre demande et vous contactera pour
-              confirmer la disponibilité et le tarif.
+              {fill(t.confirmation.body, { name: summary.listingName })}
               {detail.responseTime
-                ? ` L’établissement répond en général sous ${detail.responseTime}.`
+                ? ` ${fill(t.confirmation.respondsIn, { time: detail.responseTime })}`
                 : ""}
             </>
           ) : (
             <>
-              Le prestataire a reçu votre demande et vous contactera pour
-              confirmer la disponibilité et le tarif.
+              {t.confirmation.bodyGeneric}
             </>
           )}
         </p>
@@ -93,30 +97,29 @@ export default async function ConfirmationPage({ params }: Params) {
         <dl className="mt-7 overflow-hidden rounded-panel border border-line bg-surface text-left">
           <div className="flex items-baseline justify-between gap-4 border-b border-line px-4 py-3.5">
             <dt className="font-mono text-label uppercase tracking-[0.14em] text-ink-subtle">
-              Référence
+              {t.confirmation.reference}
             </dt>
             <dd className="tabular font-mono text-base">{reference}</dd>
           </div>
 
           {summary ? (
             <div className="grid gap-px bg-line sm:grid-cols-2">
-              <Cell label="Prestation" value={summary.listingName} />
+              <Cell label={t.confirmation.service} value={summary.listingName} />
               <Cell
-                label="Date & personnes"
-                value={`${formatDateFr(summary.date)} · ${summary.people} pers.`}
+                label={t.confirmation.dateAndPeople}
+                value={`${formatDate(summary.date, locale)} · ${summary.people} pers.`}
                 numeric
               />
               <Cell
-                label="Vous serez contacté au"
+                label={t.confirmation.contactedAt}
                 value={summary.phone}
                 numeric
               />
-              <Cell label="Copie envoyée à" value={summary.email} />
+              <Cell label={t.confirmation.copyTo} value={summary.email} />
             </div>
           ) : (
             <p className="px-4 py-3.5 text-small text-ink-muted">
-              Le détail de cette demande n’est plus affiché ici. Gardez la
-              référence : elle suffit pour la retrouver.
+              {t.confirmation.lost}
             </p>
           )}
         </dl>
@@ -128,28 +131,30 @@ export default async function ConfirmationPage({ params }: Params) {
             target="_blank"
             rel="noreferrer noopener"
           >
-            Relancer sur WhatsApp
+            {t.confirmation.chaseWhatsapp}
           </Button>
-          <Button href="/explorer" variant="secondary">
-            Continuer à explorer
+          <Button href={href("/explorer")} variant="secondary">
+            {t.confirmation.keepExploring}
           </Button>
         </div>
 
         <p className="mx-auto mt-5 max-w-[52ch] text-small text-ink-subtle">
-          Sans réponse sous 48 h,{" "}
-          <Link href="/contact" className="text-brand hover:underline">
-            écrivez-nous
+          {t.confirmation.noReply}{" "}
+          <Link href={href("/contact")} className="text-brand hover:underline">
+            {t.confirmation.writeUs}
           </Link>{" "}
-          avec la référence <span className="tabular font-mono">{reference}</span>{" "}
-          et nous relancerons l’établissement.
+          {fill(t.confirmation.withReference, { reference })}
         </p>
       </div>
 
       {nearby.length ? (
         <ListingRow
-          kicker="Pendant que vous y êtes"
-          title={`À faire autour de ${listing?.place}`}
+          kicker={t.confirmation.meanwhileKicker}
+          title={fill(t.confirmation.meanwhileTitle, {
+            place: listing ? listingPlace(listing, locale) : "",
+          })}
           listings={nearby}
+          locale={locale}
           columns={3}
           aspect="16/9"
           className="border-t border-line"

@@ -5,6 +5,9 @@ import { Plate } from "@/components/media/Plate";
 import { Button } from "@/components/ui/Button";
 import { formatCoordinates, TOWN_CENTRE } from "@/lib/geo";
 import { SITE } from "@/lib/site";
+import { getDictionary } from "@/i18n";
+import { localeHref, type Locale } from "@/i18n/config";
+
 
 export const metadata: Metadata = {
   title: "Nous écrire",
@@ -19,23 +22,25 @@ const SOCIALS = [
 ];
 
 export default async function ContactPage({
+  params,
   searchParams,
 }: {
+  params: Promise<{ locale: Locale }>;
   searchParams: Promise<{ sujet?: string }>;
 }) {
+  const { locale } = await params;
   const { sujet } = await searchParams;
+  const t = getDictionary(locale);
 
   return (
     <div className="mx-auto grid max-w-[68rem] grid-cols-[minmax(0,1fr)] gap-10 px-4 pb-16 pt-8 md:px-6 lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-12">
       <div>
         <p className="font-mono text-label uppercase tracking-[0.14em] text-ink-subtle">
-          Accueil / Contact
+          {t.common.home} / {t.common.contact}
         </p>
-        <h1 className="mt-2.5 text-page">Nous écrire</h1>
+        <h1 className="mt-2.5 text-page">{t.contact.title}</h1>
         <p className="mt-2.5 max-w-[54ch] text-ink-muted">
-          Pour une réservation, passez par la fiche du lieu concerné — c’est
-          plus rapide et le prestataire vous répond directement. Ce formulaire
-          est destiné à la plateforme.
+          {t.contact.lead}
         </p>
 
         <div className="mt-7">
@@ -55,11 +60,11 @@ export default async function ContactPage({
 
         <div className="rounded-panel border border-line p-4.5">
           <p className="font-mono text-label uppercase tracking-[0.14em] text-ink-subtle">
-            Coordonnées
+            {t.contact.details}
           </p>
           <dl className="mt-3 flex flex-col gap-3 text-small">
             <div>
-              <dt className="font-semibold">Téléphone / WhatsApp</dt>
+              <dt className="font-semibold">{t.contact.phone}</dt>
               <dd className="tabular font-mono text-ink-muted">
                 <a
                   href={`tel:${SITE.phone.replace(/\s/g, "")}`}
@@ -70,7 +75,7 @@ export default async function ContactPage({
               </dd>
             </div>
             <div>
-              <dt className="font-semibold">Email</dt>
+              <dt className="font-semibold">{t.contact.email}</dt>
               <dd className="text-ink-muted">
                 <a href={`mailto:${SITE.email}`} className="hover:underline">
                   {SITE.email}
@@ -78,9 +83,9 @@ export default async function ContactPage({
               </dd>
             </div>
             <div>
-              <dt className="font-semibold">Adresse</dt>
+              <dt className="font-semibold">{t.contact.address}</dt>
               <dd className="text-ink-muted">
-                Taolagnaro, {SITE.region}
+                Taolagnaro, {t.discover.kicker}
                 <br />
                 <span className="tabular font-mono text-label">
                   {formatCoordinates(TOWN_CENTRE)}
@@ -88,8 +93,8 @@ export default async function ContactPage({
               </dd>
             </div>
             <div>
-              <dt className="font-semibold">Réponse</dt>
-              <dd className="text-ink-muted">Sous 2 jours ouvrés (GMT+3)</dd>
+              <dt className="font-semibold">{t.contact.replyTime}</dt>
+              <dd className="text-ink-muted">{t.contact.replyTimeValue}</dd>
             </div>
           </dl>
 
@@ -111,19 +116,18 @@ export default async function ContactPage({
 
         <div className="rounded-panel bg-surface p-4.5">
           <p className="text-small font-semibold">
-            Vous tenez un hôtel, une table ou une activité&nbsp;?
+            {t.contact.providerTitle}
           </p>
           <p className="mt-1.5 text-small text-ink-muted">
-            Le référencement est gratuit. Il vous faut des photos, une
-            description et un numéro joignable.
+            {t.contact.providerBody}
           </p>
           <div className="mt-3.5">
             <Button
-              href="/contact?sujet=referencer"
+              href={localeHref(locale, "/contact?sujet=referencer")}
               variant="secondary"
               size="sm"
             >
-              Comment ça marche →
+              {t.contact.providerCta}
             </Button>
           </div>
         </div>
