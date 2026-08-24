@@ -1,0 +1,235 @@
+{
+  "_note": "Sélection manuelle. Chaque fichier a été vérifié individuellement : le lieu montré correspond au lieu annoncé. Les rejets sont documentés dans commons-rejected.json.",
+  "picks": [
+    {
+      "file": "LIBANONA BEACH.jpg",
+      "target": "plage-de-libanona",
+      "role": "lead",
+      "caption": {
+        "fr": "La plage de Libanona.",
+        "en": "Libanona beach."
+      }
+    },
+    {
+      "file": "Beach Fort Dauphin I.jpg",
+      "target": "plage-de-libanona",
+      "role": "gallery",
+      "caption": {
+        "fr": "Le littoral de Taolagnaro.",
+        "en": "The Taolagnaro shoreline."
+      }
+    },
+    {
+      "file": "Beach Fort Dauphin III.JPG",
+      "target": "plage-de-libanona",
+      "role": "gallery",
+      "caption": {
+        "fr": "Le littoral de Taolagnaro.",
+        "en": "The Taolagnaro shoreline."
+      }
+    },
+    {
+      "file": "Vue de Fort-Dauphin et de l'océan indien.jpg",
+      "target": "pic-saint-louis",
+      "role": "lead",
+      "caption": {
+        "fr": "Vue de Taolagnaro depuis le Pic Saint-Louis.",
+        "en": "Taolagnaro seen from Pic Saint-Louis."
+      }
+    },
+    {
+      "file": "Tolanaro.jpg",
+      "target": "pic-saint-louis",
+      "role": "gallery",
+      "caption": {
+        "fr": "Taolagnaro vue des hauteurs.",
+        "en": "Taolagnaro from above."
+      }
+    },
+    {
+      "file": "Fort-Dauphin Madagascar. Ruin of bastion.jpg",
+      "target": "fort-flacourt",
+      "role": "lead",
+      "caption": {
+        "fr": "Ruines d’un bastion du Fort Flacourt, vers 1900.",
+        "en": "Ruins of a Fort Flacourt bastion, circa 1900."
+      }
+    },
+    {
+      "file": "Le Fort Dauphin - levé sur le lieu par le Sieur de Flacourt - btv1b8595758z.jpg",
+      "target": "fort-flacourt",
+      "role": "gallery",
+      "caption": {
+        "fr": "Le fort levé sur place par Flacourt, XVIIe siècle.",
+        "en": "The fort surveyed on site by Flacourt, 17th century."
+      }
+    },
+    {
+      "file": "Nahampoana reserve 2013 7.jpg",
+      "target": "reserve-de-nahampoana",
+      "role": "lead",
+      "caption": {
+        "fr": "Maki catta dans la réserve de Nahampoana.",
+        "en": "Ring-tailed lemur at Nahampoana."
+      }
+    },
+    {
+      "file": "Nahampoana reserve 2013 8.jpg",
+      "target": "reserve-de-nahampoana",
+      "role": "gallery",
+      "caption": {
+        "fr": "Maki catta dans la réserve.",
+        "en": "Ring-tailed lemur in the reserve."
+      }
+    },
+    {
+      "file": "Nahampoana reserve water I.jpg",
+      "target": "reserve-de-nahampoana",
+      "role": "gallery",
+      "caption": {
+        "fr": "Rivière dans la réserve de Nahampoana.",
+        "en": "A river in Nahampoana reserve."
+      }
+    },
+    {
+      "file": "Nahampoana reserve 2013 6.jpg",
+      "target": "reserve-de-nahampoana",
+      "role": "gallery",
+      "caption": {
+        "fr": "Arbre fruitier, réserve de Nahampoana.",
+        "en": "Fruit tree, Nahampoana reserve."
+      }
+    },
+    {
+      "file": "Madagascar74.094.jpg",
+      "target": "baie-de-sainte-luce",
+      "role": "lead",
+      "caption": {
+        "fr": "Manafiafy (Sainte-Luce), milieu des années 1970.",
+        "en": "Manafiafy (Sainte-Luce), mid-1970s."
+      }
+    },
+    {
+      "file": "Madagascar74.101.jpg",
+      "target": "baie-de-sainte-luce",
+      "role": "gallery",
+      "caption": {
+        "fr": "Manafiafy (Sainte-Luce), milieu des années 1970.",
+        "en": "Manafiafy (Sainte-Luce), mid-1970s."
+      }
+    },
+    {
+      "file": "Evatra walk I.jpg",
+      "target": "presquile-de-lokaro",
+      "role": "lead",
+      "caption": {
+        "fr": "La côte près d’Évatraha, accès à Lokaro.",
+        "en": "The coast near Évatraha, the way to Lokaro."
+      }
+    },
+    {
+      "file": "Evatra walk III.jpg",
+      "target": "presquile-de-lokaro",
+      "role": "gallery",
+      "caption": {
+        "fr": "La côte près d’Évatraha.",
+        "en": "The coast near Évatraha."
+      }
+    },
+    {
+      "file": "Canoes Fort Dauphin I.JPG",
+      "target": "presquile-de-lokaro",
+      "role": "gallery",
+      "caption": {
+        "fr": "Pirogues monoxyles, Taolagnaro.",
+        "en": "Dugout pirogues, Taolagnaro."
+      }
+    },
+    {
+      "file": "Lemur Katta in Berenty.jpg",
+      "target": "reserve-de-berenty",
+      "role": "lead",
+      "caption": {
+        "fr": "Maki catta à Berenty.",
+        "en": "Ring-tailed lemur at Berenty."
+      }
+    },
+    {
+      "file": "Jumping Verreaux's Sifaka Berenty Madagascar - panoramio.jpg",
+      "target": "reserve-de-berenty",
+      "role": "gallery",
+      "caption": {
+        "fr": "Sifaka de Verreaux en plein saut, Berenty.",
+        "en": "Verreaux’s sifaka mid-leap, Berenty."
+      }
+    },
+    {
+      "file": "Red-fronted Brown Lemur Berenty Madagascar - panoramio.jpg",
+      "target": "reserve-de-berenty",
+      "role": "gallery",
+      "caption": {
+        "fr": "Lémur brun à front roux, Berenty.",
+        "en": "Red-fronted brown lemur, Berenty."
+      }
+    },
+    {
+      "file": "Chameleon in Berenty Madagascar 0001.JPG",
+      "target": "reserve-de-berenty",
+      "role": "gallery",
+      "caption": {
+        "fr": "Caméléon à Berenty.",
+        "en": "Chameleon at Berenty."
+      }
+    },
+    {
+      "file": "Tolagnaro 01 - Madagascar.jpg",
+      "target": "_region",
+      "role": "gallery",
+      "caption": {
+        "fr": "Taolagnaro.",
+        "en": "Taolagnaro."
+      }
+    },
+    {
+      "file": "Fort Dauphin porto vecchio.JPG",
+      "target": "_region",
+      "role": "gallery",
+      "caption": {
+        "fr": "Le vieux port de Taolagnaro.",
+        "en": "The old port of Taolagnaro."
+      }
+    },
+    {
+      "file": "Biraon' ny kaominina Tolagnaro, Madagasikara.jpg",
+      "target": "_region",
+      "role": "gallery",
+      "caption": {
+        "fr": "La mairie de Taolagnaro.",
+        "en": "Taolagnaro town hall."
+      }
+    },
+    {
+      "file": "Période de floraison de Didiereaceae, foret sèche dans le sud de Madagascar.jpg",
+      "target": "_spiny-forest",
+      "role": "lead",
+      "caption": {
+        "fr": "Didiéréacées en floraison, forêt sèche du sud.",
+        "en": "Didiereaceae in flower, southern dry forest."
+      }
+    },
+    {
+      "file": "L'Islet ou Fort d'Anossi - levé sur le lieu par le sieur de Flacourt - btv1b8595759c.jpg",
+      "target": "fort-flacourt",
+      "role": "gallery",
+      "caption": {
+        "fr": "L’Islet ou Fort d’Anossi, levé par Flacourt.",
+        "en": "L’Islet or Fort d’Anossi, surveyed by Flacourt."
+      }
+    }
+  ],
+  "gaps": {
+    "plage-dambinanibe": "Aucune photo libre trouvée. Garde sa plaque.",
+    "mahampy": "Aucune photo libre de vannerie de mahampy. Garde sa plaque.",
+    "sainte-luce-note": "Les seules photos libres datent des années 1970 — légendées comme telles, jamais présentées comme l’état actuel."
+  }
+}
