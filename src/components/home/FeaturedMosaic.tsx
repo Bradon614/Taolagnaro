@@ -5,6 +5,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { featuredListings, listingHref } from "@/lib/listings";
 import { listingAccess, listingDuration, listingSummary } from "@/lib/listing-i18n";
 import { getDictionary } from "@/i18n";
+import { leadPhoto } from "@/lib/photos";
 import { localeHref, type Locale } from "@/i18n/config";
 
 
@@ -35,6 +36,10 @@ export function FeaturedMosaic({ locale }: { locale: Locale }) {
           >
             <Plate
               variant={lead.plate}
+              photo={leadPhoto(lead.slug)}
+              alt=""
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="h-64 rounded-plate transition-opacity group-hover:opacity-90 lg:h-full"
             >
               <Badge tone="floating" className="absolute left-3 top-3">
@@ -59,6 +64,9 @@ export function FeaturedMosaic({ locale }: { locale: Locale }) {
             >
               <Plate
                 variant={listing.plate}
+                photo={leadPhoto(listing.slug)}
+                alt=""
+                sizes="(max-width: 1024px) 100vw, 25vw"
                 className="h-40 rounded-plate transition-opacity group-hover:opacity-90 lg:h-full"
               >
                 <span className="mt-auto p-4">

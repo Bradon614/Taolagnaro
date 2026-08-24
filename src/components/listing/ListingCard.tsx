@@ -19,6 +19,7 @@ import {
 import { getDictionary } from "@/i18n";
 import { localeHref, type Locale } from "@/i18n/config";
 import { formatDistance } from "@/lib/geo";
+import { leadPhoto, photoCaption } from "@/lib/photos";
 
 /**
  * One shell, six category fills. The structure never changes — image, kicker,
@@ -75,6 +76,7 @@ export function ListingCard({
   const badge = listingBadge(listing, locale);
   const level = listingLevel(listing, locale);
   const access = listingAccess(listing, locale);
+  const photo = leadPhoto(listing.slug);
 
   // Activities lead with a difficulty chip; everything else with its rating.
   const kickerRight = level ? (
@@ -88,7 +90,13 @@ export function ListingCard({
   return (
     <article className="relative flex h-full w-full flex-col overflow-hidden rounded-plate border border-line bg-surface-raised transition-shadow hover:shadow-[0_10px_24px_-18px_rgb(0_0_0_/_0.5)]">
       <div className="relative">
-        <Plate variant={listing.plate} className={ASPECT[aspect]} />
+        <Plate
+          variant={listing.plate}
+          className={ASPECT[aspect]}
+          photo={photo}
+          alt={photo ? photoCaption(photo, locale) : ""}
+          sizes="(max-width: 640px) 78vw, (max-width: 1280px) 50vw, 25vw"
+        />
 
         {/* Badges share the top-left so the heart owns the top-right corner.
             Anything over a plate carries its own contrast: only the gold

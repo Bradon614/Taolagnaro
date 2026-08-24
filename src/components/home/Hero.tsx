@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SearchTrigger } from "@/components/search/SearchTrigger";
 import { Plate } from "@/components/media/Plate";
+import { photoById } from "@/lib/photos";
 import { SITE } from "@/lib/site";
 import { getDictionary } from "@/i18n";
 import { localeHref, type Locale } from "@/i18n/config";
@@ -30,7 +31,22 @@ export function Hero({ locale }: { locale: Locale }) {
   ];
 
   return (
-    <Plate variant="ocean" className="min-h-[34rem] md:min-h-[38rem]">
+    <Plate
+      variant="ocean"
+      // Chosen by id, not by position: the town and the ocean seen from Pic
+      // Saint-Louis. Taking whatever sorted first gave the town hall.
+      photo={photoById("vue-de-fort-dauphin-et-de-l-oc-an-indien")}
+      alt=""
+      priority
+      sizes="100vw"
+      className="min-h-[34rem] md:min-h-[38rem]"
+    >
+      {/* A photograph varies far more than a gradient does, so the hero
+          carries its own scrim rather than trusting the plate's. */}
+      <span
+        aria-hidden="true"
+        className="absolute inset-0 -z-[1] bg-[linear-gradient(to_top,rgb(4_20_22/0.85),rgb(4_20_22/0.5)_50%,rgb(4_20_22/0.35))]"
+      />
       <div className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-end px-4 pb-10 pt-28 md:px-6 md:pb-14">
         <p className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-label uppercase tracking-[0.18em] text-white/70">
           <span>{t.discover.kicker}</span>

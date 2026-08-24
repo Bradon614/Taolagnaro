@@ -4,6 +4,7 @@ import { Plate } from "@/components/media/Plate";
 import { Button } from "@/components/ui/Button";
 import { chaptersFor } from "@/lib/discover";
 import { getDictionary, fill } from "@/i18n";
+import { photosFor, photoCaption, photoCredit } from "@/lib/photos";
 import { isLocale, localeHref, type Locale } from "@/i18n/config";
 import { TOTAL_LISTINGS } from "@/lib/site";
 
@@ -32,6 +33,17 @@ export default async function DecouvrirPage({
   const { locale } = await params;
   const t = getDictionary(locale);
   const chapters = chaptersFor(locale);
+
+  // Which photographs illustrate which chapter. Kept here rather than in the
+  // editorial data so a chapter never depends on an image existing.
+  const CHAPTER_PHOTOS: Record<string, string[]> = {
+    "le-lieu": ["_region"],
+    histoire: ["fort-flacourt"],
+    nature: ["reserve-de-nahampoana", "reserve-de-berenty"],
+    plages: ["plage-de-libanona", "presquile-de-lokaro"],
+    culture: ["_region"],
+    pratique: ["_spiny-forest"],
+  };
   return (
     <>
       <Plate variant="sunset" className="min-h-[26rem] md:min-h-[30rem]">
@@ -94,7 +106,12 @@ export default async function DecouvrirPage({
                 </dl>
               ) : null}
 
-              {chapter.figure ? (
+              {chapter.figure ? (() => {
+                const shots = (CHAPTER_PHOTOS[chapter.id] ?? []).flatMap(
+                  (target) => photosFor(target).slice(0, 2),
+                );
+                const credits = [...new Set(shots.map(photoCredit))];
+                return (
                 <figure className="mt-7">
                   <div
                     className={`grid gap-3 ${
@@ -109,6 +126,13 @@ export default async function DecouvrirPage({
                       <Plate
                         key={`${plate}-${plateIndex}`}
                         variant={plate}
+                        photo={shots[plateIndex]}
+                        alt={
+                          shots[plateIndex]
+                            ? photoCaption(shots[plateIndex], locale)
+                            : ""
+                        }
+                        sizes="(max-width: 640px) 100vw, 33vw"
                         className={`rounded-plate ${
                           chapter.figure!.plates.length === 1
                             ? "h-56 md:h-72"
@@ -119,12 +143,15 @@ export default async function DecouvrirPage({
                   </div>
                   <figcaption className="mt-2 text-small text-ink-subtle">
                     {chapter.figure.caption}{" "}
-                    <span className="font-mono text-label uppercase tracking-[0.1em]">
-                      {t.discover.photoCredit}
+                    <span className="font-mono text-label">
+                      {credits.length > 0
+                        ? credits.join(" · ")
+                        : t.discover.photoCredit}
                     </span>
                   </figcaption>
                 </figure>
-              ) : null}
+                );
+              })() : null}
             </section>
           ))}
         </article>

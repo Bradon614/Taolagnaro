@@ -22,6 +22,7 @@ import {
 } from "@/lib/listings";
 import { formatCoordinates, formatDistance } from "@/lib/geo";
 import { getDictionary, fill } from "@/i18n";
+import { photosFor } from "@/lib/photos";
 import { localeHref, type Locale } from "@/i18n/config";
 import {
   categoryLabel,
@@ -78,7 +79,12 @@ export default async function ListingDetailPage({ params }: Params) {
       ? [listingSummary(listing, locale)]
       : ((locale === "en" ? detail.descriptionEn : detail.description) ??
         detail.description ?? [listingSummary(listing, locale)]);
+  const photos = photosFor(listing.slug);
+  // The gallery is sized by plates, so a listing that has more photographs
+  // than hand-authored gallery plates would silently drop the extras. Pad the
+  // plates out so every photograph we hold actually gets a tile.
   const plates = [listing.plate, ...(detail.gallery ?? [])];
+  while (plates.length < photos.length) plates.push(listing.plate);
   const nearby = nearbyListings(listing, 4);
 
   // Practical rows come from the rich detail when it exists, and are otherwise
@@ -125,6 +131,7 @@ export default async function ListingDetailPage({ params }: Params) {
 
       <Gallery
         plates={plates}
+        photos={photos}
         photoCount={detail.photoCount}
         alt={listing.name}
         locale={locale}

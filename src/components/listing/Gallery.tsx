@@ -1,7 +1,9 @@
+import Link from "next/link";
 import { Plate } from "@/components/media/Plate";
 import type { PlateVariant } from "@/components/media/Plate";
 import { getDictionary, fill } from "@/i18n";
-import type { Locale } from "@/i18n/config";
+import { localeHref, type Locale } from "@/i18n/config";
+import { photoCaption, photoCredit, type Photo } from "@/lib/photos";
 
 /**
  * Mosaic on desktop, full-bleed swipe carousel on mobile.
@@ -15,16 +17,22 @@ import type { Locale } from "@/i18n/config";
  */
 export function Gallery({
   plates,
+  photos = [],
   photoCount,
   alt,
   locale = "fr",
 }: {
   plates: PlateVariant[];
+  /** Real photographs, in order. Any tile past the end falls back to a plate. */
+  photos?: Photo[];
   photoCount?: number;
   alt: string;
   locale?: Locale;
 }) {
   const t = getDictionary(locale);
+  // One credit line for the set: repeating it per tile would drown the images,
+  // and every photograph is listed in full on /credits.
+  const credits = [...new Set(photos.map(photoCredit))];
   const [lead, ...rest] = plates;
   if (!lead) return null;
 
@@ -52,7 +60,14 @@ export function Gallery({
       >
         {plates.map((plate, index) => (
           <li key={`${plate}-${index}`} className="w-full shrink-0 snap-center">
-            <Plate variant={plate} className="aspect-[4/3]" />
+            <Plate
+              variant={plate}
+              photo={photos[index]}
+              alt={photos[index] ? photoCaption(photos[index], locale) : ""}
+              priority={index === 0}
+              sizes="100vw"
+              className="aspect-[4/3]"
+            />
           </li>
         ))}
       </ul>
@@ -63,6 +78,10 @@ export function Gallery({
       >
         <Plate
           variant={lead}
+          photo={photos[0]}
+          alt={photos[0] ? photoCaption(photos[0], locale) : ""}
+          priority
+          sizes="(max-width: 1024px) 60vw, 50vw"
           className={`md:row-span-2 ${secondaryCount > 0 ? "rounded-l-plate" : "rounded-plate"}`}
         />
 
@@ -77,6 +96,13 @@ export function Gallery({
             <Plate
               key={`${plate}-${index}`}
               variant={plate}
+              photo={photos[index + 1]}
+              alt={
+                photos[index + 1]
+                  ? photoCaption(photos[index + 1], locale)
+                  : ""
+              }
+              sizes="25vw"
               className={[
                 isTopRight ? "rounded-tr-plate" : "",
                 isBottomRight ? "rounded-br-plate" : "",
@@ -93,6 +119,15 @@ export function Gallery({
           );
         })}
       </div>
+
+      {credits.length > 0 ? (
+        <p className="mx-auto max-w-[1440px] px-4 pt-1.5 font-mono text-label text-ink-subtle md:px-6">
+          {locale === "en" ? "Photos" : "Photos"} : {credits.join(" · ")} —{" "}
+          <Link href={localeHref(locale, "/credits")} className="hover:text-ink underline">
+            {locale === "en" ? "full credits" : "crédits complets"}
+          </Link>
+        </p>
+      ) : null}
     </>
   );
 }
