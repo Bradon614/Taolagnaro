@@ -135,7 +135,11 @@ const LEGAL_FR: LegalDoc = {
       blocks: [
         {
           kind: "p",
-          text: "[[STATUT DES DROITS PHOTOGRAPHIQUES]] — préciser l’origine des images, les licences obtenues et le nom des photographes à créditer.",
+          text: "Les photographies des lieux publics proviennent de Wikimedia Commons sous licence libre (CC BY, CC BY-SA ou domaine public). Chacune est créditée sur la page Crédits photographiques, avec son auteur, sa licence et un lien vers l’original.",
+        },
+        {
+          kind: "p",
+          text: "[[DROITS DES PHOTOS DE PRESTATAIRES]] — les images fournies par les hôtels, tables et prestataires restent à encadrer : préciser la cession de droits demandée lors du référencement.",
         },
         {
           kind: "p",
@@ -458,7 +462,11 @@ const LEGAL_EN: LegalDoc = {
       blocks: [
         {
           kind: "p",
-          text: "[[PHOTOGRAPHY RIGHTS STATUS]] — state where the images come from, what licences were obtained, and which photographers must be credited.",
+          text: "Photographs of public places come from Wikimedia Commons under free licences (CC BY, CC BY-SA or public domain). Each is credited on the Photo credits page with its author, its licence and a link to the original.",
+        },
+        {
+          kind: "p",
+          text: "[[PROVIDER PHOTOGRAPH RIGHTS]] — images supplied by hotels, restaurants and providers still need terms: state what licence is asked for at listing time.",
         },
         {
           kind: "p",
