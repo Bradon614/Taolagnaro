@@ -33,13 +33,12 @@ export async function generateMetadata({
       locale: locale === "en" ? "en_GB" : locale === "mg" ? "mg_MG" : "fr_MG",
       siteName: "Taolagnaro",
     },
+    // No `alternates` here on purpose. A layout cannot know which path is
+    // being rendered, so any hreflang set at this level would claim every
+    // page's English twin is /en — wrong for all but the home page. The
+    // sitemap carries hreflang per URL instead, which is accurate.
     alternates: {
       canonical: locale === "fr" ? "/" : `/${locale}`,
-      languages: {
-        fr: "/",
-        en: "/en",
-        mg: "/mg",
-      },
     },
   };
 }
