@@ -373,6 +373,17 @@ export const fr = {
     practical: "Infos pratiques",
     howItWorks: "Comment ça marche",
   },
+  notFound: {
+    code: "404",
+    title: "Cette page n’existe pas",
+    body: "Le lien est peut-être ancien, ou l’adresse comporte une faute. Voici par où reprendre.",
+    search: "Chercher un lieu",
+  },
+  errorPage: {
+    title: "Quelque chose s’est mal passé",
+    body: "L’incident a été enregistré. Vous pouvez réessayer — si cela recommence, écrivez-nous.",
+    retry: "Réessayer",
+  },
   errors: {
     fullName: "Indiquez le nom sous lequel le prestataire vous trouvera.",
     contactName: "Indiquez le nom auquel vous répondre.",

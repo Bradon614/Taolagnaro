@@ -370,6 +370,17 @@ export const en: Dictionary = {
     practical: "Practical information",
     howItWorks: "How it works",
   },
+  notFound: {
+    code: "404",
+    title: "This page does not exist",
+    body: "The link may be old, or the address may have a typo. Here is where to pick up again.",
+    search: "Search for a place",
+  },
+  errorPage: {
+    title: "Something went wrong",
+    body: "The incident has been logged. You can try again — if it keeps happening, write to us.",
+    retry: "Try again",
+  },
   errors: {
     fullName: "Give the name the provider should look for you under.",
     contactName: "Give the name we should reply to.",
