@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
-import { isListingDetailRoute, SITE } from "@/lib/site";
+import { isListingDetailRoute, whatsappHref } from "@/lib/site";
 import { useWishlist } from "@/lib/wishlist";
 import { useHref, useLocale } from "@/i18n/LocaleProvider";
 import { splitLocale } from "@/i18n/config";
@@ -32,6 +32,8 @@ export function MobileTabBar() {
   const { t } = useLocale();
   const href = useHref();
   const [moreOpen, setMoreOpen] = useState(false);
+  // No number configured means no button, rather than a link to a dead account.
+  const whatsapp = whatsappHref();
 
   const moreLinks = [
     { href: "/decouvrir", label: t.common.discover },
@@ -105,12 +107,14 @@ export function MobileTabBar() {
             </ul>
             <div className="mt-4 flex items-center justify-between border-t border-line pt-4">
               <LanguageSwitcher className="text-ink" />
-              <a
-                href={`https://wa.me/${SITE.whatsapp}`}
-                className="rounded-plate bg-whatsapp px-4 py-2 text-small font-semibold text-abyss"
-              >
-                WhatsApp
-              </a>
+              {whatsapp ? (
+                <a
+                  href={whatsapp}
+                  className="rounded-plate bg-whatsapp px-4 py-2 text-small font-semibold text-abyss"
+                >
+                  WhatsApp
+                </a>
+              ) : null}
             </div>
           </div>
         </div>

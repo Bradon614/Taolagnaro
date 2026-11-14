@@ -12,7 +12,7 @@ import {
   isValidReference,
   type ReservationRequest,
 } from "@/lib/requests";
-import { SITE } from "@/lib/site";
+import { whatsappHref } from "@/lib/site";
 import { getDictionary, fill } from "@/i18n";
 import { localeHref, type Locale } from "@/i18n/config";
 import { listingPlace } from "@/lib/listing-i18n";
@@ -59,11 +59,12 @@ export default async function ConfirmationPage({ params }: Params) {
   const detail = listing ? detailFor(listing.slug) : {};
   const nearby = listing ? nearbyListings(listing, 3) : [];
 
-  const whatsappText = encodeURIComponent(
-    `${locale === "en" ? "Hello, I am writing about my request" : "Bonjour, je vous contacte au sujet de ma demande"} ${reference}${
-      summary ? ` (${summary.listingName})` : ""
-    }.`,
-  );
+  const whatsappMessage = `${
+    locale === "en"
+      ? "Hello, I am writing about my request"
+      : "Bonjour, je vous contacte au sujet de ma demande"
+  } ${reference}${summary ? ` (${summary.listingName})` : ""}.`;
+  const whatsappLink = whatsappHref(whatsappMessage);
 
   return (
     <>
@@ -125,14 +126,16 @@ export default async function ConfirmationPage({ params }: Params) {
         </dl>
 
         <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <Button
-            href={`https://wa.me/${SITE.whatsapp}?text=${whatsappText}`}
-            variant="whatsapp"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            {t.confirmation.chaseWhatsapp}
-          </Button>
+          {whatsappLink ? (
+            <Button
+              href={whatsappLink}
+              variant="whatsapp"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              {t.confirmation.chaseWhatsapp}
+            </Button>
+          ) : null}
           <Button href={href("/explorer")} variant="secondary">
             {t.confirmation.keepExploring}
           </Button>

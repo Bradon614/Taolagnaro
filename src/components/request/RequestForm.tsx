@@ -118,7 +118,7 @@ export function RequestForm({
             type="tel"
             autoComplete="tel"
             defaultValue={value("phone")}
-            placeholder="+261 34 00 000 00"
+            placeholder="+261 3X XX XXX XX"
             aria-invalid={state.errors.phone ? true : undefined}
             aria-describedby={state.errors.phone ? "phone-error" : "phone-hint"}
             className={inputClass(state.errors.phone)}

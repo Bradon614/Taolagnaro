@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { formatAriary, formatEuro, priceUnit } from "@/lib/money";
-import { SITE } from "@/lib/site";
+import { whatsappHref } from "@/lib/site";
 import { listingHref, type Listing } from "@/lib/listings";
 import type { ListingDetail } from "@/lib/listing-details";
 import { getDictionary } from "@/i18n";
@@ -54,9 +54,9 @@ export function ReservationPanel({
         ? formatEuro(listing.price.min)
         : null;
 
-  const whatsappText = encodeURIComponent(
-    `Bonjour, je vous contacte depuis Taolagnaro.mg au sujet de ${listing.name}.`,
-  );
+  const whatsappMessage =
+    `Bonjour, je vous contacte depuis Taolagnaro.mg au sujet de ${listing.name}.`;
+  const whatsappLink = whatsappHref(whatsappMessage);
 
   return (
     <div className="flex flex-col gap-3.5 rounded-panel border border-line-strong bg-surface p-5">
@@ -109,15 +109,17 @@ export function ReservationPanel({
         {t.detail.noPayment}
       </p>
 
-      <Button
-        href={`https://wa.me/${SITE.whatsapp}?text=${whatsappText}`}
-        variant="whatsapp"
-        fullWidth
-        target="_blank"
-        rel="noreferrer noopener"
-      >
-        {t.detail.whatsapp}
-      </Button>
+      {whatsappLink ? (
+        <Button
+          href={whatsappLink}
+          variant="whatsapp"
+          fullWidth
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          {t.detail.whatsapp}
+        </Button>
+      ) : null}
 
       {detail.responseTime ? (
         <p className="border-t border-line pt-3 text-small text-ink-subtle">

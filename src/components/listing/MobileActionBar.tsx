@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { formatAriary, formatEuro, formatPrice, priceUnit } from "@/lib/money";
-import { SITE } from "@/lib/site";
+import { whatsappHref } from "@/lib/site";
 import { listingHref, type Listing } from "@/lib/listings";
 import { getDictionary } from "@/i18n";
 import { localeHref, type Locale } from "@/i18n/config";
@@ -26,9 +26,11 @@ export function MobileActionBar({
   const approx =
     listing.price.kind === "from" ? formatEuro(listing.price.amount) : null;
 
-  const whatsappText = encodeURIComponent(
-    `Bonjour, je vous contacte depuis Taolagnaro.mg au sujet de ${listing.name}.`,
-  );
+  const whatsappMessage =
+    `Bonjour, je vous contacte depuis Taolagnaro.mg au sujet de ${listing.name}.`;
+  // Null when the platform has no WhatsApp number configured: the button is
+  // then not rendered at all.
+  const whatsappLink = whatsappHref(whatsappMessage);
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 flex items-center gap-3 border-t border-line bg-surface px-4 pb-[calc(env(safe-area-inset-bottom)+0.9rem)] pt-3 shadow-[0_-3px_14px_rgb(0_0_0_/_0.08)] lg:hidden">
@@ -45,16 +47,18 @@ export function MobileActionBar({
       <div className="ml-auto flex items-center gap-2">
         {listing.acceptsRequests ? (
           <>
-            <Button
-              href={`https://wa.me/${SITE.whatsapp}?text=${whatsappText}`}
-              variant="whatsapp"
-              size="sm"
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label="Écrire sur WhatsApp"
-            >
-              WhatsApp
-            </Button>
+            {whatsappLink ? (
+              <Button
+                href={whatsappLink}
+                variant="whatsapp"
+                size="sm"
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="Écrire sur WhatsApp"
+              >
+                WhatsApp
+              </Button>
+            ) : null}
             <Button
               href={localeHref(locale, `${listingHref(listing)}/demande`)}
               variant="primary"

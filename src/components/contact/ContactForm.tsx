@@ -115,7 +115,7 @@ export function ContactForm({ initialSubject }: { initialSubject?: string }) {
             type="tel"
             autoComplete="tel"
             defaultValue={value("phone")}
-            placeholder="+261 34 00 000 00"
+            placeholder="+261 3X XX XXX XX"
             className={inputClass()}
           />
         </Field>

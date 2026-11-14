@@ -1,18 +1,30 @@
 import Link from "next/link";
 import { LogoGlyph } from "@/components/brand/Logo";
 import { FooterColumn } from "@/components/layout/FooterColumn";
-import { CATEGORIES, SITE } from "@/lib/site";
+import { CATEGORIES, SITE, SITE_CONTACT, whatsappHref } from "@/lib/site";
 import { getDictionary } from "@/i18n";
 import { localeHref, type Locale } from "@/i18n/config";
 
-const SOCIALS = [
-  { label: "Facebook", href: "https://facebook.com" },
-  { label: "Instagram", href: "https://instagram.com" },
-  { label: "WhatsApp", href: `https://wa.me/${SITE.whatsapp}` },
-];
+/**
+ * Only the social accounts that are actually configured. Nothing is shown for a
+ * missing value — a generic link to facebook.com is worse than no button.
+ */
+function socialLinks(): { label: string; href: string }[] {
+  const links: { label: string; href: string }[] = [];
+  if (SITE_CONTACT.facebook) {
+    links.push({ label: "Facebook", href: SITE_CONTACT.facebook });
+  }
+  if (SITE_CONTACT.instagram) {
+    links.push({ label: "Instagram", href: SITE_CONTACT.instagram });
+  }
+  const whatsapp = whatsappHref();
+  if (whatsapp) links.push({ label: "WhatsApp", href: whatsapp });
+  return links;
+}
 
 export function SiteFooter({ locale }: { locale: Locale }) {
   const t = getDictionary(locale);
+  const socials = socialLinks();
   const href = (path: string) => localeHref(locale, path);
 
   const columns = [
@@ -58,20 +70,22 @@ export function SiteFooter({ locale }: { locale: Locale }) {
             <p className="mt-3 max-w-[36ch] text-small opacity-75">
               {t.footer.blurb}
             </p>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {SOCIALS.map((social) => (
-                <li key={social.label}>
-                  <a
-                    href={social.href}
-                    rel="noreferrer noopener"
-                    target="_blank"
-                    className="inline-block rounded-sm border border-white/30 px-2.5 py-1 font-mono text-label uppercase tracking-[0.12em] hover:border-white/60"
-                  >
-                    {social.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            {socials.length ? (
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {socials.map((social) => (
+                  <li key={social.label}>
+                    <a
+                      href={social.href}
+                      rel="noreferrer noopener"
+                      target="_blank"
+                      className="inline-block rounded-sm border border-white/30 px-2.5 py-1 font-mono text-label uppercase tracking-[0.12em] hover:border-white/60"
+                    >
+                      {social.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
           </div>
 
           {columns.map((column) => (

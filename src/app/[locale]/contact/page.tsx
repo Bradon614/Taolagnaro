@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { Plate } from "@/components/media/Plate";
 import { Button } from "@/components/ui/Button";
 import { formatCoordinates, TOWN_CENTRE } from "@/lib/geo";
-import { SITE } from "@/lib/site";
+import { SITE_CONTACT, whatsappHref } from "@/lib/site";
 import { getDictionary } from "@/i18n";
 import { localeHref, type Locale } from "@/i18n/config";
 
@@ -15,11 +15,22 @@ export const metadata: Metadata = {
     "Contacter la plateforme Taolagnaro : référencer un établissement, signaler une erreur, presse et partenariats.",
 };
 
-const SOCIALS = [
-  { label: "Facebook", href: "https://facebook.com" },
-  { label: "Instagram", href: "https://instagram.com" },
-  { label: "WhatsApp", href: `https://wa.me/${SITE.whatsapp}` },
-];
+/**
+ * Only the accounts that are configured. A missing value renders nothing rather
+ * than a link to facebook.com with no page behind it.
+ */
+function socialLinks(): { label: string; href: string }[] {
+  const links: { label: string; href: string }[] = [];
+  if (SITE_CONTACT.facebook) {
+    links.push({ label: "Facebook", href: SITE_CONTACT.facebook });
+  }
+  if (SITE_CONTACT.instagram) {
+    links.push({ label: "Instagram", href: SITE_CONTACT.instagram });
+  }
+  const whatsapp = whatsappHref();
+  if (whatsapp) links.push({ label: "WhatsApp", href: whatsapp });
+  return links;
+}
 
 export default async function ContactPage({
   params,
@@ -31,6 +42,7 @@ export default async function ContactPage({
   const { locale } = await params;
   const { sujet } = await searchParams;
   const t = getDictionary(locale);
+  const socials = socialLinks();
 
   return (
     <div className="mx-auto grid max-w-[68rem] grid-cols-[minmax(0,1fr)] gap-10 px-4 pb-16 pt-8 md:px-6 lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-12">
@@ -63,25 +75,29 @@ export default async function ContactPage({
             {t.contact.details}
           </p>
           <dl className="mt-3 flex flex-col gap-3 text-small">
-            <div>
-              <dt className="font-semibold">{t.contact.phone}</dt>
-              <dd className="tabular font-mono text-ink-muted">
-                <a
-                  href={`tel:${SITE.phone.replace(/\s/g, "")}`}
-                  className="hover:underline"
-                >
-                  {SITE.phone}
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="font-semibold">{t.contact.email}</dt>
-              <dd className="text-ink-muted">
-                <a href={`mailto:${SITE.email}`} className="hover:underline">
-                  {SITE.email}
-                </a>
-              </dd>
-            </div>
+            {SITE_CONTACT.phone ? (
+              <div>
+                <dt className="font-semibold">{t.contact.phone}</dt>
+                <dd className="tabular font-mono text-ink-muted">
+                  <a
+                    href={`tel:${SITE_CONTACT.phone.replace(/\s/g, "")}`}
+                    className="hover:underline"
+                  >
+                    {SITE_CONTACT.phone}
+                  </a>
+                </dd>
+              </div>
+            ) : null}
+            {SITE_CONTACT.email ? (
+              <div>
+                <dt className="font-semibold">{t.contact.email}</dt>
+                <dd className="text-ink-muted">
+                  <a href={`mailto:${SITE_CONTACT.email}`} className="hover:underline">
+                    {SITE_CONTACT.email}
+                  </a>
+                </dd>
+              </div>
+            ) : null}
             <div>
               <dt className="font-semibold">{t.contact.address}</dt>
               <dd className="text-ink-muted">
@@ -98,20 +114,22 @@ export default async function ContactPage({
             </div>
           </dl>
 
-          <ul className="mt-4 flex flex-wrap gap-2 border-t border-line pt-4">
-            {SOCIALS.map((social) => (
-              <li key={social.label}>
-                <a
-                  href={social.href}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="inline-block rounded-sm border border-line-strong px-2.5 py-1 font-mono text-label uppercase tracking-[0.12em] text-ink-muted hover:text-ink"
-                >
-                  {social.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {socials.length ? (
+            <ul className="mt-4 flex flex-wrap gap-2 border-t border-line pt-4">
+              {socials.map((social) => (
+                <li key={social.label}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="inline-block rounded-sm border border-line-strong px-2.5 py-1 font-mono text-label uppercase tracking-[0.12em] text-ink-muted hover:text-ink"
+                  >
+                    {social.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
 
         <div className="rounded-panel bg-surface p-4.5">
