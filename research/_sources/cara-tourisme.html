@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tourisme à Fort-Dauphin – CARA Centre d'Affaires Régional Anosy</title>
+  <meta name="description" content="Découvrez le secteur touristique de la région Anosy : tourisme balnéaire, environnemental, culturel, sports nautiques et trekking à Fort-Dauphin, Madagascar."/>
+  <meta name="keywords" content="Tourisme, Balnéaire, Environnemental, Fort-Dauphin, Taolagnaro, Anosy, Madagascar, CARA"/>
+  <link rel="icon" href="fd.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <style>
+
+    /* ===== PAGE HERO BANNER ===== */
+    .page-hero {
+      background:
+        linear-gradient(135deg, rgba(10,22,40,.82) 0%, rgba(10,61,98,.70) 60%, rgba(204,20,20,.18) 100%),
+        url('images/sectors/tourisme/lokaro-beach.jpg') center center / cover no-repeat;
+      min-height: 380px;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 5% 48px;
+      position: relative;
+      margin-top: 72px;
+    }
+    .page-hero-content { position: relative; z-index: 1; }
+    .breadcrumb {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      list-style: none;
+      font-size: 13px;
+      color: rgba(255,255,255,.55);
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+    .breadcrumb li + li::before {
+      content: '/';
+      margin-right: 8px;
+      opacity: .4;
+    }
+    .breadcrumb a {
+      color: rgba(255,255,255,.65);
+      transition: color .2s;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover { color: #fff; }
+    .breadcrumb .active { color: var(--gold); font-weight: 600; }
+    .page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      color: #fff;
+      line-height: 1.2;
+      margin: 0;
+    }
+    .page-hero h1 span { color: var(--gold); }
+    .page-hero-sub {
+      color: rgba(255,255,255,.85);
+      font-size: 15px;
+      margin-top: 10px;
+      max-width: 640px;
+    }
+
+    /* ===== INTRO CARDS (3 cartes accroche) ===== */
+    #intro-tourisme {
+      background: var(--white);
+      padding: 80px 5%;
+    }
+    .intro-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .intro-card {
+      background: var(--white);
+      border: 1px solid rgba(10,61,98,.1);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform .3s ease, box-shadow .3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .intro-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(10,61,98,.13);
+    }
+    .intro-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .intro-card-body {
+      padding: 24px 22px 26px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .intro-card-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin: 0 0 10px;
+    }
+    .intro-card-body p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      flex: 1;
+      margin: 0 0 18px;
+    }
+    .btn-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      background: linear-gradient(135deg, var(--accent), #e03a3a);
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .btn-more:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(204,20,20,.3);
+      color: #fff;
+    }
+
+    /* ===== SECTION GÉNÉRIQUE 2 COLONNES ===== */
+    .feature-section {
+      padding: 80px 5%;
+    }
+    .feature-section.alt { background: var(--light-bg); }
+    .feature-section.white { background: var(--white); }
+    .feature-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .feature-row.reverse .feature-text { order: 2; }
+    .feature-row.reverse .feature-img { order: 1; }
+    .feature-img img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 18px 40px rgba(10,61,98,.18);
+      display: block;
+    }
+    .feature-text .section-tag { display: inline-block; }
+    .feature-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+      color: var(--primary);
+      margin: 14px 0 18px;
+      line-height: 1.25;
+    }
+    .feature-text h2 span { color: var(--accent); }
+    .feature-text p {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.75;
+      margin: 0 0 14px;
+      text-align: justify;
+    }
+    .feature-text .note {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      font-style: italic;
+      border-left: 3px solid var(--gold);
+      padding-left: 12px;
+      margin-top: 10px;
+    }
+
+    /* ===== GALERIE 3 IMAGES ===== */
+    .mini-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      max-width: 1280px;
+      margin: 48px auto 0;
+    }
+    .mini-gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform .35s ease, box-shadow .35s ease;
+      cursor: pointer;
+    }
+    .mini-gallery img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 14px 34px rgba(10,61,98,.18);
+    }
+
+    /* ===== SPORTS NAUTIQUES / COLLECTIFS ===== */
+    .sports-section { padding: 80px 5%; }
+    .sports-section.dark {
+      background: linear-gradient(135deg, var(--primary) 0%, #1a6fa8 100%);
+    }
+    .sports-section.dark .section-title,
+    .sports-section.dark .section-subtitle { color: #fff; }
+    .sports-section.dark .section-subtitle { color: rgba(255,255,255,.8); }
+    .sports-section.dark .section-tag {
+      background: rgba(255,255,255,.15);
+      color: #fff;
+    }
+    .sports-intro {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
+    }
+    .sports-intro p {
+      color: rgba(255,255,255,.85);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .sports-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .sport-card {
+      position: relative;
+      height: 240px;
+      border-radius: 16px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      padding: 22px;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .sport-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.75) 100%);
+      transition: background .3s;
+    }
+    .sport-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 44px rgba(0,0,0,.35);
+    }
+    .sport-card:hover::before {
+      background: linear-gradient(180deg, rgba(204,20,20,.25) 0%, rgba(0,0,0,.85) 100%);
+    }
+    .sport-card span {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+
+    /* ===== ACTIVITÉS / FAUNE-FLORE ===== */
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1280px;
+      margin: 48px auto 0;
+    }
+    .activity-item {
+      background: var(--white);
+      border: 1px solid rgba(10,61,98,.1);
+      border-radius: 14px;
+      padding: 26px 18px;
+      text-align: center;
+      transition: transform .3s, box-shadow .3s, border-color .3s;
+    }
+    .activity-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(10,61,98,.12);
+      border-color: rgba(204,20,20,.25);
+    }
+    .activity-item i {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .activity-item h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0 0 6px;
+    }
+    .activity-item p {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ===== CTA SECTION ===== */
+    #cta-tourisme {
+      background: linear-gradient(135deg, var(--primary) 0%, #1a6fa8 100%);
+      padding: 72px 5%;
+      text-align: center;
+    }
+    #cta-tourisme h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    #cta-tourisme p {
+      color: rgba(255,255,255,.78);
+      font-size: 16px;
+      max-width: 620px;
+      margin: 0 auto 32px;
+    }
+    .cta-btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-cta-white {
+      background: #fff;
+      color: var(--primary);
+      padding: 13px 30px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      transition: transform .25s, box-shadow .25s;
+      box-shadow: 0 4px 16px rgba(0,0,0,.15);
+    }
+    .btn-cta-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,.22);
+    }
+    .btn-cta-outline {
+      border: 2px solid rgba(255,255,255,.55);
+      color: #fff;
+      padding: 13px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background .25s, border-color .25s;
+    }
+    .btn-cta-outline:hover {
+      background: rgba(255,255,255,.1);
+      border-color: #fff;
+      color: #fff;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 992px) {
+      .intro-grid,
+      .sports-grid       { grid-template-columns: repeat(2, 1fr); }
+      .activities-grid   { grid-template-columns: repeat(2, 1fr); }
+      .feature-row       { grid-template-columns: 1fr; gap: 32px; }
+      .feature-row.reverse .feature-text,
+      .feature-row.reverse .feature-img { order: initial; }
+      .mini-gallery      { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .intro-grid,
+      .sports-grid,
+      .mini-gallery,
+      .activities-grid   { grid-template-columns: 1fr; }
+      .page-hero         { min-height: 280px; padding-bottom: 36px; }
+      .feature-section,
+      .sports-section,
+      #intro-tourisme    { padding: 56px 5%; }
+      .mini-gallery img  { height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+<!--
+  ⚠️ NE PAS dupliquer ici : #preloader, #back-to-top et <nav id="navbar">
+  sont déjà générés par includes/nav.php
+-->
+
+<!-- ===== NAVBAR + PRELOADER + BACK-TO-TOP (include) ===== -->
+
+<!-- ===== PRELOADER ===== -->
+<div id="preloader">
+  <img src="images/logo.png" alt="CARA" onerror="this.style.display='none'" />
+  <div class="pl-bar"></div>
+</div>
+
+<!-- ===== BACK TO TOP ===== -->
+<button id="back-to-top" aria-label="Retour en haut de page">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- ===== NAVBAR ===== -->
+<nav id="navbar">
+  <a href="index.php" class="nav-brand">
+    <img src="images/logo.png" alt="Logo CARA" />
+    <div class="nav-brand-text">
+      <strong>CARA</strong>
+      <small>Centre d'Affaires Régional Anosy</small>
+    </div>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+
+    <li>
+      <a href="index.php">
+        Accueil
+      </a>
+    </li>
+
+    <li class="dropdown">
+      <a href="#" class="dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+        CARA <i class="fas fa-chevron-down dd-arrow"></i>
+      </a>
+      <div class="dropdown-menu">
+        <a href="news.php"><i class="fas fa-newspaper"></i> Actualités</a>
+        <a href="resultat.php"><i class="fas fa-chart-bar"></i> Résultats</a>
+        <a href="beneficiaires.php"><i class="fas fa-users"></i> Nos bénéficiaires</a>
+        <a href="recrutement.php"><i class="fas fa-file-alt"></i> Appels d'offres / Emploi</a>
+        <a href="#"><i class="fas fa-graduation-cap"></i> Formation</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="#" class="dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+        Infos Pratiques <i class="fas fa-chevron-down dd-arrow"></i>
+      </a>
+      <div class="dropdown-menu">
+        <a href="infospro.php"><i class="fas fa-briefcase"></i> Infos professionnel</a>
+        <a href="infosftu.php"><i class="fas fa-city"></i> Infos Fort-Dauphin</a>
+        <a href="venirftu.php"><i class="fas fa-plane"></i> Venir à Fort-Dauphin</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="#" class="dropdown-trigger active" aria-haspopup="true" aria-expanded="false">
+        Secteurs <i class="fas fa-chevron-down dd-arrow"></i>
+      </a>
+      <div class="dropdown-menu">
+        <a href="tourisme.php"><i class="fas fa-umbrella-beach"></i> Tourisme</a>
+        <a href="mine.php"><i class="fas fa-hard-hat"></i> Mine &amp; Énergie</a>
+        <a href="agriculture.php"><i class="fas fa-leaf"></i> Agriculture</a>
+        <a href="elevage.php"><i class="fas fa-horse"></i> Élevage</a>
+        <a href="peche.php"><i class="fas fa-fish"></i> Pêche &amp; halieutiques</a>
+        <a href="artisanat.php"><i class="fas fa-paint-brush"></i> Artisanat</a>
+      </div>
+    </li>
+
+    <!-- <li>
+      <a href="membres.php">
+        Annuaire
+      </a>
+    </li> -->
+
+    <li>
+      <a href="blog.php">
+        Blog
+      </a>
+    </li>
+
+    <li>
+      <a href="service.php" class="nav-cta">
+        Nos Services
+      </a>
+    </li>
+
+  </ul>
+
+  <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<style>
+.dd-arrow {
+  font-size: 9px;
+  margin-left: 4px;
+  transition: transform 0.22s ease;
+  display: inline-block;
+}
+.dropdown.is-open > a .dd-arrow {
+  transform: rotate(180deg);
+}
+.dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 230px;
+  background: #fff;
+  border: 1px solid #dde3ec;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(10,61,98,.14);
+  padding: 6px 0;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition:
+    opacity    0.18s ease,
+    transform  0.18s ease,
+    visibility 0s linear 0.18s;
+}
+.dropdown.is-open .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition:
+    opacity    0.18s ease,
+    transform  0.18s ease,
+    visibility 0s linear 0s;
+}
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  font-size: .88rem;
+  color: #1a2640;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background .15s, color .15s, padding-left .15s;
+}
+.dropdown-menu a:hover {
+  background: #f4f7fb;
+  color: #cc1414;
+  padding-left: 24px;
+}
+.dropdown-menu a i {
+  width: 16px;
+  text-align: center;
+  color: #cc1414;
+  flex-shrink: 0;
+}
+
+/* ===== Item actif dans le menu déroulant ===== */
+.dropdown-menu a.active {
+  background: #f4f7fb;
+  color: #cc1414;
+  font-weight: 700;
+  box-shadow: inset 3px 0 0 #cc1414;
+}
+
+/* ===== MOBILE : dropdown en accordéon ===== */
+@media (max-width: 900px) {
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-left: 2px solid #dde3ec;
+    margin-left: 12px;
+    border-radius: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s ease;
+  }
+  .dropdown.is-open .dropdown-menu {
+    max-height: 500px;
+  }
+  .dropdown-menu a.active {
+    box-shadow: none;
+    border-left: 3px solid #cc1414;
+  }
+}
+</style>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ─────────────────────────────────────────
+     PRELOADER
+  ───────────────────────────────────────── */
+  var _preloaderDone = false;
+  function hidePreloader() {
+    if (_preloaderDone) return;
+    _preloaderDone = true;
+    var pl = document.getElementById('preloader');
+    if (!pl) return;
+    pl.style.transition    = 'opacity .45s ease';
+    pl.style.opacity       = '0';
+    pl.style.pointerEvents = 'none';
+    setTimeout(function () {
+      if (pl.parentNode) pl.parentNode.removeChild(pl);
+    }, 460);
+  }
+  window.addEventListener('load', hidePreloader);
+  setTimeout(hidePreloader, 3000);
+
+  /* ─────────────────────────────────────────
+     ÉLÉMENTS DOM
+  ───────────────────────────────────────── */
+  var navbar    = document.getElementById('navbar');
+  var hamburger = document.getElementById('hamburger');
+  var navLinks  = document.getElementById('navLinks');
+  var btt       = document.getElementById('back-to-top');
+  var dropdowns = Array.prototype.slice.call(document.querySelectorAll('.dropdown'));
+
+  /* ─────────────────────────────────────────
+     SCROLL
+  ───────────────────────────────────────── */
+  window.addEventListener('scroll', function () {
+    if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 40);
+    if (btt)    btt.classList.toggle('visible',     window.scrollY > 400);
+  }, { passive: true });
+
+  if (btt) {
+    btt.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     UTIL : tout fermer
+  ───────────────────────────────────────── */
+  function closeAllDropdowns() {
+    dropdowns.forEach(function (dd) {
+      dd.classList.remove('is-open');
+      var t = dd.querySelector('.dropdown-trigger');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  function closeMobileMenu() {
+    if (!navLinks) return;
+    navLinks.classList.remove('open');
+    if (hamburger) {
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  /* ─────────────────────────────────────────
+     HAMBURGER MOBILE
+  ───────────────────────────────────────── */
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = navLinks.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', String(open));
+      if (!open) closeAllDropdowns();
+    });
+  }
+
+  /* Fermer le menu mobile quand on clique un lien “normal” */
+  if (navLinks) {
+    navLinks.querySelectorAll('a:not(.dropdown-trigger)').forEach(function (a) {
+      a.addEventListener('click', function () {
+        closeMobileMenu();
+        closeAllDropdowns();
+      });
+    });
+  }
+
+  /* ─────────────────────────────────────────
+     DROPDOWNS — clic
+  ───────────────────────────────────────── */
+  dropdowns.forEach(function (dd) {
+    var trigger = dd.querySelector('.dropdown-trigger');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      var wasOpen = dd.classList.contains('is-open');
+
+      // Ferme les autres
+      dropdowns.forEach(function (other) {
+        if (other !== dd) {
+          other.classList.remove('is-open');
+          var t = other.querySelector('.dropdown-trigger');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Toggle celui-ci
+      dd.classList.toggle('is-open', !wasOpen);
+      trigger.setAttribute('aria-expanded', String(!wasOpen));
+    });
+  });
+
+  /* Empêche la fermeture quand on clique DANS le menu déroulant */
+  document.querySelectorAll('.dropdown-menu').forEach(function (menu) {
+    menu.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
+  });
+
+  /* Clic extérieur → tout fermer */
+  document.addEventListener('click', function () {
+    closeAllDropdowns();
+  });
+
+  /* Échap → tout fermer */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeAllDropdowns();
+      closeMobileMenu();
+    }
+  });
+
+  /* Resize : si on repasse en desktop, reset l'état mobile */
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 900) {
+      closeMobileMenu();
+    }
+  });
+
+  /* ─────────────────────────────────────────
+     Fallback images cassées (sécurisé)
+  ───────────────────────────────────────── */
+  document.addEventListener('error', function (e) {
+    var el = e.target;
+    if (!el || el.tagName !== 'IMG') return;   // ← garde-fou
+    if (el.dataset.errHandled) return;
+    el.dataset.errHandled = '1';
+    el.onerror = null;
+    el.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+    el.style.background = '#f0f3f7';
+    el.style.minHeight  = '40px';
+  }, true);
+
+})();
+</script>
+
+<!-- ===== PAGE HERO ===== -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <ol class="breadcrumb">
+      <li><a href="index.php"><i class="fas fa-home"></i> Accueil</a></li>
+      <li><a href="#">Secteurs</a></li>
+      <li class="active">Tourisme</li>
+    </ol>
+    <h1>Le <span>Tourisme</span> à Fort-Dauphin</h1>
+    <p class="page-hero-sub">
+      Entre plages turquoise, forêts tropicales et culture authentique —
+      découvrez l'un des secteurs phares de la région Anosy.
+    </p>
+  </div>
+</div>
+
+<!-- ===== INTRO – 3 PORTES D'ENTRÉE ===== -->
+<section id="intro-tourisme">
+  <div style="text-align:center; max-width:720px; margin:0 auto;">
+    <span class="section-tag">Vue d'ensemble</span>
+    <h2 class="section-title">Un secteur stratégique pour l'Anosy</h2>
+    <div class="section-divider" style="margin:16px auto;"></div>
+    <p style="color:var(--text-muted); font-size:15px;">
+      Le tourisme est l'un des moteurs économiques majeurs de Fort-Dauphin (Taolagnaro).
+      Découvrez les chiffres, les acteurs et les opportunités d'investissement.
+    </p>
+  </div>
+
+  <div class="intro-grid">
+
+    <div class="intro-card">
+      <img src="images/sectors/tourisme/aircraft.jpg" alt="Chiffres clés du tourisme" class="intro-card-img"/>
+      <div class="intro-card-body">
+        <h3>Les chiffres clés</h3>
+        <p>Quelques chiffres importants sur le tourisme dans la région Anosy : fréquentation, hébergements, retombées économiques.</p>
+        <a href="#" class="btn-more">Plus d'infos <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="intro-card">
+      <img src="images/sectors/tourisme/acteurs_tourisme.jpg" alt="Acteurs du tourisme" class="intro-card-img"/>
+      <div class="intro-card-body">
+        <h3>Les acteurs du tourisme</h3>
+        <p>Découvrez les opérateurs touristiques de Fort-Dauphin : hôteliers, agences de voyage, guides, transporteurs et restaurateurs.</p>
+        <a href="#" class="btn-more">Plus d'infos <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="intro-card">
+      <img src="images/sectors/tourisme/location.jpg" alt="Investir dans le tourisme" class="intro-card-img"/>
+      <div class="intro-card-body">
+        <h3>Investir dans le tourisme</h3>
+        <p>Informations utiles pour les investisseurs potentiels souhaitant développer une activité touristique dans la région.</p>
+        <a href="tourisme/index.php" class="btn-more">Plus d'infos <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CULTURE ===== -->
+<section class="feature-section alt">
+  <div class="feature-row">
+    <div class="feature-text">
+      <span class="section-tag">Patrimoine humain</span>
+      <h2>Une <span>culture</span> riche et authentique</h2>
+      <p>
+        Ayant un mode de vie simple, la population malagasy est divisée en 18 ethnies réparties dans 22 régions.
+        À Fort-Dauphin, les ethnies les plus présentes sont les <strong>Antanôsy</strong> et les <strong>Antandroy</strong>.
+        Les Antanôsy se divisent en Tavaratsy au nord, Tatsimo au sud et Tambolo au centre.
+      </p>
+      <p>
+        Les traditions occupent une place forte dans la vie locale. Le <em>« Fanambalia »</em> (mariage traditionnel
+        antanôsy) reste très reconnu dans les communautés. Le <em>« faly »</em> (tabou) dicte encore largement
+        le comportement collectif.
+      </p>
+      <p>
+        Historiquement, Fort-Dauphin fut le point d'entrée de la France coloniale à Madagascar. Certains vestiges
+        de cette époque sont encore visibles, notamment au <strong>Musée du Camp Flacourt</strong>.
+      </p>
+    </div>
+    <div class="feature-img">
+      <img src="images/sectors/tourisme/fanambalia.jpg" alt="Mariage traditionnel Fanambalia"/>
+    </div>
+  </div>
+
+  <div class="mini-gallery">
+    <img src="images/sectors/tourisme/petitdejeuner.jpg" alt="Petit-déjeuner traditionnel"/>
+    <img src="images/sectors/tourisme/fanambalia.jpg" alt="Fanambalia – mariage traditionnel"/>
+    <img src="images/sectors/tourisme/art-malagasy.jpg" alt="Art malagasy"/>
+  </div>
+</section>
+
+<!-- ===== ENVIRONNEMENT & BIODIVERSITÉ ===== -->
+<section class="feature-section white">
+  <div class="feature-row reverse">
+    <div class="feature-text">
+      <span class="section-tag">Nature exceptionnelle</span>
+      <h2>Environnement &amp; <span>Biodiversité</span></h2>
+      <p>
+        La région Anosy propose une biodiversité riche et diversifiée. Aux environs de Fort-Dauphin, vous accédez
+        à une forêt tropicale et humide abritant le célèbre <strong>Ravinala</strong>* en grand nombre, ainsi que
+        le <em>Népenthès</em>, plante carnivore à pièges passifs. À 70 km, dans la zone d'Amboasary Sud, le paysage
+        devient sec et aride avec des cactus et plantes épineuses uniques au monde.
+      </p>
+      <p>
+        Dans les forêts, parcs et réserves, vous rencontrerez des animaux endémiques : <strong>lémuriens</strong>
+        (dont le célèbre Maki Catta), tortues, caméléons. De <strong>juin à juillet</strong> et de
+        <strong>septembre à novembre</strong>, il est possible d'observer les <strong>baleines à bosse</strong>.
+      </p>
+      <p>
+        Le <strong>Parc National d'Andohaela</strong> (Malio, Mangoky &amp; Tsimelahy) et la <strong>forêt sacrée
+        d'Ifotaka</strong> offrent un concentré de cette biodiversité.
+      </p>
+      <p class="note">*Ravinala : Ravenale, arbre du voyageur — <em>Ravenala Madagascariensis</em>.</p>
+    </div>
+    <div class="feature-img">
+      <img src="images/sectors/tourisme/lemurien.jpg" alt="Lémurien de Madagascar"/>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TOURISME BALNÉAIRE ===== -->
+<section class="feature-section alt">
+  <div class="feature-row">
+    <div class="feature-text">
+      <span class="section-tag">Plages &amp; lagons</span>
+      <h2>Un tourisme <span>balnéaire</span> d'exception</h2>
+      <p>
+        Le tourisme balnéaire est l'un des plus pratiqués dans la région. La géographie particulière de Fort-Dauphin
+        offre un ensemble de plages magnifiques, en ville ou à quelques kilomètres seulement, avec des eaux turquoise
+        et un sable blanc.
+      </p>
+      <p>
+        Parmi les plus prisées : la <strong>plage de Libanona</strong> pour la baignade, la <strong>plage d'Ankoba</strong>
+        et la <strong>plage de Monseigneur</strong> pour le surf, kite surf et wind surf. La <strong>baie de Lokaro</strong>
+        et ses criques — qualifiée de « paradis sur terre » — émerveille par ses îlots, son lac et sa forêt naturelle
+        en proximité immédiate de la plage.
+      </p>
+      <p>
+        Sans oublier la <strong>baie des Gallions</strong> (Baie d'Italy), ancien refuge des pirates portugais, ainsi
+        que les lacs de <strong>Vinanibe</strong> et <strong>Lanirano</strong> pour les balades en bateau.
+      </p>
+    </div>
+    <div class="feature-img">
+      <img src="images/sectors/tourisme/lokaro-beach.jpg" alt="La plage de Lokaro"/>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BALADE EN MONTAGNE / TREKKING ===== -->
+<section class="feature-section white">
+  <div class="feature-row reverse">
+    <div class="feature-text">
+      <span class="section-tag">Aventure &amp; panoramas</span>
+      <h2>Balade en <span>montagne</span> &amp; Trekking</h2>
+      <p>
+        Fort-Dauphin est longée par la chaîne de montagnes <strong>Anosyenne</strong>, sur laquelle culmine le
+        <strong>Pic Saint-Louis</strong> à 529 m d'altitude. Cette chaîne retient les pluies de l'alizé, donnant
+        naissance à une bande de verdure unique.
+      </p>
+      <p>
+        Le Pic Saint-Louis fait le bonheur des adeptes de trekking : depuis son sommet, la vue est imprenable
+        sur la ville, la mer et l'arrière-pays. On y aperçoit souvent les <em>Papango</em> (Milans noirs) valser
+        dans les courants ascendants.
+      </p>
+      <p>
+        L'effort de la montée est largement récompensé par un panorama exceptionnel — une expérience à ne pas
+        manquer pour les amateurs de randonnée.
+      </p>
+    </div>
+    <div class="feature-img">
+      <img src="images/sectors/tourisme/trekking.jpg" alt="Trekking au Pic Saint-Louis"/>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPORTS NAUTIQUES ===== -->
+<section class="sports-section dark">
+  <div class="sports-intro">
+    <span class="section-tag">Glisse &amp; sensations</span>
+    <h2 class="section-title">Sports nautiques</h2>
+    <div class="section-divider" style="margin:16px auto;"></div>
+    <p>
+      La géographie de Fort-Dauphin — une presqu'île entourée de plages et de spots de glisse —
+      favorise la pratique des sports nautiques. Selon le sens du vent, un spot devient plus propice qu'un autre.
+      Inutile de parcourir de longues distances : les meilleurs spots sont à portée de main.
+    </p>
+  </div>
+
+  <div class="sports-grid">
+    <div class="sport-card" style="background-image:url('images/sectors/tourisme/surf.jpg');">
+      <span><i class="fas fa-water" style="margin-right:8px;"></i>Surf</span>
+    </div>
+    <div class="sport-card" style="background-image:url('images/sectors/tourisme/windsurf.jpg');">
+      <span><i class="fas fa-wind" style="margin-right:8px;"></i>Wind Surf</span>
+    </div>
+    <div class="sport-card" style="background-image:url('images/sectors/tourisme/kitesurf.jpg');">
+      <span><i class="fas fa-feather" style="margin-right:8px;"></i>Kite Surf</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPORTS COLLECTIFS ===== -->
+<section class="sports-section" style="background:var(--light-bg);">
+  <div style="text-align:center; max-width:720px; margin:0 auto 48px;">
+    <span class="section-tag">Esprit d'équipe</span>
+    <h2 class="section-title">Sports collectifs</h2>
+    <div class="section-divider" style="margin:16px auto;"></div>
+    <p class="section-subtitle" style="margin:0 auto;">
+      Football, volley-ball, basket-ball — la ville vibre au rythme du sport. La proximité des plages
+      a fait du beach soccer et du beach volley des disciplines très populaires.
+    </p>
+  </div>
+
+  <div class="sports-grid">
+    <div class="sport-card" style="background-image:url('images/sectors/tourisme/beach-soccer.jpg');">
+      <span><i class="fas fa-futbol" style="margin-right:8px;"></i>Beach Soccer</span>
+    </div>
+    <div class="sport-card" style="background-image:url('images/sectors/tourisme/beach-volley.jpg');">
+      <span><i class="fas fa-volleyball-ball" style="margin-right:8px;"></i>Beach Volley</span>
+    </div>
+    <div class="sport-card" style="background-image:url('images/sectors/tourisme/basketball.jpg');">
+      <span><i class="fas fa-basketball-ball" style="margin-right:8px;"></i>Basket Ball</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACTIVITÉS À DÉCOUVRIR ===== -->
+<section class="feature-section white">
+  <div style="text-align:center; max-width:720px; margin:0 auto;">
+    <span class="section-tag">Pourquoi venir ?</span>
+    <h2 class="section-title" style="margin-top:14px;">Une destination, mille expériences</h2>
+    <div class="section-divider" style="margin:16px auto;"></div>
+    <p class="section-subtitle" style="margin:0 auto;">
+      Du farniente sur la plage à l'exploration des parcs nationaux, Fort-Dauphin a tout pour séduire.
+    </p>
+  </div>
+
+  <div class="activities-grid">
+    <div class="activity-item">
+      <i class="fas fa-umbrella-beach"></i>
+      <h4>Plages paradisiaques</h4>
+      <p>Libanona, Ankoba, Lokaro, Monseigneur</p>
+    </div>
+    <div class="activity-item">
+      <i class="fas fa-tree"></i>
+      <h4>Parcs &amp; réserves</h4>
+      <p>Andohaela, forêt sacrée d'Ifotaka</p>
+    </div>
+    <div class="activity-item">
+      <i class="fas fa-mountain"></i>
+      <h4>Trekking</h4>
+      <p>Pic Saint-Louis, 529 m d'altitude</p>
+    </div>
+    <div class="activity-item">
+      <i class="fas fa-fish"></i>
+      <h4>Faune endémique</h4>
+      <p>Lémuriens, caméléons, baleines à bosse</p>
+    </div>
+    <div class="activity-item">
+      <i class="fas fa-landmark"></i>
+      <h4>Patrimoine historique</h4>
+      <p>Musée du Camp Flacourt</p>
+    </div>
+    <div class="activity-item">
+      <i class="fas fa-water"></i>
+      <h4>Sports nautiques</h4>
+      <p>Surf, kite surf, wind surf</p>
+    </div>
+    <div class="activity-item">
+      <i class="fas fa-utensils"></i>
+      <h4>Gastronomie locale</h4>
+      <p>Cuisine malgache authentique</p>
+    </div>
+    <div class="activity-item">
+      <i class="fas fa-users"></i>
+      <h4>Rencontres culturelles</h4>
+      <p>Antanôsy, Antandroy, traditions</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="cta-tourisme">
+  <h2>Vous êtes acteur du tourisme dans l'Anosy ?</h2>
+  <p>
+    Hôtelier, guide, restaurateur, agence de voyage ou porteur de projet touristique :
+    CARA vous accompagne dans la structuration et le développement de votre activité.
+  </p>
+  <div class="cta-btns">
+    <a href="service.php" class="btn-cta-white">
+      <i class="fas fa-cogs" style="margin-right:8px;"></i>Découvrir nos services
+    </a>
+    <a href="membres.php" class="btn-cta-outline">
+      <i class="fas fa-building" style="margin-right:8px;"></i>Annuaire d'entreprises
+    </a>
+  </div>
+</section>
+
+<!-- ===== PARTENAIRES + CONFIANCE + FOOTER via includes ===== -->
+
+<!-- ===== PARTENAIRES ===== -->
+<section id="partners" style="background:var(--white);">
+  <div style="text-align:center; margin-bottom:16px;">
+    <span class="section-tag">Ensemble pour l'Anosy</span>
+    <h2 class="section-title" style="margin:8px auto 0;">Nos Partenaires</h2>
+    <div class="section-divider" style="margin:16px auto 0;"></div>
+    <p class="section-subtitle" style="margin:16px auto 0; max-width:560px;">
+      Des acteurs institutionnels, privés et internationaux engagés aux côtés de CARA.
+    </p>
+  </div>
+  <div class="partners-grid">
+    <div class="partner-logo"><img src="images/partenaires/apea.png"        alt="APEA"/></div>
+    <div class="partner-logo"><img src="images/partenaires/procom.png"      alt="PROCOM"/></div>
+    <div class="partner-logo"><img src="images/partenaires/mtm.png"         alt="MTM"/></div>
+    <div class="partner-logo"><img src="images/partenaires/pic.png"         alt="PIC"/></div>
+    <div class="partner-logo"><img src="images/partenaires/cga.png"         alt="CGA"/></div>
+    <div class="partner-logo"><img src="images/partenaires/riotinto.png"    alt="Rio Tinto QMM"/></div>
+    <div class="partner-logo"><img src="images/partenaires/africinnov.png"  alt="Africinnov"/></div>
+    <div class="partner-logo"><img src="images/partenaires/cci-anosy.png"   alt="CCI Anosy"/></div>
+    <div class="partner-logo"><img src="images/partenaires/mica.png"        alt="MICA"/></div>
+    <div class="partner-logo"><img src="images/partenaires/pact.png"        alt="PACT"/></div>
+    <div class="partner-logo"><img src="images/partenaires/thunderbird.png" alt="Thunderbird"/></div>
+    <div class="partner-logo"><img src="images/partenaires/mera.png"        alt="MERA"/></div>
+    <div class="partner-logo"><img src="images/partenaires/jci.png"         alt="JCI"/></div>
+    <div class="partner-logo"><img src="images/partenaires/region-anosy.png" alt="Région Anosy"/></div>
+    <div class="partner-logo"><img src="images/partenaires/unicef.png"      alt="UNICEF"/></div>
+    <div class="partner-logo"><img src="images/partenaires/pnud.png"        alt="PNUD"/></div>
+  </div>
+</section>
+
+<!-- ===== ILS NOUS ONT FAIT CONFIANCE ===== -->
+<section id="confiance" style="background:var(--light-bg);">
+  <div style="text-align:center; margin-bottom:16px;">
+    <span class="section-tag">Références clients</span>
+    <h2 class="section-title" style="margin:8px auto 0;">Ils nous ont fait confiance</h2>
+    <div class="section-divider" style="margin:16px auto 0;"></div>
+    <p class="section-subtitle" style="margin:16px auto 0; max-width:580px;">
+      Entreprises, coopératives, groupements et organisations accompagnés par CARA.
+    </p>
+  </div>
+  <div class="partners-grid">
+    <div class="partner-logo"><img src="images/confiance/ctas.png"           alt="CTAS"/></div>
+    <div class="partner-logo"><img src="images/confiance/giz.png"            alt="GIZ"/></div>
+    <div class="partner-logo"><img src="images/confiance/lvm.png"            alt="LVM"/></div>
+    <div class="partner-logo"><img src="images/confiance/kanto.png"          alt="Kanto"/></div>
+    <div class="partner-logo"><img src="images/confiance/kosofia.png"        alt="Kosofia"/></div>
+    <div class="partner-logo"><img src="images/confiance/soavoatsy.png"      alt="Soavoatsy"/></div>
+    <div class="partner-logo"><img src="images/confiance/care.png"           alt="CARE"/></div>
+    <div class="partner-logo"><img src="images/confiance/fid-alph.png"       alt="FID-ALPH"/></div>
+    <div class="partner-logo"><img src="images/confiance/tbse.png"           alt="TBSE"/></div>
+    <div class="partner-logo"><img src="images/confiance/tazoom.png"         alt="Tazoom"/></div>
+    <div class="partner-logo"><img src="images/confiance/vcp.png"            alt="VCP"/></div>
+    <div class="partner-logo"><img src="images/confiance/faniry.png"         alt="Faniry"/></div>
+    <div class="partner-logo"><img src="images/confiance/voromahery.png"     alt="Voromahery"/></div>
+    <div class="partner-logo"><img src="images/confiance/tolisoa.png"        alt="Tolisoa"/></div>
+    <div class="partner-logo"><img src="images/confiance/anosymaintso.png"   alt="Anosy Maintso"/></div>
+    <div class="partner-logo"><img src="images/confiance/fanarenana.png"     alt="Fanarenana"/></div>
+    <div class="partner-logo"><img src="images/confiance/alamaintso.png"     alt="Ala Maintso"/></div>
+    <div class="partner-logo"><img src="images/confiance/hasoava.png"        alt="Hasoava"/></div>
+    <div class="partner-logo"><img src="images/confiance/l.png"              alt="Partenaire"/></div>
+    <div class="partner-logo"><img src="images/confiance/soamiray.png"       alt="Soamiray"/></div>
+    <div class="partner-logo"><img src="images/confiance/fish.png"           alt="Fish"/></div>
+    <div class="partner-logo"><img src="images/confiance/16.png"             alt="Partenaire 16"/></div>
+    <div class="partner-logo"><img src="images/confiance/17.png"             alt="Partenaire 17"/></div>
+    <div class="partner-logo"><img src="images/confiance/aps.png"            alt="APS"/></div>
+    <div class="partner-logo"><img src="images/confiance/prisma.png"         alt="Prisma"/></div>
+    <div class="partner-logo"><img src="images/confiance/26.png"             alt="Partenaire 26"/></div>
+    <div class="partner-logo"><img src="images/confiance/ecle.png"           alt="ECLE"/></div>
+    <div class="partner-logo"><img src="images/confiance/manovosoa.png"      alt="Manovosoa"/></div>
+    <div class="partner-logo"><img src="images/confiance/soaketsa.png"       alt="Soaketsa"/></div>
+    <div class="partner-logo"><img src="images/confiance/njaha.png"          alt="Njaha"/></div>
+    <div class="partner-logo"><img src="images/confiance/tsiktsak.png"       alt="Tsiktsak"/></div>
+    <div class="partner-logo"><img src="images/confiance/anosyfood.png"      alt="Anosy Food"/></div>
+    <div class="partner-logo"><img src="images/confiance/anprod.png"         alt="ANPROD"/></div>
+    <div class="partner-logo"><img src="images/confiance/nyainafarm.png"     alt="Nyaina Farm"/></div>
+    <div class="partner-logo"><img src="images/confiance/anosymadio.png"     alt="Anosy Madio"/></div>
+    <div class="partner-logo"><img src="images/confiance/fermenyaiko.png"    alt="Ferme Nyaïko"/></div>
+    <div class="partner-logo"><img src="images/confiance/fermemanambina.png" alt="Ferme Manambina"/></div>
+    <div class="partner-logo"><img src="images/confiance/fermemahatsara.png" alt="Ferme Mahatsara"/></div>
+    <div class="partner-logo"><img src="images/confiance/candi-farm.png"     alt="Candi Farm"/></div>
+    <div class="partner-logo"><img src="images/confiance/fermenoary.png"     alt="Ferme Noary"/></div>
+    <div class="partner-logo"><img src="images/confiance/biotif.png"         alt="Biotif"/></div>
+    <div class="partner-logo"><img src="images/confiance/del.png"            alt="DEL"/></div>
+    <div class="partner-logo"><img src="images/confiance/vasialand.png"      alt="Vasialand"/></div>
+    <div class="partner-logo"><img src="images/confiance/mtc-tour.png"       alt="MTC Tour"/></div>
+    <div class="partner-logo"><img src="images/confiance/saint-pas.png"      alt="Saint-Pas"/></div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <!-- <img src="images/logo.png" alt="CARA" class="footer-brand-logo"/> -->
+      <div class="footer-brand-name">Centre d'Affaires Régional Anosy</div>
+      <p>ONG dédiée au développement entrepreneurial, à la formation, au coaching et à la mise en réseau des acteurs économiques de la région Anosy, Madagascar.</p>
+      <div style="margin-top:20px;">
+        <div class="footer-contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>En face BNI, Bazaribe,<br/>Fort-Dauphin (Taolagnaro) 00614,<br/>Madagascar</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-phone-alt"></i>
+          <span>
+            <a href="tel:+261340514605">+261 (0) 34 05 146 05</a><br/>
+            <a href="tel:+261341514615">+261 (0) 34 15 146 15</a>
+          </span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>
+            <a href="mailto:cara.anosy@gmail.com">cara.anosy@gmail.com</a><br/>
+            <a href="mailto:cara.communication@cara.mg">cara.communication@cara.mg</a>
+          </span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-globe"></i>
+          <a href="https://www.cara.mg" target="_blank">www.cara.mg</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fas fa-clock"></i>
+          <span>Lun – Ven : 08h00 – 17h00<br/>Samedi : 08h00 – 12h00</span>
+        </div>
+      </div>
+      <div class="social-links" style="margin-top:20px;">
+        <a href="https://www.facebook.com/CaraAnosy/"       target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/company/ongcara/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://twitter.com/ongCARAanosy"          target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.youtube.com/@caraanosy"        target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/cara_anosy"      target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>CARA</h4>
+      <ul>
+        <li><a href="news.php"><i class="fas fa-chevron-right"></i> Actualités</a></li>
+        <li><a href="resultat.php"><i class="fas fa-chevron-right"></i> Résultats</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Appels d'offres</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Offres d'emploi</a></li>
+        <li><a href="#"><i class="fas fa-chevron-right"></i> Formation</a></li>
+        <li><a href="blog.php"><i class="fas fa-chevron-right"></i> Blog</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Secteurs</h4>
+      <ul>
+        <li><a href="tourisme.php"><i class="fas fa-chevron-right"></i> Tourisme</a></li>
+        <li><a href="mine.php"><i class="fas fa-chevron-right"></i> Mine &amp; Énergie</a></li>
+        <li><a href="agriculture.php"><i class="fas fa-chevron-right"></i> Agriculture</a></li>
+        <li><a href="elevage.php"><i class="fas fa-chevron-right"></i> Élevage</a></li>
+        <li><a href="peche.php"><i class="fas fa-chevron-right"></i> Pêche</a></li>
+        <li><a href="artisanat.php"><i class="fas fa-chevron-right"></i> Artisanat</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Liens utiles</h4>
+      <ul>
+        <li><a href="service.php"><i class="fas fa-chevron-right"></i> Nos Services</a></li>
+        <li><a href="membres.php"><i class="fas fa-chevron-right"></i> Annuaire</a></li>
+        <li><a href="infosftu.php"><i class="fas fa-chevron-right"></i> Infos Fort-Dauphin</a></li>
+        <li><a href="venirftu.php"><i class="fas fa-chevron-right"></i> Venir à Fort-Dauphin</a></li>
+        <li><a href="resultat.php"><i class="fas fa-chevron-right"></i> Nos Résultats</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>&copy; 2026 CARA – Centre d'Affaires Régional Anosy. Tous droits réservés.</span>
+    <span>Conçu par <a href="http://takalou.mg" target="_blank">TAKALOU SARL</a> · Fort-Dauphin, Madagascar</span>
+  </div>
+</footer>
+<!-- ===== SCRIPTS SPÉCIFIQUES À LA PAGE TOURISME ===== -->
+<!--
+  ⚠️ Tout ce qui concerne le preloader, la navbar, le hamburger,
+  les dropdowns et le back-to-top est géré DANS includes/nav.php.
+  On ne garde ici QUE l'animation au scroll, propre à cette page.
+-->
+<script>
+(function () {
+  'use strict';
+
+  if (!('IntersectionObserver' in window)) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.style.opacity   = '1';
+        e.target.style.transform = 'translateY(0)';
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(
+    '.intro-card, .feature-row, .sport-card, .activity-item, .mini-gallery img, .partner-logo'
+  ).forEach(function (el) {
+    el.style.opacity    = '0';
+    el.style.transform  = 'translateY(24px)';
+    el.style.transition = 'opacity .6s ease, transform .6s ease';
+    observer.observe(el);
+  });
+
+})();
+</script>
+
+</body>
+</html>

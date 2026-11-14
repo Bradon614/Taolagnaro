@@ -1,0 +1,605 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-14T13:32:20Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 727284593,
+  "lat": -25.0080734,
+  "lon": 46.9652182,
+  "tags": {
+    "GNS:id": "-220822",
+    "alt_name": "Piton Saint-Louis",
+    "ele": "536",
+    "name": "Pic Saint Louis",
+    "natural": "peak",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 3495148766,
+  "lat": -24.8019124,
+  "lon": 47.1632473,
+  "tags": {
+    "access": "private",
+    "name": "Sainte Luce Reserve",
+    "operator": "Sainte Luce Reserve",
+    "tourism": "camp_site"
+  }
+},
+{
+  "type": "node",
+  "id": 5135336921,
+  "lat": -24.9672748,
+  "lon": 47.0866578,
+  "tags": {
+    "name:en": "Nepenthes Village",
+    "name:fr": "Le Nepenthes village",
+    "opening_hours": "24/7",
+    "phone": "+261 34 64 787 94",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 5137392422,
+  "lat": -25.0326369,
+  "lon": 46.9829083,
+  "tags": {
+    "name:en": "Vaosolo's Bungalow",
+    "name:fr": "Bungalow de Voasolo",
+    "opening_hours": "Mo-Su 09:00-18:00",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 5143241721,
+  "lat": -25.0285614,
+  "lon": 46.9880698,
+  "tags": {
+    "name:en": "Flav's Bungalows",
+    "name:fr": "Bungalow de Flav",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 5196050227,
+  "lat": -25.0292828,
+  "lon": 46.9845116,
+  "tags": {
+    "email": "emiliestrg@gmail.com",
+    "internet_access": "wlan",
+    "name:en": "Marceline's guest house",
+    "name:fr": "Maison d'hôtes Chez Marceline",
+    "operator": "Telma",
+    "phone": "0344071525",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 5329474222,
+  "lat": -25.0389763,
+  "lon": 46.9967680,
+  "tags": {
+    "name:en": "Libanona Chalet",
+    "name:fr": "Chalet Libanona",
+    "opening_hours": "24/7",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 5329477823,
+  "lat": -25.0416313,
+  "lon": 46.9956451,
+  "tags": {
+    "cuisine": "malagasy;french;indian",
+    "internet_access": "wlan",
+    "name": "Talinjoo",
+    "name:en": "Talinjoo's Restaurant",
+    "name:fr": "restaurant du Talinjoo",
+    "opening_hours": "24/7",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 6167541701,
+  "lat": -24.9497620,
+  "lon": 47.1048676,
+  "tags": {
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 6170852487,
+  "lat": -25.0198721,
+  "lon": 46.9557364,
+  "tags": {
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6170853687,
+  "lat": -25.0128606,
+  "lon": 46.9585030,
+  "tags": {
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6596959785,
+  "lat": -25.0372135,
+  "lon": 46.9932297,
+  "tags": {
+    "name:en": "Old Miramar Hotel (closed)",
+    "name:fr": "Ancien Hôtel Miramar (Fermé)",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 8302560917,
+  "lat": -25.0256547,
+  "lon": 46.9884876,
+  "tags": {
+    "name:en": "L'€uro Hotel Restaurant",
+    "name:fr": "L'€uro Hotel Restaurant",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10056820017,
+  "lat": -25.0213128,
+  "lon": 46.9741859,
+  "tags": {
+    "name:en": "Fandriantsara Hôtel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10657181205,
+  "lat": -25.0334652,
+  "lon": 46.9909373,
+  "tags": {
+    "name:en": "Croix du Sud",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 11357384669,
+  "lat": -25.0341739,
+  "lon": 46.9841447,
+  "tags": {
+    "name:en": "Ankoba Beach Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 11563896477,
+  "lat": -25.0318320,
+  "lon": 46.8108290,
+  "tags": {
+    "name:fr": "Chez Maman' Stiffen",
+    "tourism": "camp_site"
+  }
+},
+{
+  "type": "node",
+  "id": 11693973069,
+  "lat": -25.1103285,
+  "lon": 46.7908298,
+  "tags": {
+    "name:fr": "Maison Agent Sarisambo",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 11849673426,
+  "lat": -25.0377731,
+  "lon": 46.9950790,
+  "tags": {
+    "name": "Villa Oceania",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 12313802001,
+  "lat": -24.7532894,
+  "lon": 47.0516395,
+  "tags": {
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 12313802101,
+  "lat": -24.7535843,
+  "lon": 47.0520264,
+  "tags": {
+    "addr:housenumber": "15",
+    "name:en": "tsag",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 170613603,
+  "center": {
+    "lat": -25.0290728,
+    "lon": 46.9970580
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Office of Tourism",
+    "name:en": "Anôsy tourism office",
+    "name:fr": "Office de Tourisme Anosy",
+    "opening_hours": "Mo-Sa 09:00-16:30",
+    "tourism": "information"
+  }
+},
+{
+  "type": "way",
+  "id": 223923291,
+  "center": {
+    "lat": -24.9883336,
+    "lon": 46.9220974
+  },
+  "tags": {
+    "building": "yes",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 230343447,
+  "center": {
+    "lat": -25.0299028,
+    "lon": 46.9952497
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Hôtel Mahavokey",
+    "source": "Bing",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 230365562,
+  "center": {
+    "lat": -25.0320781,
+    "lon": 46.9892460
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Galion",
+    "source": "Bing",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 230365580,
+  "center": {
+    "lat": -25.0351171,
+    "lon": 46.9968034
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "name": "Le Petit Bonheur",
+    "source": "Bing",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 230365602,
+  "center": {
+    "lat": -25.0340309,
+    "lon": 46.9936055
+  },
+  "tags": {
+    "building": "yes",
+    "description": "Hôtel Azura , Groupe Sodiat",
+    "name": "Hôtel Azura",
+    "source": "Bing",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 230495113,
+  "center": {
+    "lat": -25.0261514,
+    "lon": 46.9901960
+  },
+  "tags": {
+    "name": "Hotel du Phare",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 230516350,
+  "center": {
+    "lat": -25.0281260,
+    "lon": 46.9908685
+  },
+  "tags": {
+    "building": "yes",
+    "name": "La Marina Hotel",
+    "source": "Bing",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 230675367,
+  "center": {
+    "lat": -25.0316716,
+    "lon": 46.9901443
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Le Dauphin",
+    "source": "Bing",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 231466727,
+  "center": {
+    "lat": -25.0348450,
+    "lon": 46.9923949
+  },
+  "tags": {
+    "building": "yes",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "way",
+  "id": 231515042,
+  "center": {
+    "lat": -25.0255523,
+    "lon": 46.9907122
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Le Port Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 251117902,
+  "center": {
+    "lat": -25.0335268,
+    "lon": 46.9937151
+  },
+  "tags": {
+    "amenity": "restaurant",
+    "building": "yes",
+    "name": "Chez Anita",
+    "name:en": "Anita's Hotel",
+    "name:fr": "Hotel Anita",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 252090775,
+  "center": {
+    "lat": -25.0358291,
+    "lon": 46.9950001
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Miramar",
+    "source": "Bing",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 253010109,
+  "center": {
+    "lat": -25.0377831,
+    "lon": 46.9957618
+  },
+  "tags": {
+    "alt_name": "Le Local",
+    "building": "yes",
+    "name": "Formerly Chez George",
+    "source": "local knowledge",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 279533619,
+  "center": {
+    "lat": -25.0401243,
+    "lon": 46.9959925
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Lavasoa",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 283308428,
+  "center": {
+    "lat": -24.7812453,
+    "lon": 47.1709071
+  },
+  "tags": {
+    "access": "private",
+    "name": "ACP Camp",
+    "operator": "SEED Madagascar",
+    "tourism": "camp_site"
+  }
+},
+{
+  "type": "way",
+  "id": 292550155,
+  "center": {
+    "lat": -24.7821760,
+    "lon": 47.1948282
+  },
+  "tags": {
+    "name": "Manafiafy Lodge",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 307296502,
+  "center": {
+    "lat": -25.0267462,
+    "lon": 46.9896313
+  },
+  "tags": {
+    "name": "Le Népenthès",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 355811203,
+  "center": {
+    "lat": -25.0416950,
+    "lon": 46.9956645
+  },
+  "tags": {
+    "building": "yes",
+    "internet_access": "wlan",
+    "name": "Talinjoo Hotel",
+    "source": "Bing",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 389533005,
+  "center": {
+    "lat": -25.0239717,
+    "lon": 46.9905351
+  },
+  "tags": {
+    "name": "Ravanala Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 389698126,
+  "center": {
+    "lat": -25.0340447,
+    "lon": 46.9935464
+  },
+  "tags": {
+    "name": "Azura Hotel",
+    "source": "Bing",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 441141776,
+  "center": {
+    "lat": -24.7809747,
+    "lon": 47.1703282
+  },
+  "tags": {
+    "access": "private",
+    "name": "ACP Camp",
+    "operator": "SEED Madagascar",
+    "tourism": "camp_site"
+  }
+},
+{
+  "type": "way",
+  "id": 441141777,
+  "center": {
+    "lat": -24.7811164,
+    "lon": 47.1709288
+  },
+  "tags": {
+    "access": "private",
+    "name": "ACP Camp",
+    "operator": "SEED Madagascar",
+    "tourism": "camp_site"
+  }
+},
+{
+  "type": "way",
+  "id": 1115021942,
+  "center": {
+    "lat": -24.7729466,
+    "lon": 47.1994990
+  },
+  "tags": {
+    "building": "yes",
+    "email": "Vahinylodge@yahoo.fr",
+    "name": "vahiny lodge",
+    "phone": "+261 32 02 468 22, +261 32 43 964 93",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "relation",
+  "id": 3089134,
+  "center": {
+    "lat": -25.0313961,
+    "lon": 46.9906894
+  },
+  "tags": {
+    "building": "yes",
+    "name": "La Croix du Sud",
+    "tourism": "hotel",
+    "type": "multipolygon"
+  }
+},
+{
+  "type": "relation",
+  "id": 5124000,
+  "center": {
+    "lat": -25.0286255,
+    "lon": 46.9959906
+  },
+  "tags": {
+    "building": "yes",
+    "internet_access": "wlan",
+    "massage": "therapeutic",
+    "name": "Kaleta Hotel",
+    "tourism": "hotel",
+    "type": "multipolygon"
+  }
+}
+
+  ]
+}

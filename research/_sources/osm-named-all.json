@@ -1,0 +1,1444 @@
+[
+ {
+  "osm": "node/727284593",
+  "url": "https://www.openstreetmap.org/node/727284593",
+  "lat": -25.0080734,
+  "lon": 46.9652182,
+  "tags": {
+   "GNS:id": "-220822",
+   "alt_name": "Piton Saint-Louis",
+   "ele": "536",
+   "name": "Pic Saint Louis",
+   "natural": "peak",
+   "tourism": "viewpoint"
+  },
+  "srcfile": "osm-tourism.json"
+ },
+ {
+  "osm": "node/3495148766",
+  "url": "https://www.openstreetmap.org/node/3495148766",
+  "lat": -24.8019124,
+  "lon": 47.1632473,
+  "tags": {
+   "access": "private",
+   "name": "Sainte Luce Reserve",
+   "operator": "Sainte Luce Reserve",
+   "tourism": "camp_site"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "node/5329477823",
+  "url": "https://www.openstreetmap.org/node/5329477823",
+  "lat": -25.0416313,
+  "lon": 46.9956451,
+  "tags": {
+   "cuisine": "malagasy;french;indian",
+   "internet_access": "wlan",
+   "name": "Talinjoo",
+   "name:en": "Talinjoo's Restaurant",
+   "name:fr": "restaurant du Talinjoo",
+   "opening_hours": "24/7",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "node/11849673426",
+  "url": "https://www.openstreetmap.org/node/11849673426",
+  "lat": -25.0377731,
+  "lon": 46.995079,
+  "tags": {
+   "name": "Villa Oceania",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/170613603",
+  "url": "https://www.openstreetmap.org/way/170613603",
+  "lat": -25.0290728,
+  "lon": 46.997058,
+  "tags": {
+   "building": "yes",
+   "name": "Office of Tourism",
+   "name:en": "Anôsy tourism office",
+   "name:fr": "Office de Tourisme Anosy",
+   "opening_hours": "Mo-Sa 09:00-16:30",
+   "tourism": "information"
+  },
+  "srcfile": "osm-tourism.json"
+ },
+ {
+  "osm": "way/230343447",
+  "url": "https://www.openstreetmap.org/way/230343447",
+  "lat": -25.0299028,
+  "lon": 46.9952497,
+  "tags": {
+   "building": "yes",
+   "name": "Hôtel Mahavokey",
+   "source": "Bing",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/230365562",
+  "url": "https://www.openstreetmap.org/way/230365562",
+  "lat": -25.0320781,
+  "lon": 46.989246,
+  "tags": {
+   "building": "yes",
+   "name": "Galion",
+   "source": "Bing",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/230365580",
+  "url": "https://www.openstreetmap.org/way/230365580",
+  "lat": -25.0351171,
+  "lon": 46.9968034,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "name": "Le Petit Bonheur",
+   "source": "Bing",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/230365602",
+  "url": "https://www.openstreetmap.org/way/230365602",
+  "lat": -25.0340309,
+  "lon": 46.9936055,
+  "tags": {
+   "building": "yes",
+   "description": "Hôtel Azura , Groupe Sodiat",
+   "name": "Hôtel Azura",
+   "source": "Bing",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/230495113",
+  "url": "https://www.openstreetmap.org/way/230495113",
+  "lat": -25.0261514,
+  "lon": 46.990196,
+  "tags": {
+   "name": "Hotel du Phare",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/230516350",
+  "url": "https://www.openstreetmap.org/way/230516350",
+  "lat": -25.028126,
+  "lon": 46.9908685,
+  "tags": {
+   "building": "yes",
+   "name": "La Marina Hotel",
+   "source": "Bing",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/230675367",
+  "url": "https://www.openstreetmap.org/way/230675367",
+  "lat": -25.0316716,
+  "lon": 46.9901443,
+  "tags": {
+   "building": "yes",
+   "name": "Le Dauphin",
+   "source": "Bing",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/231515042",
+  "url": "https://www.openstreetmap.org/way/231515042",
+  "lat": -25.0255523,
+  "lon": 46.9907122,
+  "tags": {
+   "building": "yes",
+   "name": "Le Port Hotel",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/251117902",
+  "url": "https://www.openstreetmap.org/way/251117902",
+  "lat": -25.0335268,
+  "lon": 46.9937151,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "name": "Chez Anita",
+   "name:en": "Anita's Hotel",
+   "name:fr": "Hotel Anita",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/252090775",
+  "url": "https://www.openstreetmap.org/way/252090775",
+  "lat": -25.0358291,
+  "lon": 46.9950001,
+  "tags": {
+   "building": "yes",
+   "name": "Miramar",
+   "source": "Bing",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/253010109",
+  "url": "https://www.openstreetmap.org/way/253010109",
+  "lat": -25.0377831,
+  "lon": 46.9957618,
+  "tags": {
+   "alt_name": "Le Local",
+   "building": "yes",
+   "name": "Formerly Chez George",
+   "source": "local knowledge",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/279533619",
+  "url": "https://www.openstreetmap.org/way/279533619",
+  "lat": -25.0401243,
+  "lon": 46.9959925,
+  "tags": {
+   "building": "yes",
+   "name": "Lavasoa",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/283308428",
+  "url": "https://www.openstreetmap.org/way/283308428",
+  "lat": -24.7812453,
+  "lon": 47.1709071,
+  "tags": {
+   "access": "private",
+   "name": "ACP Camp",
+   "operator": "SEED Madagascar",
+   "tourism": "camp_site"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/292550155",
+  "url": "https://www.openstreetmap.org/way/292550155",
+  "lat": -24.782176,
+  "lon": 47.1948282,
+  "tags": {
+   "name": "Manafiafy Lodge",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/307296502",
+  "url": "https://www.openstreetmap.org/way/307296502",
+  "lat": -25.0267462,
+  "lon": 46.9896313,
+  "tags": {
+   "name": "Le Népenthès",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/355811203",
+  "url": "https://www.openstreetmap.org/way/355811203",
+  "lat": -25.041695,
+  "lon": 46.9956645,
+  "tags": {
+   "building": "yes",
+   "internet_access": "wlan",
+   "name": "Talinjoo Hotel",
+   "source": "Bing",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/389533005",
+  "url": "https://www.openstreetmap.org/way/389533005",
+  "lat": -25.0239717,
+  "lon": 46.9905351,
+  "tags": {
+   "name": "Ravanala Hotel",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/389698126",
+  "url": "https://www.openstreetmap.org/way/389698126",
+  "lat": -25.0340447,
+  "lon": 46.9935464,
+  "tags": {
+   "name": "Azura Hotel",
+   "source": "Bing",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/441141776",
+  "url": "https://www.openstreetmap.org/way/441141776",
+  "lat": -24.7809747,
+  "lon": 47.1703282,
+  "tags": {
+   "access": "private",
+   "name": "ACP Camp",
+   "operator": "SEED Madagascar",
+   "tourism": "camp_site"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/441141777",
+  "url": "https://www.openstreetmap.org/way/441141777",
+  "lat": -24.7811164,
+  "lon": 47.1709288,
+  "tags": {
+   "access": "private",
+   "name": "ACP Camp",
+   "operator": "SEED Madagascar",
+   "tourism": "camp_site"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/1115021942",
+  "url": "https://www.openstreetmap.org/way/1115021942",
+  "lat": -24.7729466,
+  "lon": 47.199499,
+  "tags": {
+   "building": "yes",
+   "email": "Vahinylodge@yahoo.fr",
+   "name": "vahiny lodge",
+   "phone": "+261 32 02 468 22, +261 32 43 964 93",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "relation/3089134",
+  "url": "https://www.openstreetmap.org/relation/3089134",
+  "lat": -25.0313961,
+  "lon": 46.9906894,
+  "tags": {
+   "building": "yes",
+   "name": "La Croix du Sud",
+   "tourism": "hotel",
+   "type": "multipolygon"
+  },
+  "srcfile": "osm-tourism.json"
+ },
+ {
+  "osm": "relation/5124000",
+  "url": "https://www.openstreetmap.org/relation/5124000",
+  "lat": -25.0286255,
+  "lon": 46.9959906,
+  "tags": {
+   "building": "yes",
+   "internet_access": "wlan",
+   "massage": "therapeutic",
+   "name": "Kaleta Hotel",
+   "tourism": "hotel",
+   "type": "multipolygon"
+  },
+  "srcfile": "osm-tourism.json"
+ },
+ {
+  "osm": "node/2528944037",
+  "url": "https://www.openstreetmap.org/node/2528944037",
+  "lat": -25.028734,
+  "lon": 46.9960691,
+  "tags": {
+   "amenity": "cafe",
+   "name": "Patisserie Colbert"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "node/5316287824",
+  "url": "https://www.openstreetmap.org/node/5316287824",
+  "lat": -25.0292226,
+  "lon": 46.9843201,
+  "tags": {
+   "amenity": "bar",
+   "cuisine": "tapas;burger",
+   "internet_access": "wlan",
+   "name": "La Kabane",
+   "name:fr": "La Kabane",
+   "opening_hours": "We-Su 11:00-23:00",
+   "phone": "+261341260643",
+   "website": "https://www.facebook.com/profile.php?id=100064052106468"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "node/13013669101",
+  "url": "https://www.openstreetmap.org/node/13013669101",
+  "lat": -25.0257898,
+  "lon": 46.9883781,
+  "tags": {
+   "amenity": "restaurant",
+   "name": "Soupe Tamatave"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "node/13759268150",
+  "url": "https://www.openstreetmap.org/node/13759268150",
+  "lat": -25.028942,
+  "lon": 46.9932957,
+  "tags": {
+   "addr:street": "Boulevard Numéro 1",
+   "amenity": "bar",
+   "brewery": "various",
+   "internet_access": "wlan",
+   "name": "Cafe Bar Colorado",
+   "opening_hours": "11 AM to 10 PM"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/231466420",
+  "url": "https://www.openstreetmap.org/way/231466420",
+  "lat": -25.0262684,
+  "lon": 46.9928801,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "name": "Hôtel Mahavoky Annexe"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/231466620",
+  "url": "https://www.openstreetmap.org/way/231466620",
+  "lat": -25.0255913,
+  "lon": 46.9892257,
+  "tags": {
+   "amenity": "bar",
+   "building": "yes",
+   "name": "Florida"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/231466742",
+  "url": "https://www.openstreetmap.org/way/231466742",
+  "lat": -25.0275958,
+  "lon": 46.9942506,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "cuisine": "french;malagasy;seafood;fish",
+   "name": "Karibu",
+   "name:en": "Karibu",
+   "name:fr": "Karibu",
+   "opening_hours": "Mo-Su 10:00-22:00",
+   "phone": "+264346907770"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/231514965",
+  "url": "https://www.openstreetmap.org/way/231514965",
+  "lat": -25.0287912,
+  "lon": 46.9950864,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "cuisine": "pizza",
+   "delivery": "yes",
+   "name": "Pizza Express",
+   "takeaway": "yes"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/231546679",
+  "url": "https://www.openstreetmap.org/way/231546679",
+  "lat": -25.0269391,
+  "lon": 46.9788274,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "name": "Les Chasseurs"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/231554039",
+  "url": "https://www.openstreetmap.org/way/231554039",
+  "lat": -25.034218,
+  "lon": 46.9832557,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "cuisine": "french;regional",
+   "diet:seafood": "yes",
+   "name": "L'Arrivage",
+   "name:fr": "L'Arrivage",
+   "opening_hours": "Tu-Su 07:30 - 17:00",
+   "operator": "Telma",
+   "phone": "+261385493861",
+   "website": "https://www.facebook.com/people/LArrivage-Fort-dauphin/100083207743581/"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/243160936",
+  "url": "https://www.openstreetmap.org/way/243160936",
+  "lat": -25.0276623,
+  "lon": 46.9848416,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "capacity": "30",
+   "cuisine": "chinese",
+   "name": "Bon Appetite"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/243160938",
+  "url": "https://www.openstreetmap.org/way/243160938",
+  "lat": -25.0278574,
+  "lon": 46.9873036,
+  "tags": {
+   "amenity": "pub",
+   "building": "yes",
+   "name": "Rayon de Soleil",
+   "name:azafady": "Dimby's Bar"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/243160941",
+  "url": "https://www.openstreetmap.org/way/243160941",
+  "lat": -25.0276892,
+  "lon": 46.9847623,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "capacity": "10",
+   "cuisine": "regional",
+   "name": "Madam Abels"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/243160942",
+  "url": "https://www.openstreetmap.org/way/243160942",
+  "lat": -25.0277225,
+  "lon": 46.9846876,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "capacity": "20",
+   "cuisine": "regional",
+   "name": "Mami Jo's"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/243160944",
+  "url": "https://www.openstreetmap.org/way/243160944",
+  "lat": -25.0335184,
+  "lon": 46.9914252,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "cuisine": "local",
+   "name": "Snack Bar Mahamanina",
+   "name:azafady": "Snack Bar",
+   "note": "Karaoke facilities available on request.",
+   "phone": "+261341686276"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/245761272",
+  "url": "https://www.openstreetmap.org/way/245761272",
+  "lat": -25.02999,
+  "lon": 46.9852683,
+  "tags": {
+   "amenity": "pub",
+   "building": "yes",
+   "name": "Ski Chalet"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/245761273",
+  "url": "https://www.openstreetmap.org/way/245761273",
+  "lat": -25.0311789,
+  "lon": 46.9848927,
+  "tags": {
+   "amenity": "bar",
+   "building": "yes",
+   "name": "Sidebar"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/247154608",
+  "url": "https://www.openstreetmap.org/way/247154608",
+  "lat": -25.0272072,
+  "lon": 46.9792449,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "name": "Mami Jo's Tanambao"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/248414885",
+  "url": "https://www.openstreetmap.org/way/248414885",
+  "lat": -25.0351019,
+  "lon": 46.9926308,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "name": "Stadium Restaurant"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/252090773",
+  "url": "https://www.openstreetmap.org/way/252090773",
+  "lat": -25.0338272,
+  "lon": 46.984574,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "cuisine": "french;pizza",
+   "name": "Chez Bernards",
+   "name:en": "Bernard's",
+   "name:fr": "Chez Bernard",
+   "outdoor_seating": "yes"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/252090774",
+  "url": "https://www.openstreetmap.org/way/252090774",
+  "lat": -25.0331277,
+  "lon": 46.9923952,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "name": "Chez Vivie",
+   "source": "Bing"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/253010101",
+  "url": "https://www.openstreetmap.org/way/253010101",
+  "lat": -25.0312975,
+  "lon": 46.9845234,
+  "tags": {
+   "amenity": "bar",
+   "building": "yes",
+   "name": "Presidents Bar",
+   "name:azafady": "Hawaiian Shack"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/253010102",
+  "url": "https://www.openstreetmap.org/way/253010102",
+  "lat": -25.0288477,
+  "lon": 46.9864314,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "cuisine": "local",
+   "name": "Hotely Domoina"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/261222052",
+  "url": "https://www.openstreetmap.org/way/261222052",
+  "lat": -25.0297549,
+  "lon": 46.9864619,
+  "tags": {
+   "amenity": "cafe",
+   "building": "yes",
+   "name": "Crepe Man"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/264304940",
+  "url": "https://www.openstreetmap.org/way/264304940",
+  "lat": -25.0274576,
+  "lon": 46.9856624,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "name": "Escale"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/277024610",
+  "url": "https://www.openstreetmap.org/way/277024610",
+  "lat": -25.0300265,
+  "lon": 46.9973877,
+  "tags": {
+   "amenity": "bar",
+   "building": "yes",
+   "name": "Chez Christophe",
+   "name:azafady": "Green Window Bar"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/287213665",
+  "url": "https://www.openstreetmap.org/way/287213665",
+  "lat": -25.0031174,
+  "lon": 46.9841514,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "cuisine": "pizza,regional",
+   "name": "Coco Beach"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/287500497",
+  "url": "https://www.openstreetmap.org/way/287500497",
+  "lat": -25.0275911,
+  "lon": 46.9851728,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "name": "Mendrika Sophie",
+   "name:azafady": "The Moat",
+   "name:en": "Etoile de Mer"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/287855689",
+  "url": "https://www.openstreetmap.org/way/287855689",
+  "lat": -25.0250915,
+  "lon": 46.9915103,
+  "tags": {
+   "amenity": "bar",
+   "building": "yes",
+   "name": "Chez Martine's"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/290820632",
+  "url": "https://www.openstreetmap.org/way/290820632",
+  "lat": -25.0237715,
+  "lon": 46.9905515,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "cuisine": "regional,french",
+   "name": "Chez Coco"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/297748947",
+  "url": "https://www.openstreetmap.org/way/297748947",
+  "lat": -25.0261785,
+  "lon": 46.9877471,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "name": "Le Tournesol"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/308182334",
+  "url": "https://www.openstreetmap.org/way/308182334",
+  "lat": -25.0314022,
+  "lon": 46.9956838,
+  "tags": {
+   "amenity": "bar",
+   "building": "yes",
+   "name": "Chez Kabuko",
+   "name:en": "Chez Karibo"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/435261965",
+  "url": "https://www.openstreetmap.org/way/435261965",
+  "lat": -25.0113614,
+  "lon": 46.8920569,
+  "tags": {
+   "amenity": "restaurant",
+   "name": "Mahamanina"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "way/1102747615",
+  "url": "https://www.openstreetmap.org/way/1102747615",
+  "lat": -25.0341286,
+  "lon": 46.9865452,
+  "tags": {
+   "amenity": "restaurant",
+   "building": "yes",
+   "cuisine": "french;regional;malagasy;coffee_shop",
+   "name": "Saint Pas",
+   "opening_hours": "Mo-Sa 07:00-20:00",
+   "phone": "+261345025506",
+   "takeaway": "yes",
+   "website": "https://www.facebook.com/saintpasfd/"
+  },
+  "srcfile": "osm-restaurants.json"
+ },
+ {
+  "osm": "node/2684087812",
+  "url": "https://www.openstreetmap.org/node/2684087812",
+  "lat": -25.0363618,
+  "lon": 46.8923591,
+  "tags": {
+   "alt_name": "Portuguese Fort",
+   "historic": "ruins",
+   "name": "Tranovato"
+  },
+  "srcfile": "osm-extra.json/heritage"
+ },
+ {
+  "osm": "way/344336832",
+  "url": "https://www.openstreetmap.org/way/344336832",
+  "lat": -25.0268311,
+  "lon": 46.9986709,
+  "tags": {
+   "building": "yes",
+   "historic": "ruins",
+   "name": "Bastion de Maudave"
+  },
+  "srcfile": "osm-extra.json/heritage"
+ },
+ {
+  "osm": "way/26382946",
+  "url": "https://www.openstreetmap.org/way/26382946",
+  "lat": -25.1270681,
+  "lon": 46.511127,
+  "tags": {
+   "GNS:id": "-206489",
+   "name": "Farihy Anony",
+   "name:en": "Anony Lagoon",
+   "natural": "water",
+   "source": "Yahoo"
+  },
+  "srcfile": "osm-tmp.json"
+ },
+ {
+  "osm": "way/34477620",
+  "url": "https://www.openstreetmap.org/way/34477620",
+  "lat": -25.016368,
+  "lon": 46.9850287,
+  "tags": {
+   "name": "Farihy Amparihy",
+   "natural": "water"
+  },
+  "srcfile": "osm-tmp.json"
+ },
+ {
+  "osm": "way/34477624",
+  "url": "https://www.openstreetmap.org/way/34477624",
+  "lat": -25.0021793,
+  "lon": 46.9915656,
+  "tags": {
+   "GNS:id": "-214812",
+   "name": "Farihy Lanirano",
+   "natural": "water",
+   "source": "GNS"
+  },
+  "srcfile": "osm-tmp.json"
+ },
+ {
+  "osm": "way/34477668",
+  "url": "https://www.openstreetmap.org/way/34477668",
+  "lat": -24.9657411,
+  "lon": 47.0621903,
+  "tags": {
+   "GNS:id": "-195596",
+   "name": "Farihy Ambavarano",
+   "name:fr": "Lac Ambavarano",
+   "natural": "water",
+   "source": "GNS",
+   "water": "river"
+  },
+  "srcfile": "osm-tmp.json"
+ },
+ {
+  "osm": "way/75250725",
+  "url": "https://www.openstreetmap.org/way/75250725",
+  "lat": -25.1622803,
+  "lon": 46.6054262,
+  "tags": {
+   "GNS:id": "-212656",
+   "name": "Farihy Erombo",
+   "natural": "water",
+   "source": "Yahoo"
+  },
+  "srcfile": "osm-tmp.json"
+ },
+ {
+  "osm": "way/75529453",
+  "url": "https://www.openstreetmap.org/way/75529453",
+  "lat": -25.0862274,
+  "lon": 46.8422307,
+  "tags": {
+   "GNS:id": "-203468",
+   "name": "Farihy Andratoloharano",
+   "natural": "water",
+   "source": "Yahoo"
+  },
+  "srcfile": "osm-tmp.json"
+ },
+ {
+  "osm": "way/194271425",
+  "url": "https://www.openstreetmap.org/way/194271425",
+  "lat": -24.6158235,
+  "lon": 47.2390752,
+  "tags": {
+   "GNS:id": "-214978",
+   "name": "Farihy Lohanivondro",
+   "natural": "water",
+   "source": "GNS"
+  },
+  "srcfile": "osm-tmp.json"
+ },
+ {
+  "osm": "way/194271431",
+  "url": "https://www.openstreetmap.org/way/194271431",
+  "lat": -24.5992815,
+  "lon": 47.2470371,
+  "tags": {
+   "GNS:id": "-221461",
+   "name": "Farihy Sihanaky",
+   "natural": "water",
+   "source": "GNS"
+  },
+  "srcfile": "osm-tmp.json"
+ },
+ {
+  "osm": "way/223538664",
+  "url": "https://www.openstreetmap.org/way/223538664",
+  "lat": -25.1569175,
+  "lon": 46.58637,
+  "tags": {
+   "GNS:id": "-221268",
+   "name": "Farihy Sarida",
+   "natural": "water",
+   "source": "GNS"
+  },
+  "srcfile": "osm-tmp.json"
+ },
+ {
+  "osm": "way/224172325",
+  "url": "https://www.openstreetmap.org/way/224172325",
+  "lat": -25.0334178,
+  "lon": 46.9756045,
+  "tags": {
+   "name": "Farihy Ambinanikely",
+   "natural": "water"
+  },
+  "srcfile": "osm-tmp.json"
+ },
+ {
+  "osm": "way/818779486",
+  "url": "https://www.openstreetmap.org/way/818779486",
+  "lat": -25.0033435,
+  "lon": 46.8038165,
+  "tags": {
+   "intermittent": "yes",
+   "name": "Bassin eau",
+   "natural": "water",
+   "water": "wastewater"
+  },
+  "srcfile": "osm-tmp.json"
+ },
+ {
+  "osm": "node/3744075366",
+  "url": "https://www.openstreetmap.org/node/3744075366",
+  "lat": -24.8231207,
+  "lon": 46.1763489,
+  "tags": {
+   "name": "Mandrare River Camp",
+   "operator": "Madaclassic",
+   "tourism": "hotel"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "way/226390100",
+  "url": "https://www.openstreetmap.org/way/226390100",
+  "lat": -24.9368438,
+  "lon": 47.1112313,
+  "tags": {
+   "fixme": "Need confirmation that this is the correct location? I believe it is.",
+   "name": "Pirate Camp",
+   "tourism": "chalet"
+  },
+  "srcfile": "osm-extra.json/lodging"
+ },
+ {
+  "osm": "node/2669181339",
+  "url": "https://www.openstreetmap.org/node/2669181339",
+  "lat": -25.0992681,
+  "lon": 46.471945,
+  "tags": {
+   "amenity": "place_of_worship",
+   "name": "Eglise Luthérienne",
+   "religion": "christian"
+  },
+  "srcfile": "osm-extra.json/heritage"
+ },
+ {
+  "osm": "way/189808922",
+  "url": "https://www.openstreetmap.org/way/189808922",
+  "lat": -24.9972055,
+  "lon": 46.2953715,
+  "tags": {
+   "amenity": "place_of_worship",
+   "name": "Eglise",
+   "religion": "christian"
+  },
+  "srcfile": "osm-extra.json/heritage"
+ },
+ {
+  "osm": "way/230343524",
+  "url": "https://www.openstreetmap.org/way/230343524",
+  "lat": -25.0318503,
+  "lon": 46.9947049,
+  "tags": {
+   "amenity": "place_of_worship",
+   "building": "cathedral",
+   "denomination": "roman_catholic",
+   "name": "Cathédrale Saint-Vincent-de-Paul",
+   "operator": "EKAR",
+   "religion": "christian",
+   "source": "Bing"
+  },
+  "srcfile": "osm-extra.json/heritage"
+ },
+ {
+  "osm": "way/230587979",
+  "url": "https://www.openstreetmap.org/way/230587979",
+  "lat": -25.0269555,
+  "lon": 46.981774,
+  "tags": {
+   "amenity": "place_of_worship",
+   "building": "yes",
+   "denomination": "roman_catholic",
+   "name": "Eglise TANAMBAO",
+   "religion": "christian",
+   "source": "Bing"
+  },
+  "srcfile": "osm-extra.json/heritage"
+ },
+ {
+  "osm": "way/232774015",
+  "url": "https://www.openstreetmap.org/way/232774015",
+  "lat": -25.0297583,
+  "lon": 46.9573151,
+  "tags": {
+   "amenity": "place_of_worship",
+   "building": "yes",
+   "denomination": "roman_catholic",
+   "name": "Chapelle des Soeur",
+   "religion": "christian"
+  },
+  "srcfile": "osm-extra.json/heritage"
+ },
+ {
+  "osm": "way/1266058836",
+  "url": "https://www.openstreetmap.org/way/1266058836",
+  "lat": -25.0340374,
+  "lon": 46.9879386,
+  "tags": {
+   "amenity": "place_of_worship",
+   "building": "yes",
+   "name": "Mosquée d'ESOKAKY",
+   "religion": "muslim"
+  },
+  "srcfile": "osm-extra.json/heritage"
+ },
+ {
+  "osm": "node/2644349689",
+  "url": "https://www.openstreetmap.org/node/2644349689",
+  "lat": -25.0294304,
+  "lon": 46.8087758,
+  "tags": {
+   "amenity": "marketplace",
+   "name": "Marché Market"
+  },
+  "srcfile": "osm-extra.json/markets"
+ },
+ {
+  "osm": "node/2794508508",
+  "url": "https://www.openstreetmap.org/node/2794508508",
+  "lat": -24.7566465,
+  "lon": 47.0521456,
+  "tags": {
+   "amenity": "marketplace",
+   "name": "Tsagnoriha Market"
+  },
+  "srcfile": "osm-extra.json/markets"
+ },
+ {
+  "osm": "node/3535565283",
+  "url": "https://www.openstreetmap.org/node/3535565283",
+  "lat": -25.0113426,
+  "lon": 46.8910463,
+  "tags": {
+   "amenity": "marketplace",
+   "name": "Soanierana Market"
+  },
+  "srcfile": "osm-extra.json/markets"
+ },
+ {
+  "osm": "node/10312795387",
+  "url": "https://www.openstreetmap.org/node/10312795387",
+  "lat": -24.6584056,
+  "lon": 46.8780832,
+  "tags": {
+   "amenity": "marketplace",
+   "name": "Marché Enaniliha"
+  },
+  "srcfile": "osm-extra.json/markets"
+ },
+ {
+  "osm": "node/12369194698",
+  "url": "https://www.openstreetmap.org/node/12369194698",
+  "lat": -24.93347,
+  "lon": 46.8651089,
+  "tags": {
+   "amenity": "marketplace",
+   "name": "Tsenan'Ifarantsa"
+  },
+  "srcfile": "osm-extra.json/markets"
+ },
+ {
+  "osm": "way/231466407",
+  "url": "https://www.openstreetmap.org/way/231466407",
+  "lat": -25.0276863,
+  "lon": 46.9850533,
+  "tags": {
+   "amenity": "marketplace",
+   "building": "yes",
+   "name": "Esokaka Market"
+  },
+  "srcfile": "osm-extra.json/markets"
+ },
+ {
+  "osm": "way/231466504",
+  "url": "https://www.openstreetmap.org/way/231466504",
+  "lat": -25.0334208,
+  "lon": 46.9923734,
+  "tags": {
+   "amenity": "marketplace",
+   "building": "yes",
+   "name": "Bazarikely Market"
+  },
+  "srcfile": "osm-extra.json/markets"
+ },
+ {
+  "osm": "way/232149141",
+  "url": "https://www.openstreetmap.org/way/232149141",
+  "lat": -24.7762422,
+  "lon": 47.1981603,
+  "tags": {
+   "amenity": "marketplace",
+   "building": "yes",
+   "name": "Manafiafy Market"
+  },
+  "srcfile": "osm-extra.json/markets"
+ },
+ {
+  "osm": "way/827555477",
+  "url": "https://www.openstreetmap.org/way/827555477",
+  "lat": -25.0354995,
+  "lon": 46.7483782,
+  "tags": {
+   "amenity": "marketplace",
+   "name": "Marché aux Zébu",
+   "opening_hours": "vendredi matin",
+   "operator": "public"
+  },
+  "srcfile": "osm-extra.json/markets"
+ },
+ {
+  "osm": "way/1139107578",
+  "url": "https://www.openstreetmap.org/way/1139107578",
+  "lat": -25.0267436,
+  "lon": 46.9742059,
+  "tags": {
+   "amenity": "marketplace",
+   "name": "Market (OPCI)"
+  },
+  "srcfile": "osm-extra.json/markets"
+ },
+ {
+  "osm": "way/1266700478",
+  "url": "https://www.openstreetmap.org/way/1266700478",
+  "lat": -25.0212462,
+  "lon": 46.9908977,
+  "tags": {
+   "amenity": "marketplace",
+   "name": "Bazar AMPARIHY"
+  },
+  "srcfile": "osm-extra.json/markets"
+ },
+ {
+  "osm": "way/215474567",
+  "url": "https://www.openstreetmap.org/way/215474567",
+  "lat": -25.0349263,
+  "lon": 46.9942451,
+  "tags": {
+   "leisure": "sports_centre",
+   "name": "Stade Municipal d’Ampasimasay",
+   "operator": "Commune Urbaine de Fort Dauphin"
+  },
+  "srcfile": "osm-extra.json/sport"
+ },
+ {
+  "osm": "node/9768741857",
+  "url": "https://www.openstreetmap.org/node/9768741857",
+  "lat": -24.6696723,
+  "lon": 47.1855295,
+  "tags": {
+   "amenity": "ferry_terminal",
+   "ferry": "yes",
+   "name": "Bac Vatomirindra",
+   "public_transport": "station"
+  },
+  "srcfile": "osm-extra.json/services"
+ },
+ {
+  "osm": "node/9768754692",
+  "url": "https://www.openstreetmap.org/node/9768754692",
+  "lat": -24.6158378,
+  "lon": 47.2106252,
+  "tags": {
+   "amenity": "ferry_terminal",
+   "ferry": "yes",
+   "name": "Bac Iaboakoho",
+   "public_transport": "station"
+  },
+  "srcfile": "osm-extra.json/services"
+ },
+ {
+  "osm": "node/9768754747",
+  "url": "https://www.openstreetmap.org/node/9768754747",
+  "lat": -24.6155129,
+  "lon": 47.2111237,
+  "tags": {
+   "amenity": "ferry_terminal",
+   "ferry": "yes",
+   "name": "Bac Iaboakoho",
+   "public_transport": "station"
+  },
+  "srcfile": "osm-extra.json/services"
+ },
+ {
+  "osm": "node/9768759054",
+  "url": "https://www.openstreetmap.org/node/9768759054",
+  "lat": -24.6692566,
+  "lon": 47.1857309,
+  "tags": {
+   "amenity": "ferry_terminal",
+   "ferry": "yes",
+   "name": "Bac Vatomirindra",
+   "public_transport": "station"
+  },
+  "srcfile": "osm-extra.json/services"
+ },
+ {
+  "osm": "node/11167418705",
+  "url": "https://www.openstreetmap.org/node/11167418705",
+  "lat": -25.0343967,
+  "lon": 46.9536375,
+  "tags": {
+   "addr:postcode": "614",
+   "email": "voyage.rfd2022@gmail.com",
+   "name": "voyage R",
+   "name:en": "agences de voyages et location de voitures",
+   "phone": "0344291958",
+   "shop": "travel_agency"
+  },
+  "srcfile": "osm-extra.json/services"
+ },
+ {
+  "osm": "way/183962580",
+  "url": "https://www.openstreetmap.org/way/183962580",
+  "lat": -25.0268903,
+  "lon": 46.9929003,
+  "tags": {
+   "amenity": "fuel",
+   "brand": "Total",
+   "building": "yes",
+   "name": "Total"
+  },
+  "srcfile": "osm-extra.json/services"
+ },
+ {
+  "osm": "way/231466494",
+  "url": "https://www.openstreetmap.org/way/231466494",
+  "lat": -25.0286627,
+  "lon": 46.9713515,
+  "tags": {
+   "amenity": "fuel",
+   "brand": "Galana",
+   "building": "yes",
+   "name": "Galana"
+  },
+  "srcfile": "osm-extra.json/services"
+ },
+ {
+  "osm": "way/231466567",
+  "url": "https://www.openstreetmap.org/way/231466567",
+  "lat": -25.0285088,
+  "lon": 46.9698236,
+  "tags": {
+   "amenity": "fuel",
+   "brand": "Total",
+   "building": "yes",
+   "name": "Total"
+  },
+  "srcfile": "osm-extra.json/services"
+ },
+ {
+  "osm": "way/231514959",
+  "url": "https://www.openstreetmap.org/way/231514959",
+  "lat": -25.0280679,
+  "lon": 46.9847964,
+  "tags": {
+   "amenity": "fuel",
+   "brand": "Shell",
+   "building": "yes",
+   "name": "Shell"
+  },
+  "srcfile": "osm-extra.json/services"
+ },
+ {
+  "osm": "way/231515131",
+  "url": "https://www.openstreetmap.org/way/231515131",
+  "lat": -25.0279921,
+  "lon": 46.9944035,
+  "tags": {
+   "amenity": "fuel",
+   "brand": "Jovenna",
+   "building": "yes",
+   "name": "Jovenna"
+  },
+  "srcfile": "osm-extra.json/services"
+ },
+ {
+  "osm": "way/247154604",
+  "url": "https://www.openstreetmap.org/way/247154604",
+  "lat": -25.0268261,
+  "lon": 46.9933836,
+  "tags": {
+   "building": "yes",
+   "name": "Air Fort Services",
+   "shop": "travel_agency"
+  },
+  "srcfile": "osm-extra.json/services"
+ },
+ {
+  "osm": "way/292048856",
+  "url": "https://www.openstreetmap.org/way/292048856",
+  "lat": -25.0286582,
+  "lon": 46.9865843,
+  "tags": {
+   "amenity": "fuel",
+   "building": "yes",
+   "fuel": "gas",
+   "name": "Vitogaz"
+  },
+  "srcfile": "osm-extra.json/services"
+ },
+ {
+  "osm": "node/2972034197",
+  "url": "https://www.openstreetmap.org/node/2972034197",
+  "lat": -25.0086573,
+  "lon": 46.3020327,
+  "tags": {
+   "GNS:id": "-211096",
+   "aeroway": "aerodrome",
+   "name": "Berenty"
+  },
+  "srcfile": "osm-extra.json/aeroway"
+ },
+ {
+  "osm": "node/2972034198",
+  "url": "https://www.openstreetmap.org/node/2972034198",
+  "lat": -25.0755581,
+  "lon": 46.3934498,
+  "tags": {
+   "GNS:id": "-211984",
+   "aeroway": "aerodrome",
+   "name": "Bevala"
+  },
+  "srcfile": "osm-extra.json/aeroway"
+ },
+ {
+  "osm": "way/186649424",
+  "url": "https://www.openstreetmap.org/way/186649424",
+  "lat": -24.8207335,
+  "lon": 46.1536581,
+  "tags": {
+   "GNS:id": "-213707",
+   "aeroway": "aerodrome",
+   "name": "Ifotaka Airfield"
+  },
+  "srcfile": "osm-extra.json/aeroway"
+ },
+ {
+  "osm": "way/193092611",
+  "url": "https://www.openstreetmap.org/way/193092611",
+  "lat": -25.0401139,
+  "lon": 46.9531743,
+  "tags": {
+   "GNS:id": "-217603",
+   "aeroway": "aerodrome",
+   "alt_name": "Marillac Airport",
+   "iata": "FTU",
+   "icao": "FMSD",
+   "name": "Aéroport de Tôlanaro"
+  },
+  "srcfile": "osm-extra.json/aeroway"
+ }
+]

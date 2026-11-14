@@ -1,0 +1,1549 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-14T14:12:02Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "way",
+  "id": 26382946,
+  "center": {
+    "lat": -25.1270681,
+    "lon": 46.5111270
+  },
+  "tags": {
+    "GNS:id": "-206489",
+    "name": "Farihy Anony",
+    "name:en": "Anony Lagoon",
+    "natural": "water",
+    "source": "Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 26383021,
+  "center": {
+    "lat": -25.1291535,
+    "lon": 46.7233624
+  },
+  "tags": {
+    "natural": "water",
+    "water": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 34477620,
+  "center": {
+    "lat": -25.0163680,
+    "lon": 46.9850287
+  },
+  "tags": {
+    "name": "Farihy Amparihy",
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 34477624,
+  "center": {
+    "lat": -25.0021793,
+    "lon": 46.9915656
+  },
+  "tags": {
+    "GNS:id": "-214812",
+    "name": "Farihy Lanirano",
+    "natural": "water",
+    "source": "GNS"
+  }
+},
+{
+  "type": "way",
+  "id": 34477668,
+  "center": {
+    "lat": -24.9657411,
+    "lon": 47.0621903
+  },
+  "tags": {
+    "GNS:id": "-195596",
+    "name": "Farihy Ambavarano",
+    "name:fr": "Lac Ambavarano",
+    "natural": "water",
+    "source": "GNS",
+    "water": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 73592893,
+  "center": {
+    "lat": -25.0330712,
+    "lon": 46.9656837
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 73592895,
+  "center": {
+    "lat": -24.9611888,
+    "lon": 47.0863477
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 75250725,
+  "center": {
+    "lat": -25.1622803,
+    "lon": 46.6054262
+  },
+  "tags": {
+    "GNS:id": "-212656",
+    "name": "Farihy Erombo",
+    "natural": "water",
+    "source": "Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 75529453,
+  "center": {
+    "lat": -25.0862274,
+    "lon": 46.8422307
+  },
+  "tags": {
+    "GNS:id": "-203468",
+    "name": "Farihy Andratoloharano",
+    "natural": "water",
+    "source": "Yahoo"
+  }
+},
+{
+  "type": "way",
+  "id": 170618801,
+  "center": {
+    "lat": -25.0330566,
+    "lon": 46.9609834
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 193324590,
+  "center": {
+    "lat": -24.6849734,
+    "lon": 46.0869529
+  },
+  "tags": {
+    "natural": "water",
+    "source": "Bing",
+    "water": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 194271425,
+  "center": {
+    "lat": -24.6158235,
+    "lon": 47.2390752
+  },
+  "tags": {
+    "GNS:id": "-214978",
+    "name": "Farihy Lohanivondro",
+    "natural": "water",
+    "source": "GNS"
+  }
+},
+{
+  "type": "way",
+  "id": 194271431,
+  "center": {
+    "lat": -24.5992815,
+    "lon": 47.2470371
+  },
+  "tags": {
+    "GNS:id": "-221461",
+    "name": "Farihy Sihanaky",
+    "natural": "water",
+    "source": "GNS"
+  }
+},
+{
+  "type": "way",
+  "id": 194652335,
+  "center": {
+    "lat": -24.8069705,
+    "lon": 47.1540378
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 194652337,
+  "center": {
+    "lat": -24.8242871,
+    "lon": 47.1440310
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 194652338,
+  "center": {
+    "lat": -24.8348250,
+    "lon": 47.1358991
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 194652339,
+  "center": {
+    "lat": -24.7838253,
+    "lon": 47.1635173
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 194902182,
+  "center": {
+    "lat": -24.8851491,
+    "lon": 47.1165769
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 194902185,
+  "center": {
+    "lat": -24.8960885,
+    "lon": 47.1188819
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 194911567,
+  "center": {
+    "lat": -24.8533406,
+    "lon": 47.1184544
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 194930408,
+  "center": {
+    "lat": -24.8649848,
+    "lon": 47.1164879
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 194930413,
+  "center": {
+    "lat": -24.9378622,
+    "lon": 47.0940173
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 194930415,
+  "center": {
+    "lat": -24.9333464,
+    "lon": 47.0927814
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223349301,
+  "center": {
+    "lat": -25.0005142,
+    "lon": 46.8574893
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223377662,
+  "center": {
+    "lat": -24.9372140,
+    "lon": 46.8306175
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223377663,
+  "center": {
+    "lat": -24.9546631,
+    "lon": 46.8608633
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223377664,
+  "center": {
+    "lat": -24.9310652,
+    "lon": 46.8772025
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223377665,
+  "center": {
+    "lat": -24.9367614,
+    "lon": 46.8372868
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223434085,
+  "center": {
+    "lat": -25.0909043,
+    "lon": 46.4727971
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223434086,
+  "center": {
+    "lat": -25.0810752,
+    "lon": 46.4813250
+  },
+  "tags": {
+    "natural": "water",
+    "water": "reservoir"
+  }
+},
+{
+  "type": "way",
+  "id": 223434087,
+  "center": {
+    "lat": -25.0833523,
+    "lon": 46.4818566
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223434088,
+  "center": {
+    "lat": -25.0810780,
+    "lon": 46.4951111
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223434089,
+  "center": {
+    "lat": -25.0830851,
+    "lon": 46.4987236
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223434090,
+  "center": {
+    "lat": -25.0833761,
+    "lon": 46.4801758
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223447973,
+  "center": {
+    "lat": -25.0925241,
+    "lon": 46.4324400
+  },
+  "tags": {
+    "natural": "water",
+    "water": "oxbow"
+  }
+},
+{
+  "type": "way",
+  "id": 223447974,
+  "center": {
+    "lat": -24.9943065,
+    "lon": 46.3902385
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223471844,
+  "center": {
+    "lat": -25.1404595,
+    "lon": 46.7524140
+  },
+  "tags": {
+    "natural": "water",
+    "water": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 223538664,
+  "center": {
+    "lat": -25.1569175,
+    "lon": 46.5863700
+  },
+  "tags": {
+    "GNS:id": "-221268",
+    "name": "Farihy Sarida",
+    "natural": "water",
+    "source": "GNS"
+  }
+},
+{
+  "type": "way",
+  "id": 223538670,
+  "center": {
+    "lat": -25.1794830,
+    "lon": 46.6225985
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223538681,
+  "center": {
+    "lat": -25.1781872,
+    "lon": 46.6893563
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223538688,
+  "center": {
+    "lat": -25.1759651,
+    "lon": 46.6981667
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223538691,
+  "center": {
+    "lat": -25.0853371,
+    "lon": 46.4741229
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223538696,
+  "center": {
+    "lat": -25.1783310,
+    "lon": 46.6893781
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223580154,
+  "center": {
+    "lat": -25.0871941,
+    "lon": 46.4084668
+  },
+  "tags": {
+    "natural": "water",
+    "water": "pond"
+  }
+},
+{
+  "type": "way",
+  "id": 223580157,
+  "center": {
+    "lat": -25.0447675,
+    "lon": 46.3709365
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223580160,
+  "center": {
+    "lat": -25.0877616,
+    "lon": 46.4085584
+  },
+  "tags": {
+    "natural": "water",
+    "water": "pond"
+  }
+},
+{
+  "type": "way",
+  "id": 223580161,
+  "center": {
+    "lat": -25.0461654,
+    "lon": 46.3719361
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223719895,
+  "center": {
+    "lat": -24.9517404,
+    "lon": 46.4306876
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223719897,
+  "center": {
+    "lat": -24.9578188,
+    "lon": 46.4287741
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223760048,
+  "center": {
+    "lat": -24.9229721,
+    "lon": 46.4223188
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223760051,
+  "center": {
+    "lat": -24.7744217,
+    "lon": 47.0230642
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223760052,
+  "center": {
+    "lat": -24.7753873,
+    "lon": 47.0218765
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223802211,
+  "center": {
+    "lat": -24.9124297,
+    "lon": 46.8859603
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223908196,
+  "center": {
+    "lat": -25.1203774,
+    "lon": 46.4076601
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223908200,
+  "center": {
+    "lat": -25.1404557,
+    "lon": 46.4301387
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223908201,
+  "center": {
+    "lat": -25.1180842,
+    "lon": 46.4090816
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223908204,
+  "center": {
+    "lat": -25.1346955,
+    "lon": 46.4251950
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223923339,
+  "center": {
+    "lat": -24.8497390,
+    "lon": 47.1123208
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 223923343,
+  "center": {
+    "lat": -24.8486561,
+    "lon": 47.1284686
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 224138744,
+  "center": {
+    "lat": -24.9555996,
+    "lon": 47.0504057
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 224138747,
+  "center": {
+    "lat": -24.9534182,
+    "lon": 47.0577281
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 224138751,
+  "center": {
+    "lat": -24.9571264,
+    "lon": 47.0359075
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 224172325,
+  "center": {
+    "lat": -25.0334178,
+    "lon": 46.9756045
+  },
+  "tags": {
+    "name": "Farihy Ambinanikely",
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 224172332,
+  "center": {
+    "lat": -24.6692561,
+    "lon": 47.2153086
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 224785431,
+  "center": {
+    "lat": -24.8388375,
+    "lon": 47.1337697
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 225809521,
+  "center": {
+    "lat": -25.1037518,
+    "lon": 46.7962611
+  },
+  "tags": {
+    "natural": "water",
+    "water": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 225809522,
+  "center": {
+    "lat": -25.1166827,
+    "lon": 46.8073193
+  },
+  "tags": {
+    "natural": "water",
+    "water": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 226072292,
+  "center": {
+    "lat": -25.1777408,
+    "lon": 46.6981107
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 226072294,
+  "center": {
+    "lat": -25.1769600,
+    "lon": 46.6944848
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 226144930,
+  "center": {
+    "lat": -24.6725992,
+    "lon": 47.2116382
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 226144932,
+  "center": {
+    "lat": -24.6760954,
+    "lon": 47.2142117
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 226144933,
+  "center": {
+    "lat": -24.6908933,
+    "lon": 47.2054974
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 226347340,
+  "center": {
+    "lat": -24.7415955,
+    "lon": 47.0916732
+  },
+  "tags": {
+    "natural": "water",
+    "water": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 226347341,
+  "center": {
+    "lat": -24.6947414,
+    "lon": 47.2037095
+  },
+  "tags": {
+    "natural": "water",
+    "water": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 227055317,
+  "center": {
+    "lat": -25.1530381,
+    "lon": 46.1223552
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 227055318,
+  "center": {
+    "lat": -25.1547267,
+    "lon": 46.1211020
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 227055320,
+  "center": {
+    "lat": -25.1551913,
+    "lon": 46.1196694
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 227055322,
+  "center": {
+    "lat": -25.1545366,
+    "lon": 46.1221905
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 227055325,
+  "center": {
+    "lat": -25.1549830,
+    "lon": 46.1218049
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 227055335,
+  "center": {
+    "lat": -25.1527078,
+    "lon": 46.1233566
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 227055337,
+  "center": {
+    "lat": -25.1563222,
+    "lon": 46.1195055
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 228879994,
+  "center": {
+    "lat": -25.1579206,
+    "lon": 46.1149356
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 228879995,
+  "center": {
+    "lat": -25.1573643,
+    "lon": 46.1158741
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 228879997,
+  "center": {
+    "lat": -25.1534018,
+    "lon": 46.1212927
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 228879999,
+  "center": {
+    "lat": -25.1579184,
+    "lon": 46.1145403
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 228880001,
+  "center": {
+    "lat": -25.1575762,
+    "lon": 46.1163963
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 228880002,
+  "center": {
+    "lat": -25.1563186,
+    "lon": 46.1077569
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 228880005,
+  "center": {
+    "lat": -25.1577567,
+    "lon": 46.1155612
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 228880010,
+  "center": {
+    "lat": -25.1566620,
+    "lon": 46.1087945
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 228880013,
+  "center": {
+    "lat": -25.1579202,
+    "lon": 46.1125374
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 228880018,
+  "center": {
+    "lat": -25.1571921,
+    "lon": 46.1106591
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 231221748,
+  "center": {
+    "lat": -25.1233390,
+    "lon": 46.8013679
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 231363817,
+  "center": {
+    "lat": -25.0796230,
+    "lon": 46.4820239
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 231363818,
+  "center": {
+    "lat": -25.0594143,
+    "lon": 46.4713193
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 231554042,
+  "center": {
+    "lat": -25.0340081,
+    "lon": 46.9814616
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 232149174,
+  "center": {
+    "lat": -24.7817327,
+    "lon": 47.1983959
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 232167425,
+  "center": {
+    "lat": -24.8160775,
+    "lon": 47.1345775
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 232259797,
+  "center": {
+    "lat": -24.8008474,
+    "lon": 47.1401271
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 232560549,
+  "center": {
+    "lat": -24.9733186,
+    "lon": 46.9771384
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 232774021,
+  "center": {
+    "lat": -25.0314941,
+    "lon": 46.9604092
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 232919379,
+  "center": {
+    "lat": -25.0680836,
+    "lon": 46.8136442
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 232919380,
+  "center": {
+    "lat": -25.0668327,
+    "lon": 46.8124749
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 237304621,
+  "center": {
+    "lat": -24.9728002,
+    "lon": 47.0275184
+  },
+  "tags": {
+    "natural": "water",
+    "water": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 237767390,
+  "center": {
+    "lat": -24.9345001,
+    "lon": 46.4107805
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 278149108,
+  "center": {
+    "lat": -24.7062124,
+    "lon": 47.1802737
+  },
+  "tags": {
+    "natural": "water",
+    "water": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 297135490,
+  "center": {
+    "lat": -25.0338704,
+    "lon": 46.9827288
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 342558580,
+  "center": {
+    "lat": -24.7773546,
+    "lon": 47.1598020
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 342558594,
+  "center": {
+    "lat": -24.7810783,
+    "lon": 47.1758311
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 342729196,
+  "center": {
+    "lat": -24.7789289,
+    "lon": 47.0948185
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 342742095,
+  "center": {
+    "lat": -24.8394604,
+    "lon": 47.0842099
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 344213390,
+  "center": {
+    "lat": -25.0326880,
+    "lon": 46.9697192
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 347318027,
+  "center": {
+    "lat": -25.0253811,
+    "lon": 46.9888222
+  },
+  "tags": {
+    "natural": "water",
+    "water": "pond"
+  }
+},
+{
+  "type": "way",
+  "id": 379527902,
+  "center": {
+    "lat": -24.9112395,
+    "lon": 47.1256370
+  },
+  "tags": {
+    "natural": "water",
+    "water": "lake"
+  }
+},
+{
+  "type": "way",
+  "id": 380972637,
+  "center": {
+    "lat": -24.7829778,
+    "lon": 47.1984025
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 818779486,
+  "center": {
+    "lat": -25.0033435,
+    "lon": 46.8038165
+  },
+  "tags": {
+    "intermittent": "yes",
+    "name": "Bassin eau",
+    "natural": "water",
+    "water": "wastewater"
+  }
+},
+{
+  "type": "way",
+  "id": 860354285,
+  "center": {
+    "lat": -24.9166359,
+    "lon": 47.1235329
+  },
+  "tags": {
+    "natural": "water",
+    "water": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 902684619,
+  "center": {
+    "lat": -24.8876658,
+    "lon": 47.0431312
+  },
+  "tags": {
+    "natural": "water",
+    "water": "pond"
+  }
+},
+{
+  "type": "way",
+  "id": 902684634,
+  "center": {
+    "lat": -24.8847089,
+    "lon": 47.0405133
+  },
+  "tags": {
+    "natural": "water",
+    "water": "oxbow"
+  }
+},
+{
+  "type": "way",
+  "id": 902690949,
+  "center": {
+    "lat": -24.9641413,
+    "lon": 46.9897807
+  },
+  "tags": {
+    "natural": "water",
+    "water": "lake"
+  }
+},
+{
+  "type": "way",
+  "id": 902690950,
+  "center": {
+    "lat": -24.9645596,
+    "lon": 46.9933843
+  },
+  "tags": {
+    "natural": "water",
+    "water": "lake"
+  }
+},
+{
+  "type": "way",
+  "id": 904852699,
+  "center": {
+    "lat": -24.6106612,
+    "lon": 46.9043509
+  },
+  "tags": {
+    "natural": "water",
+    "water": "pond"
+  }
+},
+{
+  "type": "way",
+  "id": 905457726,
+  "center": {
+    "lat": -25.0936150,
+    "lon": 46.6895650
+  },
+  "tags": {
+    "natural": "water",
+    "water": "pond"
+  }
+},
+{
+  "type": "way",
+  "id": 905457731,
+  "center": {
+    "lat": -25.1008953,
+    "lon": 46.7063859
+  },
+  "tags": {
+    "natural": "water",
+    "water": "pond"
+  }
+},
+{
+  "type": "way",
+  "id": 905457732,
+  "center": {
+    "lat": -25.1017928,
+    "lon": 46.7076378
+  },
+  "tags": {
+    "natural": "water",
+    "water": "pond"
+  }
+},
+{
+  "type": "way",
+  "id": 905457825,
+  "center": {
+    "lat": -25.1402391,
+    "lon": 46.7474062
+  },
+  "tags": {
+    "natural": "water",
+    "water": "pond"
+  }
+},
+{
+  "type": "way",
+  "id": 905457914,
+  "center": {
+    "lat": -25.1372257,
+    "lon": 46.7500448
+  },
+  "tags": {
+    "natural": "water",
+    "water": "pond"
+  }
+},
+{
+  "type": "way",
+  "id": 950303799,
+  "center": {
+    "lat": -24.6677176,
+    "lon": 47.1911166
+  },
+  "tags": {
+    "natural": "water",
+    "water": "river"
+  }
+},
+{
+  "type": "way",
+  "id": 1027392213,
+  "center": {
+    "lat": -25.0260528,
+    "lon": 46.9004039
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 1031841794,
+  "center": {
+    "lat": -25.1469806,
+    "lon": 46.1315194
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 1104768932,
+  "center": {
+    "lat": -24.9127342,
+    "lon": 47.1304101
+  },
+  "tags": {
+    "natural": "water",
+    "water": "pond"
+  }
+},
+{
+  "type": "way",
+  "id": 1115022010,
+  "center": {
+    "lat": -24.8521219,
+    "lon": 47.1126031
+  },
+  "tags": {
+    "natural": "water",
+    "water": "pond"
+  }
+},
+{
+  "type": "way",
+  "id": 1313287054,
+  "center": {
+    "lat": -24.6872187,
+    "lon": 46.4049712
+  },
+  "tags": {
+    "natural": "water",
+    "water": "pond"
+  }
+},
+{
+  "type": "way",
+  "id": 1318085443,
+  "center": {
+    "lat": -24.9122202,
+    "lon": 46.8627271
+  },
+  "tags": {
+    "natural": "water"
+  }
+},
+{
+  "type": "way",
+  "id": 1318085495,
+  "center": {
+    "lat": -24.8934121,
+    "lon": 46.8075930
+  },
+  "tags": {
+    "natural": "water"
+  }
+}
+
+  ]
+}

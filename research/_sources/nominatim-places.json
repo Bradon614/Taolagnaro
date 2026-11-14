@@ -1,0 +1,244 @@
+{
+ "Pic Saint-Louis": [
+  {
+   "name": "Pic Saint Louis, Tolagnaro, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-25.0080734",
+   "lon": "46.9652182",
+   "type": "peak",
+   "category": "natural",
+   "osm_type": "node",
+   "osm_id": 727284593
+  }
+ ],
+ "Réserve de Nahampoana": [
+  {
+   "name": "Réserve de Nahampoana, Nahampoana, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-24.9746126",
+   "lon": "46.9802782",
+   "type": "nature_reserve",
+   "category": "leisure",
+   "osm_type": "way",
+   "osm_id": 232534342
+  }
+ ],
+ "Réserve de Berenty": [],
+ "Parc National d'Andohahela": [
+  {
+   "name": "Parc National d'Andohahela, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-24.7535919",
+   "lon": "46.8174835",
+   "type": "national_park",
+   "category": "boundary",
+   "osm_type": "relation",
+   "osm_id": 4242110
+  }
+ ],
+ "Andohahela National Park": [
+  {
+   "name": "Parc National d'Andohahela, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-24.7535919",
+   "lon": "46.8174835",
+   "type": "national_park",
+   "category": "boundary",
+   "osm_type": "relation",
+   "osm_id": 4242110
+  }
+ ],
+ "Jardin Botanique de Saïadi": [
+  {
+   "name": "Jardin botanique de Saiadi, Nahampoana, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-24.9875614",
+   "lon": "46.9821258",
+   "type": "garden",
+   "category": "leisure",
+   "osm_type": "way",
+   "osm_id": 402126433
+  }
+ ],
+ "Domaine de la Cascade": [
+  {
+   "name": "Domaine de la Cascade, Manatantely, Soanierana, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-24.9866952",
+   "lon": "46.9317334",
+   "type": "nature_reserve",
+   "category": "leisure",
+   "osm_type": "way",
+   "osm_id": 347252699
+  }
+ ],
+ "Musée Fort Flacourt": [],
+ "Baie de Sainte-Luce": [],
+ "Lokaro": [
+  {
+   "name": "Lokaro, Itapera, Mandromodromotra, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-24.9277410",
+   "lon": "47.1140382",
+   "type": "hamlet",
+   "category": "place",
+   "osm_type": "node",
+   "osm_id": 3826932412
+  }
+ ],
+ "Évatraha": [],
+ "Plage de Libanona": [
+  {
+   "name": "Plage Libanona, Ampasimasay, Tolagnaro, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-25.0386631",
+   "lon": "46.9956052",
+   "type": "beach",
+   "category": "natural",
+   "osm_type": "way",
+   "osm_id": 120666411
+  }
+ ],
+ "Plage Ankoba": [
+  {
+   "name": "Plage Ankoba, Ambinanikely, Tolagnaro, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-25.0347422",
+   "lon": "46.9824110",
+   "type": "beach",
+   "category": "natural",
+   "osm_type": "way",
+   "osm_id": 247154606
+  }
+ ],
+ "Plage Monseigneur": [
+  {
+   "name": "Plage Monseigneur, Bazaribe, Tolagnaro, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-25.0361700",
+   "lon": "46.9984340",
+   "type": "beach",
+   "category": "natural",
+   "osm_type": "way",
+   "osm_id": 230333136
+  }
+ ],
+ "Plage d'Ambinanibe": [],
+ "Plage d'Amparihy": [],
+ "Lac Lanirano": [
+  {
+   "name": "Le Jardin du Lac Nursery, Lanirano, Amparihy, Tolagnaro, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-25.0067996",
+   "lon": "46.9855434",
+   "type": "commercial",
+   "category": "landuse",
+   "osm_type": "way",
+   "osm_id": 1131133361
+  }
+ ],
+ "Lac Anony": [],
+ "Lac Vinanibe": [],
+ "Lac Amparihy": [
+  {
+   "name": "Le Jardin du Lac Nursery, Lanirano, Amparihy, Tolagnaro, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-25.0067996",
+   "lon": "46.9855434",
+   "type": "commercial",
+   "category": "landuse",
+   "osm_type": "way",
+   "osm_id": 1131133361
+  }
+ ],
+ "Cascade de Manantantely": [],
+ "Grotte d'Agnalapatsy": [],
+ "Fort Dauphin": [
+  {
+   "name": "Tolagnaro, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-25.0290132",
+   "lon": "46.9966565",
+   "type": "administrative",
+   "category": "boundary",
+   "osm_type": "relation",
+   "osm_id": 3694013
+  }
+ ],
+ "Tranovato": [
+  {
+   "name": "Tranovato, N 13, Manatantely, Soanierana, Tôlanaro, Anosy, Province de Toliara, 614, Madagasikara / Madagascar",
+   "lat": "-25.0363618",
+   "lon": "46.8923591",
+   "type": "ruins",
+   "category": "historic",
+   "osm_type": "node",
+   "osm_id": 2684087812
+  }
+ ],
+ "Cap Sainte-Marie": [],
+ "Ifotaka": [
+  {
+   "name": "Ifotaka, Amboasary-Atsimo, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-24.8017376",
+   "lon": "46.1376927",
+   "type": "administrative",
+   "category": "boundary",
+   "osm_type": "relation",
+   "osm_id": 3773563
+  }
+ ],
+ "Manafiafy": [
+  {
+   "name": "Manafiafy, Sainte Luce, Mahatalaky, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-24.7762593",
+   "lon": "47.1979840",
+   "type": "hamlet",
+   "category": "place",
+   "osm_type": "node",
+   "osm_id": 2051895951
+  }
+ ],
+ "Amboasary Sud": [
+  {
+   "name": "Amboasary, Amboasary-Atsimo, Anosy, Province de Toliara, 603, Madagasikara / Madagascar",
+   "lat": "-25.0359198",
+   "lon": "46.3853238",
+   "type": "administrative",
+   "category": "boundary",
+   "osm_type": "relation",
+   "osm_id": 3720836
+  }
+ ],
+ "Sarisambo": [
+  {
+   "name": "Sarisambo, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-25.0972868",
+   "lon": "46.7930211",
+   "type": "administrative",
+   "category": "boundary",
+   "osm_type": "relation",
+   "osm_id": 3718238
+  }
+ ],
+ "Ankaramena": [
+  {
+   "name": "Ankaramena, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-25.0289433",
+   "lon": "46.7765960",
+   "type": "administrative",
+   "category": "boundary",
+   "osm_type": "relation",
+   "osm_id": 3723285
+  }
+ ],
+ "Mandromodromotra": [
+  {
+   "name": "Mandromodromotra, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-24.9139350",
+   "lon": "47.0299090",
+   "type": "administrative",
+   "category": "boundary",
+   "osm_type": "relation",
+   "osm_id": 3605808
+  }
+ ],
+ "Marche artisanal Fort-Dauphin": [
+  {
+   "name": "Marche Artisanal, N 12a, Lanirano, Amparihy, Tolagnaro, Tôlanaro, Anosy, Province de Toliara, Madagasikara / Madagascar",
+   "lat": "-25.0239018",
+   "lon": "46.9917333",
+   "type": "gift",
+   "category": "shop",
+   "osm_type": "way",
+   "osm_id": 231466863
+  }
+ ]
+}
