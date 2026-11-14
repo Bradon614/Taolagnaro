@@ -131,7 +131,7 @@ Two matches deserve a note. `motel-m1-manantenina` resolved to `motel-m1`, **not
 phone comes from the "Hébergements" entry (`motel-m1`); the "Hôtel Restaurant" entry has no
 phone. `espace-sophie-amboasary` and `vahinn-sainte-luce` differ in spelling from the
 source (`Ambosary`/`Amboasary`, `st luce`/`Sainte-Luce`) — the source's spelling is what
-the URL uses. All 15 pages exist on disk under `_sources/orta/`.
+the URL uses. All 15 pages were fetched from the tourism office's site and their extracted content is committed in `_sources/orta-records.json` (the raw HTML itself is not committed — see `README.md`).
 
 All 54 accommodation records now carry at least one **non-generic** source — counting an
 OpenStreetMap object URL as record-specific, 30 point at their own ORTA member page and 24

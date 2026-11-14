@@ -1,0 +1,51 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-14T15:42:20Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "way",
+  "id": 180869936,
+  "center": {
+    "lat": -24.9559503,
+    "lon": 47.0261342
+  },
+  "tags": {
+    "landuse": "quarry",
+    "name": "QMM Ilmenite Mine",
+    "operator": "QMM, Rio Tinto",
+    "resource": "ilmenite"
+  }
+},
+{
+  "type": "way",
+  "id": 232710172,
+  "center": {
+    "lat": -25.0390876,
+    "lon": 46.9312723
+  },
+  "tags": {
+    "landuse": "quarry",
+    "name": "Andriambe Quarry",
+    "operator": "QMM,Rio Tinto"
+  }
+},
+{
+  "type": "way",
+  "id": 389600506,
+  "center": {
+    "lat": -25.0325556,
+    "lon": 46.9229498
+  },
+  "tags": {
+    "landuse": "quarry",
+    "name": "QMM Mine"
+  }
+}
+
+  ]
+}

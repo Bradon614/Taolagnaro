@@ -144,6 +144,38 @@ verified against its Commons description before attachment.
 
 A directory entry is evidence that something is *listed*, never proof that it is open.
 
+## Repository policy for `_sources/`
+
+`research/_sources/` holds the working material behind the dataset. **Raw HTML scrapes are
+not committed**; the extracted evidence and the scripts are.
+
+| Kept in Git | Not kept in Git |
+| --- | --- |
+| `*.txt` — text extracted from the fetched pages | `*.html` — verbatim scrapes of third-party sites |
+| `*.json` — parsed API responses, OSM and ORTA extracts, audit output | |
+| `*.py` — the fetch, validation and audit scripts | |
+
+**Why.** A saved page carries whatever its owner embedded: map keys, analytics IDs, tracking
+pixels. Committing raw HTML imports other people's credentials into this repository. That is
+not hypothetical — a Mapbox token and two Google Maps API keys have already been pulled in
+this way and had to be redacted.
+
+**Consequence for a fresh clone.** The raw pages will be absent, so a claim cannot be
+re-checked against the original bytes without re-fetching it. The citations still resolve:
+every `source_url` in the JSON files is the live URL, and the extracted content of the key
+sources is committed as `.txt` / `.json`. To re-fetch, re-run the script that produced the
+file (e.g. `_sources/osm_extra.py`, `_sources/attach_images.py`).
+
+**Before committing anything under `_sources/`, run:**
+
+```bash
+python3 research/_sources/scan_secrets.py
+```
+
+It reports the file, line and masked length of any credential-shaped string — never the
+value. It covers Mapbox, Google, AWS, GitHub, Stripe, Slack, SendGrid, OpenAI/Anthropic,
+PEM private keys and `user:pass@` URLs.
+
 ## Publication exclusion
 
 **13 records must never be imported into the application catalogue.** They are kept in the

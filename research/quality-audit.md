@@ -28,7 +28,7 @@ findings below so the two documents do not contradict each other.
 | **C1** Canadian museum images on `musee-fort-flacourt` | **Fixed.** Both `Fort Dauphin Museum.1/2.JPG` images removed; `Fort-Dauphin. Fort Flacourt.jpg` (public domain) is now the lead image and was verified as the Malagasy fort. |
 | **H1** `karibu` phone `+264…` | **Fixed.** `phone` and `phone_source` set to `null`. No substitute number invented. The original OSM value remains in `_sources/osm-restaurants.json` and in Git history. |
 | **H3** inconsistent record shape | **Fixed.** All five files now carry the same 33-key canonical schema in a fixed order. `licence_number` removed (was `null` in 19/19). The four activity fields were promoted to the shared schema as nullable. `README.md` documents the correction. |
-| **H4** 15 accommodations citing only the directory index | **Fixed.** Each was matched to its individual ORTA member page by phone (or, where no phone exists, by the name the record itself quotes) and that URL added to `source_urls`. No URL was guessed; all 15 pages are on disk under `_sources/orta/`. |
+| **H4** 15 accommodations citing only the directory index | **Fixed.** Each was matched to its individual ORTA member page by phone (or, where no phone exists, by the name the record itself quotes) and that URL added to `source_urls`. No URL was guessed; each page was fetched from the tourism office's own site and its extracted content is committed in `_sources/orta-records.json`. |
 | **H5** 13 records unsafe to publish | **Documented and enforced.** Listed in §2.2 and §4, in [`INTEGRATION.md`](INTEGRATION.md), and asserted by `validate_dataset.py`. **None was deleted** and no `verification_status` was altered. |
 | **M8** share-alike not represented | **Fixed.** `image-attribution.csv` gained `commercial_reuse`, `share_alike` and `adaptation_note` columns, and `README.md` now explains share-alike, cropping, resizing and WebP conversion, and the difference between commercial reuse and unrestricted reuse. |
 | **H2, M1–M7, M9–M10, L1–L3** | **Not addressed.** Outside the approved correction set. Still open; see §2–§3 and §9. |
@@ -114,7 +114,7 @@ Four further shared numbers are plausible (hotel and its public restaurant, or a
 `licence_number` is `null` in **all 19** provider records — a field that carries no information at all. The four activity fields are defensible attributes but break the "one shape" contract that makes a mechanical mapping into `src/lib/listings.ts` safe.
 
 **H4. 15 accommodation records cite only the directory index, not their own member page.**
-These records' `source_urls` contain exactly `https://fortdauphin.com/annuaire-tourisme-anosy/` — the list of 56 members — so a reviewer cannot follow the citation to the specific business, and the phone number in the record cannot be re-verified from the cited URL. The member pages exist on disk under `research/_sources/orta/` and the specific URLs are recoverable:
+These records' `source_urls` contain exactly `https://fortdauphin.com/annuaire-tourisme-anosy/` — the list of 56 members — so a reviewer cannot follow the citation to the specific business, and the phone number in the record cannot be re-verified from the cited URL. The member pages were fetched from the tourism office's site; their extracted content is committed in `research/_sources/orta-records.json`, and the specific URLs are recoverable:
 
 `takasira`, `ami-appart-hotel`, `vonimboly-hotel`, `auberginn`, `anja-guest-house`, `hotel-marina-doublon`, `tournesol`, `tsarafandray`, `vintana`, `vahinn-sainte-luce`, `le-jardin-exotique`, `libanona-woods`, `hotel-le-mandrare-amboasary`, `espace-sophie-amboasary`, `motel-m1-manantenina`.
 
@@ -210,7 +210,7 @@ No two records are the same trading business *by accident* — the duplicates th
 | `le-petit-bonheur` / `…-hotel-tag-flagged` | `needs_verification` | Hotel tag probably erroneous or obsolete |
 | `pirate-camp` | `needs_verification` | OSM `fixme` disputes its own position |
 | `galion-hotel` | `needs_verification` | `source=Bing` only — imagery-derived, never field-checked |
-| `acp-camp-seed-magascar` | `needs_verification` | `access=private`; not a public business |
+| `acp-camp-seed-madagascar` | `needs_verification` | `access=private`; not a public business |
 | `maison-agent-sarisambo` | `needs_verification` | Name suggests staff housing rather than commercial lodging |
 
 ---
@@ -293,7 +293,7 @@ Caveats that a reviewer must carry into that review:
 
 The remaining 151 are `needs_confirmation`; the 13 in §2 (H5) are `do_not_publish`:
 
-`club-sandwich`, `karibu`, `chez-anita-hotel-tag-flagged`, `hotel-mahavoky-annexe-tag-flagged`, `hotel-marina-doublon`, `acp-camp-seed-magascar`, `maison-agent-sarisambo`, `ancien-hotel-miramar`, `formerly-sahil-hotel`, `le-local-ex-chez-george`, `le-petit-bonheur-hotel-tag-flagged`, `faux-cap-beach`, `aiko-aventure`.
+`club-sandwich`, `karibu`, `chez-anita-hotel-tag-flagged`, `hotel-mahavoky-annexe-tag-flagged`, `hotel-marina-doublon`, `acp-camp-seed-madagascar`, `maison-agent-sarisambo`, `ancien-hotel-miramar`, `formerly-sahil-hotel`, `le-local-ex-chez-george`, `le-petit-bonheur-hotel-tag-flagged`, `faux-cap-beach`, `aiko-aventure`.
 
 ---
 
@@ -309,7 +309,7 @@ Ordered by risk. **None has been applied.**
 
 **Cheap, mechanical, high value**
 
-4. **Add the specific ORTA member page URL** to `source_urls` for the 15 index-only accommodations. The URLs are recoverable from `research/_sources/orta/`; all 15 map cleanly. (H4)
+4. **Add the specific ORTA member page URL** to `source_urls` for the 15 index-only accommodations. The URLs are recoverable from the committed `research/_sources/orta-records.json`; all 15 map cleanly. (H4)
 5. **Split `vahiny-lodge.phone`** into one number plus a note, or null it. (M1)
 6. **Null the malformed `domaine-de-la-cascade-bungalows.phone`** — the record already says not to rely on it. (M2)
 7. **Split the two multi-address `email` fields** into `email` + a note, or keep the primary only. (M3)

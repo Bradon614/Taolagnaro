@@ -42,3 +42,10 @@ next-env.d.ts
 
 # claude code local dev config
 /.claude/
+
+# raw third-party research pages (research/_sources)
+# These are verbatim scrapes of other people's websites. They carry whatever
+# keys, tokens and tracking IDs those sites embed — a Mapbox token and two
+# Google Maps API keys have already been found this way. Commit only the
+# extracted .txt / .json evidence and the scripts, never the raw HTML.
+research/_sources/**/*.html

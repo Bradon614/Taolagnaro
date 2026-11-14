@@ -906,6 +906,11 @@
    "detail": "website URL is not listed in source_urls"
   },
   {
+   "code": "rich-but-unverified",
+   "slug": "foret-de-mandena",
+   "detail": "status=needs_verification despite 8 sources — status may be understated"
+  },
+  {
    "code": "opening-hours-unnormalised",
    "slug": "cafe-bar-colorado",
    "detail": "opening_hours is free prose, not OSM syntax: '11 AM to 10 PM'"
