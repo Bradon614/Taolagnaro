@@ -18,8 +18,13 @@ function toDegreesMinutes(value: number, positive: string, negative: string) {
   return `${carried ? degrees + 1 : degrees}°${String(carried ? 0 : minutes).padStart(2, "0")}′${hemisphere}`;
 }
 
-/** e.g. "25°02′S 46°59′E" */
-export function formatCoordinates({ lat, lon }: Coordinates): string {
+/**
+ * e.g. "25°02′S 46°59′E". Returns "" when no position is known, so callers can
+ * drop the element rather than print a made-up coordinate.
+ */
+export function formatCoordinates(coords: Coordinates | null): string {
+  if (!coords) return "";
+  const { lat, lon } = coords;
   return `${toDegreesMinutes(lat, "N", "S")} ${toDegreesMinutes(lon, "E", "W")}`;
 }
 
@@ -40,8 +45,13 @@ export function distanceKm(a: Coordinates, b: Coordinates): number {
   return 2 * EARTH_RADIUS_KM * Math.asin(Math.sqrt(h));
 }
 
-/** "6 km" / "0,8 km" */
-export function formatDistance(km: number): string {
+/**
+ * "6 km" / "0,8 km". Returns "" when the distance is unknown: printing "0 km"
+ * or an invented figure would mislead a visitor and would also corrupt any
+ * sort that treats the value as a real measurement.
+ */
+export function formatDistance(km: number | null): string {
+  if (km === null || !Number.isFinite(km)) return "";
   if (km < 10) return `${km.toFixed(1).replace(".", ",").replace(",0", "")} km`;
   return `${Math.round(km)} km`;
 }

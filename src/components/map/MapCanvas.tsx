@@ -12,6 +12,9 @@ import {
 } from "@/lib/map";
 import { formatCoordinates, type Coordinates } from "@/lib/geo";
 import type { Listing } from "@/lib/listings";
+
+/** A listing the map can actually draw: it has a surveyed position. */
+type PinnedListing = Listing & { coordinates: Coordinates };
 import { CATEGORY_GLYPH } from "@/components/map/glyphs";
 import { getDictionary, fill } from "@/i18n";
 import type { Locale } from "@/i18n/config";
@@ -63,7 +66,12 @@ export function MapCanvas({
     return () => observer.disconnect();
   }, []);
 
-  const points = listings.length > 0 ? listings.map((l) => l.coordinates) : [];
+  // Records without a position stay in the catalogue and off the map — we do
+  // not fall back to the town centre, which would put pins where nothing is.
+  const pinned = listings.filter(
+    (listing): listing is PinnedListing => listing.coordinates !== null,
+  );
+  const points = pinned.map((listing) => listing.coordinates);
   const base =
     size.width > 0 && points.length > 0
       ? fitTransform(boundsOf(points), size.width, size.height)
@@ -185,13 +193,13 @@ export function MapCanvas({
 
   /* --------------------------------------------------------- clusters */
 
-  const positioned = listings.map((listing) => ({
+  const positioned = pinned.map((listing) => ({
     item: listing,
     ...toScreen(listing.coordinates),
   }));
   const clusters = clusterByScreen(positioned, 40);
 
-  const centreLat = listings[0]?.coordinates.lat ?? -25;
+  const centreLat = pinned[0]?.coordinates.lat ?? -25;
   const bar =
     scale > 0 ? niceScaleBar(kmPerPixel(scale, centreLat)) : { km: 1, px: 60 };
 

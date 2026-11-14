@@ -44,6 +44,21 @@ const PLACE_TO_ZONE: Record<string, ZoneSlug> = {
   Nahampoana: "arriere-pays",
   "Vallée du Mandrare": "arriere-pays",
   "Village d’Ankaramena": "arriere-pays",
+  // Places carried by the real catalogue (generated from research/*.json).
+  Ankoba: "vinanibe",
+  Lanirano: "lokaro",
+  Manantantely: "arriere-pays",
+  Amboasary: "arriere-pays",
+  Berenty: "arriere-pays",
+  Andohahela: "arriere-pays",
+  Manafiafy: "sainte-luce",
+  Manantenina: "arriere-pays",
+  Tsitongambarika: "arriere-pays",
+  "Faux-Cap": "arriere-pays",
+  Sarisambo: "arriere-pays",
+  Ankaramena: "arriere-pays",
+  Ambalabe: "arriere-pays",
+  Amparihy: "vinanibe",
 };
 
 export function zoneOf(listing: Listing): ZoneSlug {
@@ -210,6 +225,10 @@ function matches(
   if (
     skip !== "maxPrice" &&
     filters.maxPrice &&
+    // A record with no published price is neither inside nor outside the band:
+    // excluding it would assert a price we do not have. It stays, showing
+    // "sur demande".
+    listing.price.kind !== "on-request" &&
     priceValue(listing) > filters.maxPrice
   ) {
     return false;
@@ -221,6 +240,30 @@ export function filterListings(filters: Filters): Listing[] {
   return LISTINGS.filter((listing) => matches(listing, filters));
 }
 
+/**
+ * Unknown always sorts last, in both directions. Treating "no price" as 0 would
+ * put every unpriced record at the top of "cheapest first", which is the one
+ * thing the research cannot support.
+ */
+function compareNullablePrice(a: Listing, b: Listing, direction: 1 | -1): number {
+  const unknownA = a.price.kind === "on-request";
+  const unknownB = b.price.kind === "on-request";
+  if (unknownA && unknownB) return 0;
+  if (unknownA) return 1;
+  if (unknownB) return -1;
+  return (priceValue(a) - priceValue(b)) * direction;
+}
+
+/** Same rule for distance: an unknown distance is not "0 km away". */
+function compareNullableDistance(a: Listing, b: Listing): number {
+  const da = a.distanceKm;
+  const db = b.distanceKm;
+  if (da === null && db === null) return 0;
+  if (da === null) return 1;
+  if (db === null) return -1;
+  return da - db;
+}
+
 export function sortListings(listings: Listing[], sort: SortKey): Listing[] {
   const sorted = [...listings];
   switch (sort) {
@@ -229,11 +272,11 @@ export function sortListings(listings: Listing[], sort: SortKey): Listing[] {
         (a, b) => (b.rating?.score ?? 0) - (a.rating?.score ?? 0),
       );
     case "prix-croissant":
-      return sorted.sort((a, b) => priceValue(a) - priceValue(b));
+      return sorted.sort((a, b) => compareNullablePrice(a, b, 1));
     case "prix-decroissant":
-      return sorted.sort((a, b) => priceValue(b) - priceValue(a));
+      return sorted.sort((a, b) => compareNullablePrice(a, b, -1));
     case "distance":
-      return sorted.sort((a, b) => a.distanceKm - b.distanceKm);
+      return sorted.sort((a, b) => compareNullableDistance(a, b));
     default:
       // Editorial order: featured places first, then the best rated.
       return sorted.sort((a, b) => {
@@ -355,7 +398,10 @@ export function budgetFacets(filters: Filters): Facet[] {
     label: band.label,
     count: LISTINGS.filter(
       (listing) =>
-        matches(listing, filters, "maxPrice") && priceValue(listing) <= band.value,
+        matches(listing, filters, "maxPrice") &&
+        // Only records with a known price can be counted inside a band.
+        listing.price.kind !== "on-request" &&
+        priceValue(listing) <= band.value,
     ).length,
   }));
 }

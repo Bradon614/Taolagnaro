@@ -6,6 +6,7 @@ import { featuredListings, listingHref } from "@/lib/listings";
 import { listingAccess, listingDuration, listingSummary } from "@/lib/listing-i18n";
 import { getDictionary } from "@/i18n";
 import { leadPhoto } from "@/lib/photos";
+import { formatDistance } from "@/lib/geo";
 import { localeHref, type Locale } from "@/i18n/config";
 
 
@@ -74,8 +75,13 @@ export function FeaturedMosaic({ locale }: { locale: Locale }) {
                     {listing.name}
                   </span>
                   <span className="mt-0.5 block text-label text-white/80">
-                    {listingAccess(listing, locale) ?? listingDuration(listing, locale)} ·{" "}
-                    {listing.distanceKm} km
+                    {[
+                      listingAccess(listing, locale) ??
+                        listingDuration(listing, locale),
+                      formatDistance(listing.distanceKm),
+                    ]
+                      .filter(Boolean)
+                      .join(" · ")}
                   </span>
                 </span>
               </Plate>

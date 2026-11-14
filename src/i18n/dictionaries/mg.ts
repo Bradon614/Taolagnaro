@@ -14,4 +14,13 @@ import type { Dictionary } from "@/i18n/dictionaries/fr";
  * Start with the `common` and `nav` namespaces — they cover the chrome that
  * appears on every page.
  */
-export const mg: DeepPartial<Dictionary> = {};
+export const mg: DeepPartial<Dictionary> = {
+  // Brand names, plus the loanword Malagasy speakers actually use for a website.
+  // Nothing here is invented Malagasy prose: the rest of the interface still
+  // falls back to French until a translator fills this file in.
+  detail: {
+    website: "Site web",
+    facebook: "Facebook",
+    instagram: "Instagram",
+  },
+};

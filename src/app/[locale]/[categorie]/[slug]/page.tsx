@@ -21,6 +21,27 @@ import {
   type Listing,
 } from "@/lib/listings";
 import { formatCoordinates, formatDistance } from "@/lib/geo";
+
+/**
+ * Research records keep their sourcing in the address field — "Ankoba (selon
+ * ORTA)", "Libanona, Tôlagnaro (localité indiquée par l'ORTA)". That provenance
+ * belongs in the record, not in front of a visitor, so it is stripped here at
+ * render time. The JSON keeps the original text untouched.
+ *
+ * Only a trailing parenthetical naming a source is removed: "Taolagnaro
+ * (Fort-Dauphin)" is part of the address and survives.
+ */
+const PROVENANCE_TAIL =
+  /\s*\([^()]*(?:selon|indiqu|fournie|source|OSM|ORTA|publiée|d’après|d'après)[^()]*\)\s*$/i;
+
+function displayAddress(address: string): string {
+  let cleaned = address.trim();
+  // Records may stack more than one provenance note at the end.
+  while (PROVENANCE_TAIL.test(cleaned)) {
+    cleaned = cleaned.replace(PROVENANCE_TAIL, "").trim();
+  }
+  return cleaned;
+}
 import { getDictionary, fill } from "@/i18n";
 import { photosFor } from "@/lib/photos";
 import { localeHref, type Locale } from "@/i18n/config";
@@ -86,6 +107,10 @@ export default async function ListingDetailPage({ params }: Params) {
   const plates = [listing.plate, ...(detail.gallery ?? [])];
   while (plates.length < photos.length) plates.push(listing.plate);
   const nearby = nearbyListings(listing, 4);
+  // Empty string when the research has no sourced distance — the row, the meta
+  // line and the map block then omit the figure instead of printing "0 km".
+  const distanceText = formatDistance(listing.distanceKm);
+  const contact = detail.contact ?? listing.contact;
 
   // Practical rows come from the rich detail when it exists, and are otherwise
   // assembled from whatever the catalog record already knows.
@@ -104,12 +129,12 @@ export default async function ListingDetailPage({ params }: Params) {
       listing.cuisine
         ? { label: t.detail.cuisineRow, value: listing.cuisine }
         : null,
-      {
-        label: t.detail.distanceRow,
-        value: fill(t.detail.fromCentre, {
-          distance: formatDistance(listing.distanceKm),
-        }),
-      },
+      distanceText
+        ? {
+            label: t.detail.distanceRow,
+            value: fill(t.detail.fromCentre, { distance: distanceText }),
+          }
+        : null,
     ].filter((row): row is { label: string; value: string } => row !== null);
 
   return (
@@ -163,11 +188,14 @@ export default async function ListingDetailPage({ params }: Params) {
               />
             ) : null}
             <span>
-              ◎ {listingPlace(listing, locale)}, {formatDistance(listing.distanceKm)} {t.common.from}
+              ◎ {listingPlace(listing, locale)}
+              {distanceText ? `, ${distanceText} ${t.common.from}` : ""}
             </span>
-            <span className="tabular font-mono text-label text-ink-subtle">
-              {formatCoordinates(listing.coordinates)}
-            </span>
+            {listing.coordinates ? (
+              <span className="tabular font-mono text-label text-ink-subtle">
+                {formatCoordinates(listing.coordinates)}
+              </span>
+            ) : null}
           </div>
 
           {detail.seasonNote ? (
@@ -220,6 +248,7 @@ export default async function ListingDetailPage({ params }: Params) {
             </section>
           ) : null}
 
+          {listing.coordinates ? (
           <section className="mt-8">
             <h2 className="text-[1.3rem]">{t.detail.location}</h2>
             {/* Static until /carte — no tile library loads on a detail page. */}
@@ -241,6 +270,7 @@ export default async function ListingDetailPage({ params }: Params) {
               · {t.detail.approxPosition}
             </p>
           </section>
+          ) : null}
 
           <Reviews
             reviews={detail.reviews ?? []}
@@ -265,29 +295,61 @@ export default async function ListingDetailPage({ params }: Params) {
             <ShareButton title={listing.name} />
           </div>
 
-          {detail.contact ? (
+          {contact ? (
             <div className="rounded-panel border border-line p-4.5">
               <p className="font-mono text-label uppercase tracking-[0.14em] text-ink-subtle">
                 {t.detail.directContact}
               </p>
               <address className="mt-2.5 flex flex-col gap-1.5 text-small not-italic text-ink-muted">
-                {detail.contact.phone ? (
+                {contact.phone ? (
                   <a
-                    href={`tel:${detail.contact.phone.replace(/\s/g, "")}`}
+                    href={`tel:${contact.phone.replace(/\s/g, "")}`}
                     className="tabular font-mono text-ink hover:underline"
                   >
-                    {detail.contact.phone}
+                    {contact.phone}
                   </a>
                 ) : null}
-                {detail.contact.email ? (
+                {contact.email ? (
                   <a
-                    href={`mailto:${detail.contact.email}`}
+                    href={`mailto:${contact.email}`}
                     className="hover:underline"
                   >
-                    {detail.contact.email}
+                    {contact.email}
                   </a>
                 ) : null}
-                <span>{detail.contact.address}</span>
+                {contact.address ? (
+                  <span>{displayAddress(contact.address)}</span>
+                ) : null}
+                {contact.website ? (
+                  <a
+                    href={contact.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    {t.detail.website}
+                  </a>
+                ) : null}
+                {contact.facebook ? (
+                  <a
+                    href={contact.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    {t.detail.facebook}
+                  </a>
+                ) : null}
+                {contact.instagram ? (
+                  <a
+                    href={contact.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    {t.detail.instagram}
+                  </a>
+                ) : null}
               </address>
             </div>
           ) : null}
