@@ -141,5 +141,6 @@ either.
 - [`correction-report.md`](correction-report.md) — what was changed on 2026-11-14 and why
 - [`README.md`](README.md) — canonical schema and image licensing obligations
 - [`research-report.md`](research-report.md) — methodology, sources and limitations
+- [`verification-campaign-guide.md`](verification-campaign-guide.md) — how the phone campaign is run and recorded
 - [`_sources/validate_dataset.py`](_sources/validate_dataset.py) — run this first:
   `python3 research/_sources/validate_dataset.py`
