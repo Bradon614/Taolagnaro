@@ -1,0 +1,257 @@
+{
+ "image_correction": {
+  "slug": "musee-fort-flacourt",
+  "removed_images": [
+   "https://upload.wikimedia.org/wikipedia/commons/b/bd/Fort_Dauphin_Museum.1.JPG",
+   "https://upload.wikimedia.org/wikipedia/commons/c/c0/Fort_Dauphin_Museum.2.JPG"
+  ],
+  "removed_reason": "Depict Fort Dauphin Museum, Manitoba, Canada (name collision).",
+  "kept_image": "https://commons.wikimedia.org/wiki/File:Fort-Dauphin._Fort_Flacourt.jpg",
+  "kept_image_licence": "Public domain",
+  "kept_image_attribution": "Fort-Dauphin. Fort Flacourt.jpg — Editeur Couadou, France. before 1904 · Public domain"
+ },
+ "phone_correction": {
+  "slug": "karibu",
+  "field": "phone",
+  "before": "+264346907770",
+  "after": null,
+  "also_cleared": "phone_source",
+  "reason": "+264 is the Namibia country code, not Madagascar (+261).",
+  "original_source_preserved": "research/_sources/osm-restaurants.json (way 231466742)"
+ },
+ "orta_traceability": [
+  {
+   "slug": "takasira",
+   "added": "https://fortdauphin.com/annuaire-tourisme-anosy/takasira/",
+   "before": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/"
+   ],
+   "after": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/",
+    "https://fortdauphin.com/annuaire-tourisme-anosy/takasira/"
+   ]
+  },
+  {
+   "slug": "ami-appart-hotel",
+   "added": "https://fortdauphin.com/annuaire-tourisme-anosy/ami-appart-hotel-2/",
+   "before": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/"
+   ],
+   "after": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/",
+    "https://fortdauphin.com/annuaire-tourisme-anosy/ami-appart-hotel-2/"
+   ]
+  },
+  {
+   "slug": "vonimboly-hotel",
+   "added": "https://fortdauphin.com/annuaire-tourisme-anosy/vonimboly-hotel/",
+   "before": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/"
+   ],
+   "after": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/",
+    "https://fortdauphin.com/annuaire-tourisme-anosy/vonimboly-hotel/"
+   ]
+  },
+  {
+   "slug": "auberginn",
+   "added": "https://fortdauphin.com/annuaire-tourisme-anosy/auberginn/",
+   "before": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/"
+   ],
+   "after": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/",
+    "https://fortdauphin.com/annuaire-tourisme-anosy/auberginn/"
+   ]
+  },
+  {
+   "slug": "anja-guest-house",
+   "added": "https://fortdauphin.com/annuaire-tourisme-anosy/anja-guest-house/",
+   "before": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/"
+   ],
+   "after": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/",
+    "https://fortdauphin.com/annuaire-tourisme-anosy/anja-guest-house/"
+   ]
+  },
+  {
+   "slug": "hotel-marina-doublon",
+   "added": "https://fortdauphin.com/annuaire-tourisme-anosy/hotel-marina/",
+   "before": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/"
+   ],
+   "after": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/",
+    "https://fortdauphin.com/annuaire-tourisme-anosy/hotel-marina/"
+   ]
+  },
+  {
+   "slug": "tournesol",
+   "added": "https://fortdauphin.com/annuaire-tourisme-anosy/tournesol/",
+   "before": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/"
+   ],
+   "after": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/",
+    "https://fortdauphin.com/annuaire-tourisme-anosy/tournesol/"
+   ]
+  },
+  {
+   "slug": "tsarafandray",
+   "added": "https://fortdauphin.com/annuaire-tourisme-anosy/tsarafandray/",
+   "before": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/"
+   ],
+   "after": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/",
+    "https://fortdauphin.com/annuaire-tourisme-anosy/tsarafandray/"
+   ]
+  },
+  {
+   "slug": "vintana",
+   "added": "https://fortdauphin.com/annuaire-tourisme-anosy/vintana/",
+   "before": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/"
+   ],
+   "after": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/",
+    "https://fortdauphin.com/annuaire-tourisme-anosy/vintana/"
+   ]
+  },
+  {
+   "slug": "vahinn-sainte-luce",
+   "added": "https://fortdauphin.com/annuaire-tourisme-anosy/vahinn-st-luce/",
+   "before": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/"
+   ],
+   "after": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/",
+    "https://fortdauphin.com/annuaire-tourisme-anosy/vahinn-st-luce/"
+   ]
+  },
+  {
+   "slug": "le-jardin-exotique",
+   "added": "https://fortdauphin.com/annuaire-tourisme-anosy/le-jardin-exotique/",
+   "before": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/"
+   ],
+   "after": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/",
+    "https://fortdauphin.com/annuaire-tourisme-anosy/le-jardin-exotique/"
+   ]
+  },
+  {
+   "slug": "libanona-woods",
+   "added": "https://fortdauphin.com/annuaire-tourisme-anosy/libanona-woods/",
+   "before": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/"
+   ],
+   "after": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/",
+    "https://fortdauphin.com/annuaire-tourisme-anosy/libanona-woods/"
+   ]
+  },
+  {
+   "slug": "hotel-le-mandrare-amboasary",
+   "added": "https://fortdauphin.com/annuaire-tourisme-anosy/hotel-le-mandrare-amboasary/",
+   "before": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/"
+   ],
+   "after": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/",
+    "https://fortdauphin.com/annuaire-tourisme-anosy/hotel-le-mandrare-amboasary/"
+   ]
+  },
+  {
+   "slug": "espace-sophie-amboasary",
+   "added": "https://fortdauphin.com/annuaire-tourisme-anosy/espace-sophie-ambosary/",
+   "before": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/"
+   ],
+   "after": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/",
+    "https://fortdauphin.com/annuaire-tourisme-anosy/espace-sophie-ambosary/"
+   ]
+  },
+  {
+   "slug": "motel-m1-manantenina",
+   "added": "https://fortdauphin.com/annuaire-tourisme-anosy/motel-m1/",
+   "before": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/"
+   ],
+   "after": [
+    "https://fortdauphin.com/annuaire-tourisme-anosy/",
+    "https://fortdauphin.com/annuaire-tourisme-anosy/motel-m1/"
+   ]
+  }
+ ],
+ "schema": {
+  "canonical_key_count": 33,
+  "canonical_order": [
+   "slug",
+   "name",
+   "category",
+   "app_category",
+   "subcategory",
+   "locality",
+   "scope",
+   "description_fr",
+   "provider_name",
+   "address",
+   "distance_from_centre_km",
+   "latitude",
+   "longitude",
+   "coordinates_source",
+   "phone",
+   "phone_source",
+   "email",
+   "website",
+   "facebook",
+   "instagram",
+   "opening_hours",
+   "price_range",
+   "duration",
+   "difficulty_level",
+   "season",
+   "services",
+   "languages",
+   "image",
+   "source_urls",
+   "verification_status",
+   "last_verification_date",
+   "verification_notes",
+   "closed_evidence"
+  ],
+  "removed_fields": {
+   "providers.json": 19
+  },
+  "added_null_fields": {
+   "restaurants.json": {
+    "provider_name": 54,
+    "duration": 54,
+    "difficulty_level": 54,
+    "season": 54
+   },
+   "accommodations.json": {
+    "provider_name": 54,
+    "duration": 54,
+    "difficulty_level": 54,
+    "season": 54
+   },
+   "attractions.json": {
+    "provider_name": 32,
+    "duration": 32,
+    "difficulty_level": 32,
+    "season": 32
+   },
+   "providers.json": {
+    "provider_name": 19,
+    "duration": 19,
+    "difficulty_level": 19,
+    "season": 19
+   }
+  },
+  "note": "licence_number was null in 19/19 provider records and absent from the documented schema, so it was removed. The four activity fields are meaningful research data already implicit in src/lib/listings.ts (duration, level) and were promoted to the shared schema as nullable."
+ }
+}

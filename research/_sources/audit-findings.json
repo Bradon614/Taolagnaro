@@ -1,0 +1,924 @@
+{
+ "critical": [],
+ "high": [
+  {
+   "code": "exact-duplicate-name",
+   "slug": "le-petit-bonheur, le-petit-bonheur-hotel-tag-flagged",
+   "detail": "identical normalised name 'lepetitbonheur' across 2 records: ['Le Petit Bonheur', 'Le Petit Bonheur']"
+  },
+  {
+   "code": "exact-duplicate-name",
+   "slug": "hotel-mahavoky-annexe, hotel-mahavoky-annexe-tag-flagged",
+   "detail": "identical normalised name 'hotelmahavokyannexe' across 2 records: ['Hôtel Mahavoky Annexe', 'Hôtel Mahavoky Annexe']"
+  },
+  {
+   "code": "shared-phone-cross-category",
+   "slug": "joo-restaurant-joo-bar-talinjoo, talinjoo-boutique-hotel",
+   "detail": "2 records share phone ending 340521235: joo-restaurant-joo-bar-talinjoo (Joo Restaurant & Joo Bar (Talinjoo)) in restaurants.json; talinjoo-boutique-hotel (Talinjoo Boutique Hôtel) in accommodations.json"
+  },
+  {
+   "code": "shared-phone-cross-category",
+   "slug": "chez-anita, chez-anita-hotel-tag-flagged",
+   "detail": "2 records share phone ending 331251342: chez-anita (Chez Anita) in restaurants.json; chez-anita-hotel-tag-flagged (Chez Anita (Hôtel Anita)) in accommodations.json"
+  },
+  {
+   "code": "shared-phone-cross-category",
+   "slug": "grill-de-lac, espace-sophie-amboasary",
+   "detail": "2 records share phone ending 349767492: grill-de-lac (Grill de Lac) in restaurants.json; espace-sophie-amboasary (Espace Sophie Amboasary) in accommodations.json"
+  },
+  {
+   "code": "shared-phone-cross-category",
+   "slug": "rex-restaurant-pizzeria, le-dauphin",
+   "detail": "2 records share phone ending 341262781: rex-restaurant-pizzeria (Rex Restaurant Pizzeria) in restaurants.json; le-dauphin (Le Dauphin) in accommodations.json"
+  },
+  {
+   "code": "shared-phone-cross-category",
+   "slug": "takasira, safari-laka",
+   "detail": "2 records share phone ending 343797467: takasira (Takasira) in accommodations.json; safari-laka (Safari Laka) in providers.json"
+  },
+  {
+   "code": "shared-phone-cross-category",
+   "slug": "berenty-lodge, reserve-de-berenty, observation-des-lemuriens-berenty, observation-des-oiseaux-berenty",
+   "detail": "4 records share phone ending 332321007: berenty-lodge (Berenty Lodge) in accommodations.json; reserve-de-berenty (Réserve de Berenty) in attractions.json; observation-des-lemuriens-berenty (Observation des lémuriens à la réserve de Berenty) in activities.json; observation-des-oiseaux-berenty (Observation des oiseaux à Berenty) in activities.json"
+  },
+  {
+   "code": "shared-phone-cross-category",
+   "slug": "mandrare-river-camp, mandrare-river-camp-tour-operator",
+   "detail": "2 records share phone ending 381561913: mandrare-river-camp (Mandrare River Camp) in accommodations.json; mandrare-river-camp-tour-operator (Mandrare River Camp (activité tour-opérateur)) in providers.json"
+  },
+  {
+   "code": "shared-phone-cross-category",
+   "slug": "reserve-de-nahampoana, observation-des-lemuriens-nahampoana, shtm",
+   "detail": "3 records share phone ending 344612280: reserve-de-nahampoana (Réserve de Nahampoana) in attractions.json; observation-des-lemuriens-nahampoana (Observation des lémuriens à la réserve de Nahampoana) in activities.json; shtm (SHTM) in providers.json"
+  },
+  {
+   "code": "shared-phone-cross-category",
+   "slug": "musee-fort-flacourt, visite-du-musee-fort-flacourt",
+   "detail": "2 records share phone ending 342337212: musee-fort-flacourt (Musée de Fort-Flacourt) in attractions.json; visite-du-musee-fort-flacourt (Visite du musée de Fort-Flacourt) in activities.json"
+  },
+  {
+   "code": "shared-phone-cross-category",
+   "slug": "excursion-cap-sainte-marie-et-lavanono, air-fort-services",
+   "detail": "2 records share phone ending 209221224: excursion-cap-sainte-marie-et-lavanono (Excursion vers le cap Sainte-Marie et Lavanono) in activities.json; air-fort-services (Air Fort Services) in providers.json"
+  },
+  {
+   "code": "shared-phone-cross-category",
+   "slug": "decouverte-de-la-vannerie-de-sainte-luce, stitch-saint-luce",
+   "detail": "2 records share phone ending 346957382: decouverte-de-la-vannerie-de-sainte-luce (Découverte de la vannerie de Sainte-Luce) in activities.json; stitch-saint-luce (Stitch Saint Luce) in providers.json"
+  }
+ ],
+ "medium": [
+  {
+   "code": "phone-charset",
+   "slug": "vahiny-lodge",
+   "detail": "phone contains unexpected characters: '+261 32 02 468 22; +261 32 43 964 93'"
+  },
+  {
+   "code": "phone-length",
+   "slug": "vahiny-lodge",
+   "detail": "+261 number has 21 digits after the country code (expected 9)"
+  },
+  {
+   "code": "phone-length",
+   "slug": "domaine-de-la-cascade-bungalows",
+   "detail": "+261 number has 8 digits after the country code (expected 9)"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "la-kabane",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "club-sandwich",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "karibu",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "les-huitres-dankoba",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "stand-a-huitres-oysters-spot",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "le-petit-bonheur",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "auberge-inn-cafe-cheese",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "bar-juliana",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "bon-appetite",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "cafe-bar-colorado",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "chez-bernards",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "chez-christophe",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "chez-clark",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "chez-coco",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "chez-kabuko",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "chez-martines",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "chez-vivie",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "coco-beach",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "crepe-man",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "escale",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "florida",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "gargote-chez-lodine",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "hotely-domoina",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "hotely-neny",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "le-mekong",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "les-chasseurs",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "madam-abels",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "mami-jos",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "mami-jos-tanambao",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "mendrika-sophie",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "patisserie-colbert",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "pizza-express",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "presidents-bar",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "rayon-de-soleil",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "sakamandia-food",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "sandwich-shop",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "sidebar",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "ski-chalet",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "snack-bar-mahamanina",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "soupe-tamatave",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "stadium-restaurant",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "hotel-mahavoky-annexe-tag-flagged",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "ravanala-hotel",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "leuro-hotel-restaurant",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "chez-marceline",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "flavs-bungalows",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "vaosolos-bungalow",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "chalet-libanona",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "vahiny-lodge",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "acp-camp-seed-madagascar",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "pirate-camp",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "maison-agent-sarisambo",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "ancien-hotel-miramar",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "formerly-sahil-hotel",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "le-petit-bonheur-hotel-tag-flagged",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "galion-hotel",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "verified-no-contact",
+   "slug": "plage-de-libanona",
+   "detail": "status=verified but no phone, website or email"
+  },
+  {
+   "code": "verified-no-contact",
+   "slug": "plage-ankoba",
+   "detail": "status=verified but no phone, website or email"
+  },
+  {
+   "code": "verified-no-contact",
+   "slug": "plage-monseigneur",
+   "detail": "status=verified but no phone, website or email"
+  },
+  {
+   "code": "verified-no-contact",
+   "slug": "pic-saint-louis",
+   "detail": "status=verified but no phone, website or email"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "marche-aux-zebu",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "farihy-ambavarano",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "verified-no-contact",
+   "slug": "surf-plage-ankoba",
+   "detail": "status=verified but no phone, website or email"
+  },
+  {
+   "code": "verified-no-contact",
+   "slug": "surf-baie-de-monseigneur",
+   "detail": "status=verified but no phone, website or email"
+  },
+  {
+   "code": "verified-no-contact",
+   "slug": "randonnee-pic-saint-louis",
+   "detail": "status=verified but no phone, website or email"
+  },
+  {
+   "code": "verified-no-contact",
+   "slug": "baignade-et-detente-plage-de-libanona",
+   "detail": "status=verified but no phone, website or email"
+  },
+  {
+   "code": "osm-only-evidence",
+   "slug": "voyage-r",
+   "detail": "every cited source is OpenStreetMap/Nominatim — no independent evidence"
+  },
+  {
+   "code": "near-duplicate-name",
+   "slug": "chez-anita / chez-anita-hotel-tag-flagged",
+   "detail": "'chezanita' contained in 'chezanitahotelanita'"
+  },
+  {
+   "code": "near-duplicate-name",
+   "slug": "le-tournesol / tournesol",
+   "detail": "'tournesol' contained in 'letournesol'"
+  },
+  {
+   "code": "near-duplicate-name",
+   "slug": "mahamanina / snack-bar-mahamanina",
+   "detail": "'mahamanina' contained in 'snackbarmahamanina'"
+  },
+  {
+   "code": "near-duplicate-name",
+   "slug": "mami-jos / mami-jos-tanambao",
+   "detail": "'mamijos' contained in 'mamijostanambao'"
+  },
+  {
+   "code": "near-duplicate-name",
+   "slug": "le-nepenthes / le-nepenthes-village",
+   "detail": "'lenepenthes' contained in 'lenepenthesvillage'"
+  },
+  {
+   "code": "near-duplicate-name",
+   "slug": "mandrare-river-camp / mandrare-river-camp-tour-operator",
+   "detail": "'mandrarerivercamp' contained in 'mandrarerivercampactivitetouroperateur'"
+  },
+  {
+   "code": "near-duplicate-name",
+   "slug": "domaine-de-la-cascade-bungalows / domaine-de-la-cascade",
+   "detail": "'domainedelacascade' contained in 'domainedelacascadeplantationlansargues'"
+  },
+  {
+   "code": "near-duplicate-name",
+   "slug": "plage-de-libanona / surf-plage-de-libanona",
+   "detail": "'plagedelibanona' contained in 'surfalaplagedelibanona'"
+  },
+  {
+   "code": "near-duplicate-name",
+   "slug": "plage-de-libanona / baignade-et-detente-plage-de-libanona",
+   "detail": "'plagedelibanona' contained in 'baignadeetdetentealaplagedelibanona'"
+  },
+  {
+   "code": "near-duplicate-name",
+   "slug": "plage-ankoba / surf-plage-ankoba",
+   "detail": "'plagedankoba' contained in 'surfalaplagedankoba'"
+  },
+  {
+   "code": "near-duplicate-name",
+   "slug": "plage-dambinanibe / surf-plage-dambinanibe",
+   "detail": "'plagedambinanibe' contained in 'surfalaplagedambinanibe'"
+  },
+  {
+   "code": "near-duplicate-name",
+   "slug": "reserve-de-nahampoana / observation-des-lemuriens-nahampoana",
+   "detail": "'reservedenahampoana' contained in 'observationdeslemuriensalareservedenahampoana'"
+  },
+  {
+   "code": "near-duplicate-name",
+   "slug": "reserve-de-berenty / observation-des-lemuriens-berenty",
+   "detail": "'reservedeberenty' contained in 'observationdeslemuriensalareservedeberenty'"
+  },
+  {
+   "code": "near-duplicate-name",
+   "slug": "domaine-de-la-cascade / randonnee-domaine-de-la-cascade",
+   "detail": "'domainedelacascade' contained in 'randonneeaudomainedelacascade'"
+  },
+  {
+   "code": "near-duplicate-name",
+   "slug": "pic-saint-louis / randonnee-pic-saint-louis",
+   "detail": "'picsaintlouis' contained in 'ascensiondupicsaintlouis'"
+  },
+  {
+   "code": "near-duplicate-name",
+   "slug": "musee-fort-flacourt / visite-du-musee-fort-flacourt",
+   "detail": "'museedefortflacourt' contained in 'visitedumuseedefortflacourt'"
+  },
+  {
+   "code": "co-located",
+   "slug": "joo-restaurant-joo-bar-talinjoo / talinjoo-boutique-hotel",
+   "detail": "3.0 m apart ('Joo Restaurant & Joo Bar (Talinjoo)' vs 'Talinjoo Boutique Hôtel')"
+  },
+  {
+   "code": "co-located",
+   "slug": "la-kabane / chez-marceline",
+   "detail": "20.4 m apart ('La Kabane' vs \"Chez Marceline (Maison d'hôtes Chez Marceline)\")"
+  },
+  {
+   "code": "co-located",
+   "slug": "chez-anita / chez-anita-hotel-tag-flagged",
+   "detail": "1.9 m apart ('Chez Anita' vs 'Chez Anita (Hôtel Anita)')"
+  },
+  {
+   "code": "co-located",
+   "slug": "le-petit-bonheur / le-petit-bonheur-hotel-tag-flagged",
+   "detail": "1.7 m apart ('Le Petit Bonheur' vs 'Le Petit Bonheur')"
+  },
+  {
+   "code": "co-located",
+   "slug": "hotel-mahavoky-annexe / hotel-mahavoky-annexe-tag-flagged",
+   "detail": "0.0 m apart ('Hôtel Mahavoky Annexe' vs 'Hôtel Mahavoky Annexe')"
+  },
+  {
+   "code": "co-located",
+   "slug": "bon-appetite / madam-abels",
+   "detail": "8.5 m apart ('Bon Appetite' vs 'Madam Abels')"
+  },
+  {
+   "code": "co-located",
+   "slug": "bon-appetite / mami-jos",
+   "detail": "16.9 m apart ('Bon Appetite' vs \"Mami Jo's\")"
+  },
+  {
+   "code": "co-located",
+   "slug": "chez-clark / sidebar",
+   "detail": "14.1 m apart ('Chez Clark' vs 'Sidebar')"
+  },
+  {
+   "code": "co-located",
+   "slug": "madam-abels / mami-jos",
+   "detail": "8.4 m apart ('Madam Abels' vs \"Mami Jo's\")"
+  },
+  {
+   "code": "co-located",
+   "slug": "soupe-tamatave / leuro-hotel-restaurant",
+   "detail": "18.6 m apart ('Soupe Tamatave' vs \"L'€uro Hotel Restaurant\")"
+  },
+  {
+   "code": "co-located",
+   "slug": "sainte-luce-reserve-camp / sainte-luce-reserve",
+   "detail": "0.0 m apart ('Sainte Luce Reserve (camping / écotourisme)' vs 'Réserve de Sainte-Luce')"
+  },
+  {
+   "code": "co-located",
+   "slug": "plage-de-libanona / surf-plage-de-libanona",
+   "detail": "0.0 m apart ('Plage de Libanona' vs 'Surf à la plage de Libanona')"
+  },
+  {
+   "code": "co-located",
+   "slug": "plage-de-libanona / plongee-masque-et-tuba-libanona",
+   "detail": "0.0 m apart ('Plage de Libanona' vs 'Plongée avec masque et tuba à Libanona')"
+  },
+  {
+   "code": "co-located",
+   "slug": "plage-de-libanona / baignade-et-detente-plage-de-libanona",
+   "detail": "0.0 m apart ('Plage de Libanona' vs 'Baignade et détente à la plage de Libanona')"
+  },
+  {
+   "code": "co-located",
+   "slug": "plage-ankoba / surf-plage-ankoba",
+   "detail": "0.0 m apart (\"Plage d'Ankoba\" vs \"Surf à la plage d'Ankoba\")"
+  },
+  {
+   "code": "co-located",
+   "slug": "plage-ankoba / kitesurf-et-planche-a-voile-ankoba",
+   "detail": "0.0 m apart (\"Plage d'Ankoba\" vs 'Kitesurf et planche à voile à Ankoba')"
+  },
+  {
+   "code": "co-located",
+   "slug": "plage-monseigneur / surf-baie-de-monseigneur",
+   "detail": "0.0 m apart ('Plage de Monseigneur (Baie de Monseigneur)' vs 'Surf à la plage de Monseigneur')"
+  },
+  {
+   "code": "co-located",
+   "slug": "plage-de-lokaro / excursion-lokaro-en-pirogue",
+   "detail": "0.0 m apart ('Plage de Lokaro' vs 'Excursion à Lokaro en pirogue')"
+  },
+  {
+   "code": "co-located",
+   "slug": "reserve-de-nahampoana / observation-des-lemuriens-nahampoana",
+   "detail": "0.0 m apart ('Réserve de Nahampoana' vs 'Observation des lémuriens à la réserve de Nahampoana')"
+  },
+  {
+   "code": "co-located",
+   "slug": "parc-national-dandohahela / randonnee-andohahela-tsimelahy",
+   "detail": "0.0 m apart (\"Parc national d'Andohahela\" vs 'Randonnée à Andohahela, parcelle de Tsimelahy')"
+  },
+  {
+   "code": "co-located",
+   "slug": "reserve-de-berenty / observation-des-lemuriens-berenty",
+   "detail": "0.0 m apart ('Réserve de Berenty' vs 'Observation des lémuriens à la réserve de Berenty')"
+  },
+  {
+   "code": "co-located",
+   "slug": "reserve-de-berenty / observation-des-oiseaux-berenty",
+   "detail": "0.0 m apart ('Réserve de Berenty' vs 'Observation des oiseaux à Berenty')"
+  },
+  {
+   "code": "co-located",
+   "slug": "domaine-de-la-cascade / randonnee-domaine-de-la-cascade",
+   "detail": "0.0 m apart ('Domaine de la Cascade' vs 'Randonnée au Domaine de la Cascade')"
+  },
+  {
+   "code": "co-located",
+   "slug": "pic-saint-louis / randonnee-pic-saint-louis",
+   "detail": "0.0 m apart ('Pic Saint-Louis' vs 'Ascension du pic Saint-Louis')"
+  },
+  {
+   "code": "co-located",
+   "slug": "bazarikely-market / marche-central-et-artisanat-de-taolagnaro",
+   "detail": "0.0 m apart ('Marché de Bazarikely' vs 'Marché central et artisanat de Taolagnaro')"
+  },
+  {
+   "code": "co-located",
+   "slug": "farihy-lanirano / balade-en-bateau-lac-lanirano",
+   "detail": "0.0 m apart ('Lac Lanirano (Farihy Lanirano)' vs 'Balade en bateau sur le lac Lanirano')"
+  },
+  {
+   "code": "co-located",
+   "slug": "surf-plage-ankoba / kitesurf-et-planche-a-voile-ankoba",
+   "detail": "0.0 m apart (\"Surf à la plage d'Ankoba\" vs 'Kitesurf et planche à voile à Ankoba')"
+  },
+  {
+   "code": "co-located",
+   "slug": "surf-plage-de-libanona / plongee-masque-et-tuba-libanona",
+   "detail": "0.0 m apart ('Surf à la plage de Libanona' vs 'Plongée avec masque et tuba à Libanona')"
+  },
+  {
+   "code": "co-located",
+   "slug": "surf-plage-de-libanona / baignade-et-detente-plage-de-libanona",
+   "detail": "0.0 m apart ('Surf à la plage de Libanona' vs 'Baignade et détente à la plage de Libanona')"
+  },
+  {
+   "code": "co-located",
+   "slug": "plongee-masque-et-tuba-libanona / baignade-et-detente-plage-de-libanona",
+   "detail": "0.0 m apart ('Plongée avec masque et tuba à Libanona' vs 'Baignade et détente à la plage de Libanona')"
+  },
+  {
+   "code": "co-located",
+   "slug": "observation-des-lemuriens-berenty / observation-des-oiseaux-berenty",
+   "detail": "0.0 m apart ('Observation des lémuriens à la réserve de Berenty' vs 'Observation des oiseaux à Berenty')"
+  },
+  {
+   "code": "email-multi",
+   "slug": "kaleta-hotel",
+   "detail": "email contains multiple addresses: 'contact@kaletahotel.com; reservation@kaletahotel.com'"
+  },
+  {
+   "code": "email-multi",
+   "slug": "mandrare-river-camp",
+   "detail": "email contains multiple addresses: 'tours@madaclassic.com; gm@madaclassic.com'"
+  }
+ ],
+ "low": [
+  {
+   "code": "slug-name-drift",
+   "slug": "leuro-hotel-restaurant",
+   "detail": "slug shares only 1 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "sainte-luce-reserve",
+   "detail": "slug shares only 0 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "bazarikely-market",
+   "detail": "slug shares only 0 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "farihy-lanirano",
+   "detail": "slug shares only 0 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "farihy-amparihy",
+   "detail": "slug shares only 0 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "farihy-ambinanikely",
+   "detail": "slug shares only 0 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "farihy-anony",
+   "detail": "slug shares only 0 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "farihy-ambavarano",
+   "detail": "slug shares only 0 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "plage-de-la-baie-des-galions",
+   "detail": "slug shares only 0 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "surf-plage-ankoba",
+   "detail": "slug shares only 4 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "surf-baie-de-monseigneur",
+   "detail": "slug shares only 4 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "surf-plage-dambinanibe",
+   "detail": "slug shares only 4 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "surf-plage-de-libanona",
+   "detail": "slug shares only 4 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "plongee-masque-et-tuba-libanona",
+   "detail": "slug shares only 7 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "randonnee-pic-saint-louis",
+   "detail": "slug shares only 0 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "excursion-baie-sainte-luce-manafiafy",
+   "detail": "slug shares only 9 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "excursion-cap-sainte-marie-et-lavanono",
+   "detail": "slug shares only 9 leading chars with normalised name"
+  },
+  {
+   "code": "slug-name-drift",
+   "slug": "foi-artisanat-anosy",
+   "detail": "slug shares only 3 leading chars with normalised name"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "larrivage",
+   "detail": "facebook URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "saint-pas",
+   "detail": "facebook URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "la-kabane",
+   "detail": "facebook URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "kaleta-hotel",
+   "detail": "facebook URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "talinjoo-boutique-hotel",
+   "detail": "facebook URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "berenty-lodge",
+   "detail": "facebook URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "berenty-lodge",
+   "detail": "instagram URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "mandrare-river-camp",
+   "detail": "website URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "mandrare-river-camp",
+   "detail": "instagram URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "manafiafy-forest-lodge",
+   "detail": "website URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "manafiafy-forest-lodge",
+   "detail": "instagram URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "domaine-de-la-cascade-bungalows",
+   "detail": "facebook URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "domaine-de-la-cascade-bungalows",
+   "detail": "instagram URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "reserve-de-berenty",
+   "detail": "facebook URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "reserve-de-berenty",
+   "detail": "instagram URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "domaine-de-la-cascade",
+   "detail": "facebook URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "domaine-de-la-cascade",
+   "detail": "instagram URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "domaine-de-la-cascade",
+   "detail": "coordinates_source URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "kitesurf-et-planche-a-voile-ankoba",
+   "detail": "coordinates_source URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "observation-des-lemuriens-berenty",
+   "detail": "facebook URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "observation-des-lemuriens-berenty",
+   "detail": "instagram URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "randonnee-domaine-de-la-cascade",
+   "detail": "facebook URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "randonnee-domaine-de-la-cascade",
+   "detail": "instagram URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "randonnee-domaine-de-la-cascade",
+   "detail": "coordinates_source URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "observation-des-oiseaux-berenty",
+   "detail": "facebook URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "observation-des-oiseaux-berenty",
+   "detail": "instagram URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "mandrare-river-camp-tour-operator",
+   "detail": "website URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "mandrare-river-camp-tour-operator",
+   "detail": "facebook URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "mandrare-river-camp-tour-operator",
+   "detail": "instagram URL is not listed in source_urls"
+  },
+  {
+   "code": "provenance-not-in-sources",
+   "slug": "air-madagascar",
+   "detail": "website URL is not listed in source_urls"
+  },
+  {
+   "code": "opening-hours-unnormalised",
+   "slug": "cafe-bar-colorado",
+   "detail": "opening_hours is free prose, not OSM syntax: '11 AM to 10 PM'"
+  },
+  {
+   "code": "opening-hours-hedged",
+   "slug": "vaosolos-bungalow",
+   "detail": "opening_hours embeds a provenance caveat: 'Mo-Su 09:00-18:00 (selon OSM)'"
+  },
+  {
+   "code": "opening-hours-hedged",
+   "slug": "office-regional-du-tourisme-danosy",
+   "detail": "opening_hours embeds a provenance caveat: 'Lundi au samedi 09:00–16:30 (selon OpenStreetMap)'"
+  }
+ ]
+}

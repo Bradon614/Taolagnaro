@@ -44,6 +44,28 @@ APP_CATEGORIES = {"sites", "hotels", "restaurants", "activites", "excursions", "
 SCOPES = {"taolagnaro_city", "nearby", "regional"}
 STATUSES = {"verified", "partially_verified", "needs_verification", "closed"}
 
+# The canonical record shape, documented in research/README.md. Every record in
+# every file must carry exactly these keys, in this order.
+CANONICAL_KEYS = [
+    "slug", "name", "category", "app_category", "subcategory", "locality", "scope",
+    "description_fr", "provider_name", "address", "distance_from_centre_km",
+    "latitude", "longitude", "coordinates_source", "phone", "phone_source",
+    "email", "website", "facebook", "instagram", "opening_hours", "price_range",
+    "duration", "difficulty_level", "season", "services", "languages", "image",
+    "source_urls", "verification_status", "last_verification_date",
+    "verification_notes", "closed_evidence",
+]
+
+# Records deliberately withheld from publication. They must remain in the research
+# dataset: deleting them would destroy the evidence that they were assessed.
+EXCLUDED_FROM_PUBLICATION = {
+    "club-sandwich", "karibu", "chez-anita-hotel-tag-flagged",
+    "hotel-mahavoky-annexe-tag-flagged", "hotel-marina-doublon",
+    "acp-camp-seed-madagascar", "maison-agent-sarisambo", "ancien-hotel-miramar",
+    "formerly-sahil-hotel", "le-local-ex-chez-george",
+    "le-petit-bonheur-hotel-tag-flagged", "faux-cap-beach", "aiko-aventure",
+}
+
 # Wider Anosy / south-east bounding box. A coordinate outside this is not a
 # Taolagnaro-area place and is almost certainly a transcription error.
 LAT_RANGE = (-26.0, -24.0)
@@ -55,6 +77,15 @@ def check(records, expected_category, path, errors, warnings):
     for index, record in enumerate(records, 1):
         where = f"{os.path.basename(path)} #{index} ({record.get('slug', 'no-slug')})"
         keys = list(record.keys())
+        if keys != CANONICAL_KEYS:
+            missing = [k for k in CANONICAL_KEYS if k not in keys]
+            extra = [k for k in keys if k not in CANONICAL_KEYS]
+            if missing:
+                errors.append(f"{where}: missing canonical keys {missing}")
+            if extra:
+                errors.append(f"{where}: non-canonical keys {extra}")
+            if not missing and not extra:
+                errors.append(f"{where}: canonical keys present but out of order")
         if seen_keys is None:
             seen_keys = keys
         elif keys != seen_keys:
@@ -149,6 +180,13 @@ def main():
         print(f"  {app:22} {apps[app]}")
 
     print(f"\nunique slugs: {len(slugs)}")
+    print(f"canonical schema: {len(CANONICAL_KEYS)} keys, enforced in every record")
+
+    missing_excluded = sorted(EXCLUDED_FROM_PUBLICATION - set(slugs))
+    if missing_excluded:
+        errors.append(f"excluded-from-publication records missing from the dataset: {missing_excluded}")
+    else:
+        print(f"excluded from publication: {len(EXCLUDED_FROM_PUBLICATION)} records present (as required)")
 
     if warnings:
         print(f"\n=== {len(warnings)} warning(s) ===")

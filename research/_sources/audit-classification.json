@@ -1,0 +1,1905 @@
+{
+ "ready_for_review": [
+  {
+   "file": "restaurants.json",
+   "slug": "joo-restaurant-joo-bar-talinjoo",
+   "name": "Joo Restaurant & Joo Bar (Talinjoo)",
+   "verification_status": "verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "larrivage",
+   "name": "L'Arrivage",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "saint-pas",
+   "name": "Saint Pas",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "chez-anita",
+   "name": "Chez Anita",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "kaleta-hotel",
+   "name": "Kaleta Hotel",
+   "verification_status": "verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "talinjoo-boutique-hotel",
+   "name": "Talinjoo Boutique Hôtel",
+   "verification_status": "verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "le-dauphin",
+   "name": "Le Dauphin",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "lavasoa-hotel",
+   "name": "Lavasoa Hotel",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "villa-oceania",
+   "name": "Villa Oceania (Villa Océane)",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "manafiafy-forest-lodge",
+   "name": "Manafiafy Forest Lodge (Manafiafy Beach & Rainforest Lodge)",
+   "verification_status": "verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "reserve-de-nahampoana",
+   "name": "Réserve de Nahampoana",
+   "verification_status": "verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "reserve-de-berenty",
+   "name": "Réserve de Berenty",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "domaine-de-la-cascade",
+   "name": "Domaine de la Cascade",
+   "verification_status": "verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "observation-des-lemuriens-nahampoana",
+   "name": "Observation des lémuriens à la réserve de Nahampoana",
+   "verification_status": "verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "observation-des-lemuriens-berenty",
+   "name": "Observation des lémuriens à la réserve de Berenty",
+   "verification_status": "verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "randonnee-domaine-de-la-cascade",
+   "name": "Randonnée au Domaine de la Cascade",
+   "verification_status": "verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "observation-des-oiseaux-berenty",
+   "name": "Observation des oiseaux à Berenty",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "air-fort-services",
+   "name": "Air Fort Services",
+   "verification_status": "verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "mandrare-river-camp-tour-operator",
+   "name": "Mandrare River Camp (activité tour-opérateur)",
+   "verification_status": "verified",
+   "reasons": [
+    "Establishment-specific evidence, contact and coordinates present."
+   ]
+  }
+ ],
+ "needs_confirmation": [
+  {
+   "file": "restaurants.json",
+   "slug": "la-kabane",
+   "name": "La Kabane",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "No establishment-specific source; only a directory index or home page."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "les-huitres-dankoba",
+   "name": "Les Huîtres d'Ankoba",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "stand-a-huitres-oysters-spot",
+   "name": "Stand à huîtres (Oysters spot)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "le-tournesol",
+   "name": "Le Tournesol",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "le-petit-bonheur",
+   "name": "Le Petit Bonheur",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "hotel-mahavoky-annexe",
+   "name": "Hôtel Mahavoky Annexe",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "grill-de-lac",
+   "name": "Grill de Lac",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "spot",
+   "name": "SPOT",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "sucre-sale",
+   "name": "Sucré Salé",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "chez-mirana-et-bernard",
+   "name": "Chez Mirana et Bernard",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "mahamanina",
+   "name": "Mahamanina",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "la-reine-du-sud-chez-georges",
+   "name": "La Reine du Sud (Chez Georges)",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "rex-restaurant-pizzeria",
+   "name": "Rex Restaurant Pizzeria",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "auberge-inn-cafe-cheese",
+   "name": "Auberge Inn Cafe & Cheese",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "bar-juliana",
+   "name": "Bar Juliana",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "bon-appetite",
+   "name": "Bon Appetite",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "cafe-bar-colorado",
+   "name": "Cafe Bar Colorado",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "chez-bernards",
+   "name": "Chez Bernards",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "chez-christophe",
+   "name": "Chez Christophe",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "chez-clark",
+   "name": "Chez Clark",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "chez-coco",
+   "name": "Chez Coco",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "chez-kabuko",
+   "name": "Chez Kabuko",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "chez-martines",
+   "name": "Chez Martine's",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "chez-vivie",
+   "name": "Chez Vivie",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "coco-beach",
+   "name": "Coco Beach",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "crepe-man",
+   "name": "Crepe Man",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "escale",
+   "name": "Escale",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "florida",
+   "name": "Florida",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "gargote-chez-lodine",
+   "name": "Gargote Chez Lodine",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "hotely-domoina",
+   "name": "Hotely Domoina",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "hotely-neny",
+   "name": "Hotely Neny",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "le-mekong",
+   "name": "Le Mekong",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "les-chasseurs",
+   "name": "Les Chasseurs",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "madam-abels",
+   "name": "Madam Abels",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "mami-jos",
+   "name": "Mami Jo's",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "mami-jos-tanambao",
+   "name": "Mami Jo's Tanambao",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "mendrika-sophie",
+   "name": "Mendrika Sophie",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "patisserie-colbert",
+   "name": "Patisserie Colbert",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "pizza-express",
+   "name": "Pizza Express",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "presidents-bar",
+   "name": "Presidents Bar",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "rayon-de-soleil",
+   "name": "Rayon de Soleil",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "sakamandia-food",
+   "name": "SAKAMANDIA FOOD",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "sandwich-shop",
+   "name": "Sandwich Shop",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "sidebar",
+   "name": "Sidebar",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "ski-chalet",
+   "name": "Ski Chalet",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "snack-bar-mahamanina",
+   "name": "Snack Bar Mahamanina",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "soupe-tamatave",
+   "name": "Soupe Tamatave",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "stadium-restaurant",
+   "name": "Stadium Restaurant",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "hotel-azura",
+   "name": "Hôtel Azura (Azura Hotel & Spa)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "le-nepenthes",
+   "name": "Le Népenthès",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "le-nepenthes-village",
+   "name": "Le Nepenthes village",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "le-port-hotel",
+   "name": "Le Port Hotel",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "hotel-du-phare",
+   "name": "Hotel du Phare",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "la-marina-hotel",
+   "name": "La Marina Hotel (Hotel Marina)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "hotel-mahavokey",
+   "name": "Hôtel Mahavokey (Mahavoky)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "ravanala-hotel",
+   "name": "Ravanala Hotel (Ravinala)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "fandriantsara-hotel",
+   "name": "Fandriantsara Hôtel (Fandriatsara)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "ankoba-beach-hotel",
+   "name": "Ankoba Beach Hotel",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "la-croix-du-sud",
+   "name": "La Croix du Sud",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "leuro-hotel-restaurant",
+   "name": "L'€uro Hotel Restaurant",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "takasira",
+   "name": "Takasira",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "ami-appart-hotel",
+   "name": "Ami Appart Hôtel",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "vonimboly-hotel",
+   "name": "Vonimboly Hôtel",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "chez-stephan",
+   "name": "Chez Stephan",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "auberginn",
+   "name": "Auberg'Inn",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "chez-marceline",
+   "name": "Chez Marceline (Maison d'hôtes Chez Marceline)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "flavs-bungalows",
+   "name": "Flav's Bungalows (Bungalow de Flav)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "vaosolos-bungalow",
+   "name": "Vaosolo's Bungalow (Bungalow de Voasolo)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "chalet-libanona",
+   "name": "Chalet Libanona",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "anja-guest-house",
+   "name": "Anja Guest House",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "tournesol",
+   "name": "Tournesol",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "tsarafandray",
+   "name": "Tsarafandray",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "vintana",
+   "name": "Vintana",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "berenty-lodge",
+   "name": "Berenty Lodge",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "mandrare-river-camp",
+   "name": "Mandrare River Camp",
+   "verification_status": "verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "lokaro-lodge",
+   "name": "Lokaro Lodge",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "vahinn-sainte-luce",
+   "name": "Vah'inn Sainte-Luce",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "vahiny-lodge",
+   "name": "vahiny lodge",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "Phone field holds more than one number."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "sainte-luce-reserve-camp",
+   "name": "Sainte Luce Reserve (camping / écotourisme)",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "domaine-de-la-cascade-bungalows",
+   "name": "Domaine de la Cascade (Plantation Lansargues)",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "le-jardin-exotique",
+   "name": "Le Jardin Exotique",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "libanona-woods",
+   "name": "Libanona Woods",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "pirate-camp",
+   "name": "Pirate Camp",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "hotel-le-mandrare-amboasary",
+   "name": "Hotel Le Mandrare (Amboasary)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "espace-sophie-amboasary",
+   "name": "Espace Sophie Amboasary",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "motel-m1-manantenina",
+   "name": "Motel M1 (Manantenina)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "galion-hotel",
+   "name": "Galion Hotel",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "plage-de-libanona",
+   "name": "Plage de Libanona",
+   "verification_status": "verified",
+   "reasons": [
+    "No phone, website or email recorded.",
+    "Image association is weak: Gallery image is captioned only 'beach at Fort Dauphin'; not confirmed to be Libanona."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "plage-ankoba",
+   "name": "Plage d'Ankoba",
+   "verification_status": "verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "plage-monseigneur",
+   "name": "Plage de Monseigneur (Baie de Monseigneur)",
+   "verification_status": "verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "plage-dambinanibe",
+   "name": "Plage d'Ambinanibe",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "plage-damparihy",
+   "name": "Plage d'Amparihy",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "plage-de-lokaro",
+   "name": "Plage de Lokaro",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded.",
+    "Image association is weak: Attached image is captioned 'ocean coast near Evatra' — the village en route, not the beach itself."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "parc-national-dandohahela",
+   "name": "Parc national d'Andohahela",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded.",
+    "Image association is weak: Gallery image 'Andohahela NP.jpg' has weak licence provenance on Commons ('Assumed own work', no machine-readable source)."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "sainte-luce-reserve",
+   "name": "Réserve de Sainte-Luce",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded.",
+    "Image association is weak: Attached image is captioned 'Manafiafy' and is a mid-1970s photograph — adjacent locality, not the reserve."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "jardin-botanique-de-saiadi",
+   "name": "Jardin botanique de Saïadi",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "foret-de-mandena",
+   "name": "Forêt de Mandena",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "tsitongambarika",
+   "name": "Tsitongambarika",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "pic-saint-louis",
+   "name": "Pic Saint-Louis",
+   "verification_status": "verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "musee-fort-flacourt",
+   "name": "Musée de Fort-Flacourt",
+   "verification_status": "verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre.",
+    "Two of three attached images are of the Fort Dauphin Museum in Manitoba, Canada — not Madagascar."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "bastion-de-maudave",
+   "name": "Bastion de Maudave",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "tranovato",
+   "name": "Tranovato",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "cathedrale-saint-vincent-de-paul",
+   "name": "Cathédrale Saint-Vincent-de-Paul",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "marche-artisanal-fort-dauphin",
+   "name": "Marché artisanal de Fort-Dauphin",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "bazarikely-market",
+   "name": "Marché de Bazarikely",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "bazar-amparihy",
+   "name": "Bazar Ampariky",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "marche-aux-zebu",
+   "name": "Marché aux Zébus",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "farihy-lanirano",
+   "name": "Lac Lanirano (Farihy Lanirano)",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "farihy-amparihy",
+   "name": "Lac Amparihy (Farihy Amparihy)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "farihy-ambinanikely",
+   "name": "Lac Ambinanikely (Farihy Ambinanikely)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "lac-vinanibe",
+   "name": "Lac Vinanibe",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "farihy-anony",
+   "name": "Lac Anony (Farihy Anony)",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "farihy-ambavarano",
+   "name": "Lac Ambavarano (Farihy Ambavarano)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page.",
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "grotte-dagnalapatsy",
+   "name": "Grotte d'Agnalapatsy",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "plage-de-la-baie-des-galions",
+   "name": "Baie des Galions (Baie d'Italy)",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "surf-plage-ankoba",
+   "name": "Surf à la plage d'Ankoba",
+   "verification_status": "verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "surf-baie-de-monseigneur",
+   "name": "Surf à la plage de Monseigneur",
+   "verification_status": "verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "surf-plage-dambinanibe",
+   "name": "Surf à la plage d'Ambinanibe",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "surf-port-ehoala",
+   "name": "Surf au Port Ehoala",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre.",
+    "Image association is weak: Attached image shows the port, not a surf spot."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "surf-plage-de-libanona",
+   "name": "Surf à la plage de Libanona",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "kitesurf-et-planche-a-voile-ankoba",
+   "name": "Kitesurf et planche à voile à Ankoba",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "plongee-masque-et-tuba-libanona",
+   "name": "Plongée avec masque et tuba à Libanona",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "randonnee-pic-saint-louis",
+   "name": "Ascension du pic Saint-Louis",
+   "verification_status": "verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "excursion-lokaro-en-pirogue",
+   "name": "Excursion à Lokaro en pirogue",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "balade-en-bateau-lac-lanirano",
+   "name": "Balade en bateau sur le lac Lanirano",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "randonnee-andohahela-tsimelahy",
+   "name": "Randonnée à Andohahela, parcelle de Tsimelahy",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "observation-des-baleines-a-bosse",
+   "name": "Observation des baleines à bosse",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "excursion-baie-sainte-luce-manafiafy",
+   "name": "Excursion à la baie Sainte-Luce et Manafiafy",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "visite-du-musee-fort-flacourt",
+   "name": "Visite du musée de Fort-Flacourt",
+   "verification_status": "verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "marche-central-et-artisanat-de-taolagnaro",
+   "name": "Marché central et artisanat de Taolagnaro",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "baignade-et-detente-plage-de-libanona",
+   "name": "Baignade et détente à la plage de Libanona",
+   "verification_status": "verified",
+   "reasons": [
+    "No phone, website or email recorded."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "excursion-cap-sainte-marie-et-lavanono",
+   "name": "Excursion vers le cap Sainte-Marie et Lavanono",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "location-de-planches-de-surf",
+   "name": "Location de planches de surf",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "excursion-4x4-vers-evatraha",
+   "name": "Excursion en 4×4 vers Évatraha",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No phone, website or email recorded.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "activities.json",
+   "slug": "decouverte-de-la-vannerie-de-sainte-luce",
+   "name": "Découverte de la vannerie de Sainte-Luce",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "dadamanga",
+   "name": "Dadamanga",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "shtm",
+   "name": "SHTM",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "safari-laka",
+   "name": "Safari Laka",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "mtc-tours",
+   "name": "MTC Tours",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "miliba-tour",
+   "name": "Miliba Tour",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "miremby-tours",
+   "name": "Miremby Tours",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "ato-sarl",
+   "name": "ATO SARL",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "lakananosy",
+   "name": "Lakan'Anosy",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "voyage-r",
+   "name": "Voyage R",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Every cited source is OpenStreetMap/Nominatim; nothing independent confirms it trades.",
+    "verification_status is 'needs_verification'.",
+    "No establishment-specific source; only a directory index or home page."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "office-regional-du-tourisme-danosy",
+   "name": "Office Régional du Tourisme d'Anôsy (ORTA)",
+   "verification_status": "verified",
+   "reasons": [
+    "No establishment-specific source; only a directory index or home page."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "stitch-saint-luce",
+   "name": "Stitch Saint Luce",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "lovasoa-mahavonjy",
+   "name": "Lovasoa Mahavonjy",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "association-mifankatia",
+   "name": "Association Mifankatia",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "foi-artisanat-anosy",
+   "name": "FOI",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "fimmasm",
+   "name": "FIMMASM",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "verification_status is 'needs_verification'.",
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "air-madagascar",
+   "name": "Air Madagascar",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "No coordinates; the app would fall back to the town centre."
+   ]
+  }
+ ],
+ "do_not_publish": [
+  {
+   "file": "restaurants.json",
+   "slug": "club-sandwich",
+   "name": "Club Sandwich",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Two contradictory OSM objects, one literally named 'temporarily closed'; phone is shared with an unrelated restaurant."
+   ]
+  },
+  {
+   "file": "restaurants.json",
+   "slug": "karibu",
+   "name": "Karibu",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Phone carries the +264 (Namibia) country code — unusable contact — and the only evidence is a single OSM object."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "chez-anita-hotel-tag-flagged",
+   "name": "Chez Anita (Hôtel Anita)",
+   "verification_status": "partially_verified",
+   "reasons": [
+    "Transparency record: same OSM object as restaurant 'chez-anita'."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "hotel-mahavoky-annexe-tag-flagged",
+   "name": "Hôtel Mahavoky Annexe",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Transparency record: same OSM object as restaurant 'hotel-mahavoky-annexe'."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "hotel-marina-doublon",
+   "name": "Hotel Marina (doublon à vérifier)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Duplicate flag only — record states 'do not publish' in its own notes."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "acp-camp-seed-madagascar",
+   "name": "ACP Camp (SEED Madagascar)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Private research camp (OSM access=private); not a bookable tourism business."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "maison-agent-sarisambo",
+   "name": "Maison Agent Sarisambo",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Name suggests staff housing rather than commercial lodging; no contact, single OSM object."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "ancien-hotel-miramar",
+   "name": "Ancien Hôtel Miramar",
+   "verification_status": "closed",
+   "reasons": [
+    "Confirmed closed (see closed_evidence). The app has no closed state and would render it as bookable."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "formerly-sahil-hotel",
+   "name": "Formerly Sahil Hotel",
+   "verification_status": "closed",
+   "reasons": [
+    "Confirmed closed (see closed_evidence). The app has no closed state and would render it as bookable."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "le-local-ex-chez-george",
+   "name": "Le Local (ex-Chez George / La Reine du Sud)",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "OSM name begins 'Formerly'; operating status unknown and the identity overlaps a separate restaurant record."
+   ]
+  },
+  {
+   "file": "accommodations.json",
+   "slug": "le-petit-bonheur-hotel-tag-flagged",
+   "name": "Le Petit Bonheur",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Transparency record: same OSM object as restaurant 'le-petit-bonheur'; hotel tag is probably wrong."
+   ]
+  },
+  {
+   "file": "attractions.json",
+   "slug": "faux-cap-beach",
+   "name": "Faux-Cap Beach",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Sole evidence is a directory index whose detail page is behind an anti-bot wall; no coordinates, no description."
+   ]
+  },
+  {
+   "file": "providers.json",
+   "slug": "aiko-aventure",
+   "name": "Aiko Aventure",
+   "verification_status": "needs_verification",
+   "reasons": [
+    "Sole evidence is a directory index whose detail page is behind an anti-bot wall; no contact, no locality confirmed."
+   ]
+  }
+ ]
+}
